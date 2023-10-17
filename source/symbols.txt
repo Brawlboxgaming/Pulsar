@@ -395,6 +395,7 @@ nextFloatLimited__6RandomFf = 0x805556a8
 
 #Model Director
 BindBRRES__13ModelDirectorFRQ34nw4r3g3d7ResFile13ArchiveSourcePCc = 0x8055b618
+BindBRRESFallback__13ModelDirectorFRQ34nw4r3g3d7ResFile13ArchiveSourcePCcRCQ34nw4r3g3d7ResFile = 0x8055b6a4
 LinkAnimation__13ModelDirectorFUiRQ34nw4r3g3d7ResFilePCc7AnmTypebPCc13ArchiveSourceUc = 0x8055ddec
 
 #Mii
@@ -1267,6 +1268,15 @@ GetCourseIdBySlot = 0x80552e74
 CharacterIDToWeightClass = 0x8081cd3c
 groupTypeSaveOffset = 0x80890d28
 
+RKNetController_Search1 = 0x80653644
+RKNetController_Search2 = 0x806536B0
+RKNetController_Search3 = 0x8065920C
+RKNetController_Search4 = 0x80659260
+RKNetController_Search5 = 0x80659724
+RKNetController_Search6 = 0x80659778
+RKNetController_Search7 = 0x8065A034
+RKNetController_Search8 = 0x8065A080
+
 
 #Global Funcs
 GetItemIconPaneName__F6ItemIdUi = 0x80860af0
@@ -1276,6 +1286,7 @@ IsBattle__Fv = 0x80860a8c
 itemObjProperties = 0x809c2f48
 itemSlotData = 0x809c3670						 
 itemBehaviourTable = 0x809c36a0
+behaviourTable__Q24Item9Behaviour = 0x809c36a0
 
 
 #debug
