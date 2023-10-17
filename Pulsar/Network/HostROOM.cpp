@@ -48,7 +48,7 @@ void SetAllToSendPackets(RKNet::ROOMHandler& roomHandler, u32 packetArg) {
     const u8 localAid = controller->subs[controller->currentSub].localAid;
     if((packetReg.packet.messageType) == 1 && localAid == controller->subs[controller->currentSub].hostAid) {
         const u8 hostParam = Info::IsHAW(true);
-        packetReg.packet.message |= hostParam << 2; //uses bit 0 of message
+        packetReg.packet.message |= hostParam << 2; //uses bit 2 of message
 
         const u8 gpParam = Settings::GetSettingValue(SETTINGSTYPE_HOST, SETTINGHOST_SCROLL_GP_RACES);
         packetReg.packet.message |= gpParam << 3; //uses bits 1-3
@@ -71,12 +71,12 @@ RKNet::ROOMPacket GetParamFromPacket(u32 packetArg, u8 aidOfSender) {
         if(controller->subs[controller->currentSub].hostAid != aidOfSender) packetReg.packet.messageType = 0;
         else {
             ConvertROOMPacketToData((packetReg.packet.message & 0b0000001111111100) >> 2);
-            System::sInstance->ParsePackROOMMsg(packetReg.packet.message >> 0xA & 0b111111);
+            System::sInstance->ParsePackROOMMsg(packetReg.packet.message >> 0xA);
         }
         packetReg.packet.message &= 0x3;
         Page* topPage = SectionMgr::sInstance->curSection->GetTopLayerPage();
         PageId topId = topPage->pageId;
-        if(topId == PAGE_VS_SETTINGS || topId == PAGE_VS_TEAMS_VIEW || topId == PAGE_BATTLE_MODE_SELECT) {
+        if(topId >= UI::SettingsPanel::firstId && topId < UI::SettingsPanel::firstId + UI::SettingsPanel::pageCount) {
             UI::SettingsPanel* panel = static_cast<UI::SettingsPanel*>(topPage);
             panel->OnBackPress(0);
         }
