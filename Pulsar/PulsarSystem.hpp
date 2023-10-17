@@ -89,8 +89,8 @@ protected:
 public:
     virtual void SetUserInfo(Network::ResvInfo::UserInfo& userInfo) const {};
     virtual bool CheckUserInfo(const Network::ResvInfo::UserInfo& userInfo) const { return true; };
-    virtual u8 SetPackROOMMsg() const { return 0; }
-    virtual void ParsePackROOMMsg(u8 msg) const {}
+    virtual u8 SetPackROOMMsg() { return 0; }
+    virtual void ParsePackROOMMsg(u8 msg) {}
 
     static System* sInstance;
     const char* GetModFolder() const { return modFolderName; }
