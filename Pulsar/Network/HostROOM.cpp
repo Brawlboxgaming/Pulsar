@@ -54,7 +54,6 @@ void SetAllToSendPackets(RKNet::ROOMHandler& roomHandler, u32 packetArg) {
         packetReg.packet.message |= gpParam << 3; //uses bits 1-3
         ConvertROOMPacketToData(packetReg.packet.message >> 2); //4 right now + 4 reserved
         packetReg.packet.message |= (System::sInstance->SetPackROOMMsg() << 0xA & 0b1111110000000000); //6 bits for packs
-
     }
     for(int i = 0; i < 12; ++i) if(i != localAid) roomHandler.toSendPackets[i] = packetReg.packet;
 }
@@ -72,7 +71,7 @@ RKNet::ROOMPacket GetParamFromPacket(u32 packetArg, u8 aidOfSender) {
         if(controller->subs[controller->currentSub].hostAid != aidOfSender) packetReg.packet.messageType = 0;
         else {
             ConvertROOMPacketToData((packetReg.packet.message & 0b0000001111111100) >> 2);
-            System::sInstance->ParsePackROOMMsg(packetReg.packet.message >> 2 & 0b111111);
+            System::sInstance->ParsePackROOMMsg(packetReg.packet.message >> 0xA & 0b111111);
         }
         packetReg.packet.message &= 0x3;
         Page* topPage = SectionMgr::sInstance->curSection->GetTopLayerPage();
