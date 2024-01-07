@@ -301,7 +301,7 @@ void SettingsPanel::OnUpDownSelect(UpDownControl& upDownControl, u32 hudSlotId) 
 }
 
 int SettingsPanel::GetNextIdx(s32 direction) {
-    return (this->sheetIdx + direction) % pageCount;
+    return (this->sheetIdx + direction + pageCount) % pageCount;
 }
 
 /*

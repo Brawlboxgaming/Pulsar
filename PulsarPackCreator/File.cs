@@ -272,29 +272,22 @@ namespace PulsarPackCreator
             bin.Write((int)bmgPosition);
             bin.BaseStream.Position = bmgPosition;
             bin.Write(bmgReader.ReadBytes((int)bmgReader.BaseStream.Length));
+            bmgReader.Close();
             using BigEndianReader fileReader = new BigEndianReader(File.Open("temp/files.txt", FileMode.Open));
             bin.Write(fileReader.ReadBytes((int)fileReader.BaseStream.Length));
+            fileReader.Close();
             bin.Close();
 
             char[] delims = new[] { '\r', '\n' };
             string[] xml = PulsarRes.XML.Split(delims, StringSplitOptions.RemoveEmptyEntries);
 
             xml[3] = xml[3].Replace("{$pack}", parameters.modFolderName);
-            xml[6] = xml[6].Replace("{$pack}", parameters.modFolderName);
-            xml[11] = xml[11].Replace("{$pack}", parameters.modFolderName);
-            xml[14] = xml[14].Replace("{$pack}", parameters.modFolderName);
-            xml[19] = xml[19].Replace("{$pack}", parameters.modFolderName);
             xml[24] = xml[24].Replace("{$pack}", parameters.modFolderName);
             xml[25] = xml[25].Replace("{$pack}", parameters.modFolderName);
             xml[26] = xml[26].Replace("{$pack}", parameters.modFolderName);
             xml[27] = xml[27].Replace("{$pack}", parameters.modFolderName);
-            xml[30] = xml[30].Replace("{$pack}", parameters.modFolderName);
-            xml[34] = xml[34].Replace("{$pack}", parameters.modFolderName);
-            xml[35] = xml[34].Replace("{$pack}", parameters.modFolderName);
-            xml[36] = xml[35].Replace("{$pack}", parameters.modFolderName);
+            xml[33] = xml[33].Replace("{$pack}", parameters.modFolderName);
 
-            bmgReader.Close();
-            fileReader.Close();
             File.Copy("temp/Pulsar.bin", $"{modFolder}/Binaries/Pulsar.bin", true);
             File.WriteAllLines($"output/Riivolution/{parameters.modFolderName}.xml", xml);
             Directory.Delete("temp/", true);
