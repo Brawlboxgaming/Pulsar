@@ -1,4 +1,4 @@
-﻿using Microsoft.Win32;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -29,7 +29,7 @@ namespace PulsarPackCreator
             return (value + (aligment - 1)) & ~(aligment - 1);
         }
 
-        private void ImportPulsarBin(BigEndianReader bin)
+        private void ImportConfigFile(BigEndianReader bin)
         {
             Directory.CreateDirectory("temp/");
             try
@@ -56,11 +56,11 @@ namespace PulsarPackCreator
                 //CUPS reading
                 bin.BaseStream.Position = offsetToCups;
                 ReadCups(bin);
-                
+
                 //BMG reading
                 bin.BaseStream.Position = offsetToBMG;
                 int bmgSize = ReadBMG(bin);
-               
+
                 //FILE reading
                 bin.BaseStream.Position = offsetToBMG + bmgSize;
                 ReadFile(bin);
@@ -103,13 +103,15 @@ namespace PulsarPackCreator
                 Directory.Delete("temp/", true);
             }
         }
-        private void OnImportBinClick(object sender, RoutedEventArgs e)
+        private void OnImportConfigClick(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
+            openFile.DefaultExt = ".pul";
+            openFile.Filter = "Pulsar Config File(*.pul) | *.pul";
             if (openFile.ShowDialog() == true)
             {
                 using BigEndianReader bin = new BigEndianReader(File.Open(openFile.FileName, FileMode.Open));
-                ImportPulsarBin(bin);
+                ImportConfigFile(bin);
             }
         }
 
@@ -137,11 +139,11 @@ namespace PulsarPackCreator
             UInt32 cupVersion = bin.ReadUInt32();
             if (cupMagic != 0x43555053 || cupVersion != CUPSVERSION) throw new Exception();
             bin.BaseStream.Position += 4;
-            
+
             cups.Clear();
             ctsCupCount = bin.ReadUInt16();
             parameters.regsMode = bin.ReadByte();
-            bin.BaseStream.Position += 1;     
+            bin.BaseStream.Position += 1;
             for (int i = 0; i < 4; i++)
             {
                 trophyCount[i] = bin.ReadUInt16();
@@ -222,7 +224,7 @@ namespace PulsarPackCreator
             using StreamWriter bmgSW = new StreamWriter("temp/BMG.txt", true);
             using StreamWriter fileSW = new StreamWriter("temp/files.txt");
             using StreamWriter crcToFile = new StreamWriter($"{modFolder}/Ghosts/FolderToTrackName.txt");
-            using BigEndianWriter bin = new BigEndianWriter(File.Create("temp/Pulsar.bin"));
+            using BigEndianWriter bin = new BigEndianWriter(File.Create("temp/Config.pul"));
             bmgSW.WriteLine(bmgSW.NewLine);
             bmgSW.WriteLine($"  {0x2847:X}    = Version created {date}");
             fileSW.WriteLine("FILE");
@@ -288,14 +290,21 @@ namespace PulsarPackCreator
             xml[27] = xml[27].Replace("{$pack}", parameters.modFolderName);
             xml[33] = xml[33].Replace("{$pack}", parameters.modFolderName);
 
-            File.Copy("temp/Pulsar.bin", $"{modFolder}/Binaries/Pulsar.bin", true);
+            bmgReader.Close();
+            fileReader.Close();
+            File.Copy("temp/Config.pul", $"{modFolder}/Binaries/Config.pul", true);
             File.WriteAllLines($"output/Riivolution/{parameters.modFolderName}.xml", xml);
             Directory.Delete("temp/", true);
             MessageBox.Show("Pack Created");
+            MessageBoxResult result = MessageBox.Show("Pack successfully created. Do you want to open the output folder?", "Pack created", MessageBoxButton.YesNo);
+            if(result == MessageBoxResult.Yes)
+            {
+                OpenDir($"{Directory.GetCurrentDirectory()}\\output");
+            }
             return true;
         }
 
-        private void OnBuildBinClick(object sender, RoutedEventArgs e)
+        private void OnBuildConfigClick(object sender, RoutedEventArgs e)
         {
             BuildBinImpl();
         }
@@ -311,9 +320,9 @@ namespace PulsarPackCreator
                 File.WriteAllBytes($"{modFolder}/Binaries/K.bin", PulsarRes.K);
                 Directory.CreateDirectory($"{modFolder}/Assets");
                 File.WriteAllBytes($"{modFolder}/Binaries/Loader.bin", PulsarRes.Loader);
-                File.WriteAllBytes($"{modFolder}/Assets/PulsarUI.szs", PulsarRes.PulsarUI);
-                File.WriteAllBytes($"{modFolder}/Assets/PulsarRace.szs", PulsarRes.PulsarRace);
-                File.WriteAllBytes($"{modFolder}/Assets/PulsarCommon.szs", PulsarRes.PulsarCommon);
+                File.WriteAllBytes($"{modFolder}/Assets/UIAssets.szs", PulsarRes.UIAssets);
+                File.WriteAllBytes($"{modFolder}/Assets/RaceAssets.szs", PulsarRes.RaceAssets);
+                File.WriteAllBytes($"{modFolder}/Assets/CommonAssets.szs", PulsarRes.CommonAssets);
             }
         }
 
@@ -355,7 +364,7 @@ namespace PulsarPackCreator
             bin.Write(parameters.hasUMTs);
             bin.Write(parameters.hasFeather);
             bin.Write(parameters.hasMegaTC);
-         
+
 
             //reserved in case it is needed 
             //bin.BaseStream.Position = (bin.BaseStream.Position + (32 - 1)) & ~(32 - 1);
@@ -427,7 +436,7 @@ namespace PulsarPackCreator
                     File.Copy($"input/{name}.szs", $"{modFolder}/Tracks/{idx * 4 + i}.szs", true);
                     crcToFile.WriteLine($"{name} = {crc32:X8}");
                     string crc32Folder = $"{modFolder}/Ghosts/{crc32.ToString("X")}";
-                    
+
                     Directory.CreateDirectory(crc32Folder);
                     for (int expert = 0; expert < 4; expert++)
                     {
@@ -439,7 +448,7 @@ namespace PulsarPackCreator
                             {
                                 MessageBox.Show($"Expert ghost {expertName}.rkg does not exist.");
                                 return false;
-                            }                       
+                            }
                             using BigEndianReader rkg = new BigEndianReader(File.Open(rkgName, FileMode.Open));
                             rkg.BaseStream.Position = 0xC;
                             UInt16 halfC = rkg.ReadUInt16();
@@ -538,6 +547,11 @@ namespace PulsarPackCreator
                 curLine = fileSR.ReadLine();
             }
         }
-    }
+        private void OnOpenInputClick(object sender, RoutedEventArgs e)
+        {
+            OpenDir($"{Directory.GetCurrentDirectory()}\\input");
+        }
 
+        private void OpenDir(string path) => Process.Start("explorer.exe", path);
+    }
 }
