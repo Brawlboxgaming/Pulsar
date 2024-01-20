@@ -3,13 +3,20 @@
 #include <types.hpp>
 #include <core/nw4r/g3d/g3dObj.hpp>
 #include <core/nw4r/g3d/res/ResMdl.hpp>
-#include <core/nw4r/math/math.hpp>
+#include <core/nw4r/math.hpp>
 
 namespace nw4r {
 namespace g3d {
 
+class IScnObjCallback;
 
 class ScnObj : public G3dObj {
+public:
+    enum Timing {
+        CALLBACK_TIMING_A = 0x0001,   //before making calculations.
+        CALLBACK_TIMING_B = 0x0002,   //in the middle of making calculations.
+        CALLBACK_TIMING_C = 0x0004    //after making calculations.
+    };
     enum OptID {
         OPTID_DISABLE_GATHER_DRAW_SCNOBJ = 0x00000001,
         OPTID_DISABLE_CALC_WORLD = 0x00000002,
@@ -35,13 +42,13 @@ class ScnObj : public G3dObj {
     virtual float GetValueForSortXlu() const; //0x2c 8006dce0
     virtual void CalcWorldMtx(const math::MTX34* parent, u32* param); //0x30 8006d6e0
     math::MTX34 matrixArray[3]; //0xC local, world, view
-    math::AABB aabb[2]; //local, world
-    u32 scnObjFlags;
-    u8 priorityDrawOpa;
+    math::AABB aabb[2]; //0x9c local, world
+    u32 scnObjFlags; //0xcc
+    u8 priorityDrawOpa; //0xd0  
     u8 priorityDrawXlu;
     u8 padding[2];
-    void* callback;
-    u8 callbackTiming;
+    void* callback; //0xd4
+    u8 callbackTiming; //0xd8
     u8 callbackDeleteOption;
     u16 callbackExecOpMask;
 };
@@ -79,11 +86,23 @@ public:
     virtual ScnObj* Remove(u32 idx); //0x38 8006ecf0
     virtual bool Remove(ScnObj* obj); //0x3c 8006edb0
 
+    void DefG3dProcScnGroup(u32 g3dproc, u32 param, void* info); //8006e6f0
+
     ScnObj** scnObjs;
     u32 scnObjArraySize; //0xe0
     u32 scnObjCount; //0xe4
 }; //0xe8
 
+class IScnObjCallback {
+public:
+    typedef ScnObj::Timing Timing;
+    virtual ~IScnObjCallback();
+    virtual void ExecCallback_CALC_WORLD(Timing, ScnObj* scnObj, u32 args, void* info);
+    virtual void ExecCallback_CALC_MAT(Timing, ScnObj* scnObj, u32 args, void* info);
+    virtual void ExecCallback_CALC_VIEW(Timing, ScnObj* scnObj, u32 args, void* info);
+    virtual void ExecCallback_DRAW_OPA(Timing, ScnObj* scnObj, u32 args, void* info);
+    virtual void ExecCallback_DRAW_XLU(Timing, ScnObj* scnObj, u32 args, void* info);
+}; //0x4
 
 }//namespace g3d  
 }//namespace nw4r 

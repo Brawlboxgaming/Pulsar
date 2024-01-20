@@ -41,7 +41,7 @@ public:
     virtual const AnmObj* GetAnmObj(AnmObjType type) const; //0x44 800727d0
 
     void ScnMdlSmpl_CalcPosture(u32 param, const math::MTX34* pParent); //80070ec0
-
+    void EnableScnMdlCallbackTiming(Timing t); //800728f0
     ResMdl resMdl;
     math::MTX34* worldMtxArray;
     u32* worldMtxAttribArray;
@@ -53,16 +53,16 @@ public:
     u16 numViewMtx;
     u32 flagScnMdlSimple;
 
-    const u8* byteCodeCalc;
-    const u8* byteCodeMix;
-    const u8* byteCodeDrawOpa;
-    const u8* byteCodeDrawXlu;
-    u32 renderingMode;
+    const u8* byteCodeCalc; //0x108
+    const u8* byteCodeMix; //0x10c
+    const u8* byteCodeDrawOpa; //0x110
+    const u8* byteCodeDrawXlu; //0x114
+    u32 renderingMode; //0x118
     ICalcWorldCallback calcWorldCb; //0x11c
-    u8 callbackTiming;
-    u8 callbackDeleteOption;
-    u16 callbackNodeID;
-    AnmObjChr* anmObjChr;
+    u8 callbackTiming; //0x120
+    u8 callbackDeleteOption; //0x121
+    u16 callbackNodeID; //0x122
+    AnmObjChr* anmObjChr; //0x124
     void* unknown;
     AnmObjMatClr* anmObjMatClr;
     AnmObjTexPat* anmObjTexPat;
