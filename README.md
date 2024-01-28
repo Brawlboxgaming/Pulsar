@@ -32,7 +32,7 @@ Pulsar is a Mario Kart Wii Kamek-Based engine to create CT distributions. It com
 - Optional Music speedUp on final lap (the music is sped up when you cross the line instead of switching to the fast lap version)
 
 
-**Gameplay:**
+Gameplay:
 - 200cc support
 - Ultra Mini-Turbos
 - Mega TCs
@@ -55,5 +55,4 @@ Pulsar can also be used as a base to add your own features. [CTTP](https://githu
 
 
 Credits:
-- Treeky for [Kamek](https://github.com/Treeki/Kamek/tree/master). The engine has been ever so slightly modified to create a new output format which combines the usual 4 binaries. 
->>>>>>> main
+- Treeki for [Kamek](https://github.com/Treeki/Kamek/tree/master). The engine has been ever so slightly modified to create a new output format which combines the usual 4 binaries. 
