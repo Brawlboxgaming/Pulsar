@@ -34,7 +34,7 @@ ExpCupSelect::ExpCupSelect() {
     this->controlsManipulatorManager.SetGlobalHandler(START_PRESS, onStartPressHandler, false, false);
 
     CupsDef* cups = CupsDef::sInstance;
-    cups->ToggleCTs(!CupsDef::IsRegsSituation());
+    cups->ToggleCTs(!CupsDef::IsVanillaSituation());
     if(cups->GetTotalCupCount() <= 8) {
         this->arrows.leftArrow.manipulator.inaccessible = true;
         this->arrows.leftArrow.isHidden = true;

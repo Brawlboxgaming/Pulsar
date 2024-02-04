@@ -14,7 +14,7 @@ namespace Network {
 
 
 void BeforeSELECTSend(RKNet::PacketHolder* packetHolder, CustomSELECTPacket* src, u32 len) {
-    if(CupsDef::IsRegsSituation()) {
+    if(CupsDef::IsVanillaSituation()) {
         CustomSELECTPacket copy = *src;
         RKNet::SELECTPacket* normalPacket = reinterpret_cast<RKNet::SELECTPacket*>(&copy);
         normalPacket->playersData[0].courseVote = (u8)CupsDef::ConvertTrack_PulsarIdToRealId(static_cast<PulsarId>(src->pulSELPlayerData[0].pulCourseVote));
@@ -32,7 +32,7 @@ void BeforeSELECTSend(RKNet::PacketHolder* packetHolder, CustomSELECTPacket* src
 kmCall(0x80661040, BeforeSELECTSend);
 
 void AfterSELECTReception(CustomSELECTPacket* dest, CustomSELECTPacket* src, u32 packetSize) {
-    if(CupsDef::IsRegsSituation() || (src->pulSELPlayerData[1].starRank & 0x80 == 0)) {
+    if(CupsDef::IsVanillaSituation() || (src->pulSELPlayerData[1].starRank & 0x80 == 0)) {
         RKNet::SELECTPacket* normalPacket = reinterpret_cast<RKNet::SELECTPacket*>(src);
         const u8 courseVoteHud0 = CupsDef::ConvertTrack_RealIdToPulsarId(static_cast<CourseId>(normalPacket->playersData[0].courseVote));
         const u8 courseVoteHud1 = CupsDef::ConvertTrack_RealIdToPulsarId(static_cast<CourseId>(normalPacket->playersData[1].courseVote));
@@ -82,7 +82,7 @@ void DecideTrack(CustomSELECTHandler* select) {
     System* system = System::sInstance;
     const CupsDef* cups = CupsDef::sInstance;
     const RKNet::Controller* controller = RKNet::Controller::sInstance;
-    if(select->mode == RKNet::ONLINEMODE_PUBLIC_VS && !CupsDef::IsRegsSituation()) {
+    if(select->mode == RKNet::ONLINEMODE_PUBLIC_VS && !CupsDef::IsVanillaSituation()) {
 
         const u32 availableAids = controller->subs[controller->currentSub].availableAids;
         u8 aids[12];

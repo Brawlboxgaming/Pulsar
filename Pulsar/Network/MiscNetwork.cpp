@@ -19,7 +19,7 @@ kmWrite32(0x8053F124, 0x38000000);
 
 //Overwrites CC rules -> 10% 100, 65% 150, 25% mirror and/or in frooms, overwritten by host setting
 void DecideCC(CustomSELECTHandler& handler) {
-    if(CupsDef::IsRegsSituation()) reinterpret_cast<RKNet::SELECTHandler&>(handler).DecideEngineClass();
+    if(CupsDef::IsVanillaSituation()) reinterpret_cast<RKNet::SELECTHandler&>(handler).DecideEngineClass();
     else {
         const u8 ccSetting = Settings::Mgr::GetSettingValue(Settings::SETTINGSTYPE_HOST, SETTINGHOST_RADIO_CC);
         RKNet::Controller* controller = RKNet::Controller::sInstance;

@@ -75,7 +75,7 @@ ChooseNextTrack::ChooseNextTrack() :
     onButtonClickHandler.ptmf = &ChooseNextTrack::OnButtonClick;
     for(int i = 0; i < 6; ++i) new (&this->manipulatorManager.holders[0].info) RaceControlButtonInfo;
     for(int i = 0; i < 12; ++i) hasReceivedHostTrack[i] = false;
-    CupsDef::sInstance->ToggleCTs(!CupsDef::IsRegsSituation());
+    CupsDef::sInstance->ToggleCTs(!CupsDef::IsVanillaSituation());
 }
 
 void ChooseNextTrack::OnActivate() {

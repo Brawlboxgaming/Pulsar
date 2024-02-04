@@ -82,7 +82,7 @@ public:
     void SaveSelectedCourse(const PushButton& courseButton);
     PulsarCupId GetNextCupId(PulsarCupId cupId, s32 direction) const;
     PulsarId RandomizeTrack(Random& random) const;
-    static bool IsRegsSituation();
+    static bool IsVanillaSituation();
 
     //Reg Check
     static inline bool IsReg(PulsarId pulsarId) { return pulsarId < 0x100 || pulsarId == 0xFFFFU; }

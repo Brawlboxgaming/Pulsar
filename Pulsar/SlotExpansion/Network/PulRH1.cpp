@@ -11,7 +11,7 @@ namespace Network {
 //Fixes for spectating
 u8 ExportRH1ToPulRH1(RKNet::PacketHolder& packetHolder, RKNet::RACEHEADER1Packet* rh1Packet, u32 len) {
     CustomRH1Packet* convPacket = reinterpret_cast<CustomRH1Packet*>(rh1Packet);
-    if(!CupsDef::IsRegsSituation()) {
+    if(!CupsDef::IsVanillaSituation()) {
         convPacket->starRankHud0 = rh1Packet->starRank[0];
         convPacket->starRankHud1 = rh1Packet->starRank[1];
         convPacket->trackId = static_cast<u16>(CupsDef::sInstance->winningCourse);
@@ -27,7 +27,7 @@ CourseId ReturnCorrectId(const RKNet::RH1Handler& rh1Handler) {
     for(int i = 0; i < 12; ++i) {
         const RKNet::RH1Data& curRH1 = rh1Handler.rh1Data[i];
         if((curRH1.trackId <= 0x42 || curRH1.trackId > 0xff) && curRH1.timer != 0) {
-            if(CupsDef::IsRegsSituation()) cups->winningCourse = CupsDef::ConvertTrack_RealIdToPulsarId(curRH1.trackId);
+            if(CupsDef::IsVanillaSituation()) cups->winningCourse = CupsDef::ConvertTrack_RealIdToPulsarId(curRH1.trackId);
             else cups->winningCourse = static_cast<PulsarId>(curRH1.trackId);
             return cups->GetCorrectTrackSlot();
         }
@@ -71,7 +71,7 @@ void ImportRH1ToPulRH1() {
     asm(mr packet, r28;);
     register RKNet::RH1Data* data;
     asm(addi data, r26, 0x20;);
-    if(CupsDef::IsRegsSituation()) {
+    if(CupsDef::IsVanillaSituation()) {
         RKNet::RACEHEADER1Packet* normal = reinterpret_cast<RKNet::RACEHEADER1Packet*>(packet);
         data->trackId = static_cast<CourseId>(normal->trackId);
         data->starRank[0] = normal->starRank[0];
