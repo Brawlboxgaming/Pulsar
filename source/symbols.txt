@@ -1367,9 +1367,6 @@ RKNetController_Search6 = 0x80659778
 RKNetController_Search7 = 0x8065A034
 RKNetController_Search8 = 0x8065A080
 
-Bombtimer_1 = 0x807A5BF4
-Bombtimer_2 = 0x807A4AC8
-
 #Global Funcs
 GetItemIconPaneName__F6ItemIdUi = 0x80860af0
 IsBattle__Fv = 0x80860a8c
