@@ -4,8 +4,8 @@
 #include <game/Item/Obj/ItemObj.hpp>
 
 //_sinit_ at 807a62d8
-namespace Item{
-class ObjBomb: public Obj {
+namespace Item {
+class ObjBomb : public Obj {
 public:
     static Obj** CreateArray(u32 count); //807a41c4
     ObjBomb(); //807a4850 inlined
