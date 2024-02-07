@@ -94,7 +94,7 @@ PulsarId CupsConfig::RandomizeTrack(Random& random) const {
 }
 
 /*
-PulsarCupId CupsDef::GetNextCupId(PulsarCupId pulsarId, s32 direction) const {
+PulsarCupId CupsConfig::GetNextCupId(PulsarCupId pulsarId, s32 direction) const {
     const u32 idx = ConvertCup_PulsarIdToIdx(pulsarId); //40 -> 8
     const u32 count = this->GetTotalCupCount(); //0xa
     const u32 min = count < 8 ? 8 : 0; //0
