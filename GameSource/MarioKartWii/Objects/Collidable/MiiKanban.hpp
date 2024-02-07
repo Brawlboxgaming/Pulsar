@@ -1,7 +1,7 @@
 #ifndef _MIIKANBAN_OBJECT_
 #define _MIIKANBAN_OBJECT_
 #include <kamek.hpp>
-#include <game/Objects/Collidable/ObjectCollidable.hpp>
+#include <MarioKartWii/Objects/Collidable/ObjectCollidable.hpp>
 
 namespace Objects {
 class MiiKanban : public ObjectCollidable { //ObjectNum 0x18e = 398

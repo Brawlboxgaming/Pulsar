@@ -1,8 +1,8 @@
 #ifndef _MODELCONTROL_
 #define _MODELCONTROL_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/UIControl.hpp>
-#include <game/UI/Page/Other/ModelRenderer.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/UI/Page/Other/ModelRenderer.hpp>
 //_sinit_ at 805f4fac
 
 class BackGroundModelControl : public LayoutUIControl {

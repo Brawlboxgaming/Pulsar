@@ -1,11 +1,11 @@
 #ifndef _ITEMOBJKOURATOGEZO_
 #define _ITEMOBJKOURATOGEZO_
 #include <kamek.hpp>
-#include <game/Item/Obj/Targeting.hpp>
+#include <MarioKartWii/Item/Obj/Targeting.hpp>
 
 //_sinit_ at 807aea78
 namespace Item {
-class ObjKouraTogezo: public ObjTargeting { //blue shell actually inherits a second class also used by reds and bombs
+class ObjKouraTogezo : public ObjTargeting { //blue shell actually inherits a second class also used by reds and bombs
 public:
     static Obj** CreateArray(u32 count); //807ab9e0
     ObjKouraTogezo(); //807abc14

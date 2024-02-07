@@ -1,8 +1,8 @@
 #ifndef _POINTERPAGE_
 #define _POINTERPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/System/System.hpp>
-#include <game/3D/Effect/EffectMgr.hpp>
+#include <MarioKartWii/UI/Page/System/System.hpp>
+#include <MarioKartWii/3D/Effect/EffectMgr.hpp>
 
 //_sinit_ at 805c9750
 
@@ -10,7 +10,7 @@ namespace Pages {
 class DpdPointer;
 }
 
-class DpdPointerControl: public LayoutUIControl {
+class DpdPointerControl : public LayoutUIControl {
     DpdPointerControl(); //805c89c4
     ~DpdPointerControl() override; //805c8a08 vtable 808b8164
     void InitSelf() override; //0x18 805c8d6c
@@ -32,7 +32,7 @@ class DpdPointerControl: public LayoutUIControl {
 }; //0x1dc
 
 namespace Pages {
-class DpdPointer: public System {
+class DpdPointer : public System {
 public:
     DpdPointer(); //805c9534
     ~DpdPointer() override; //805c9598 vtable 808b80f8

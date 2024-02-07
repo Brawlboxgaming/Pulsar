@@ -1,7 +1,7 @@
 #ifndef _DOKAN_SFC_OBJECT_
 #define _DOKAN_SFC_OBJECT_
 #include <kamek.hpp>
-#include <game/Objects/Collidable/ObjectCollidable.hpp>
+#include <MarioKartWii/Objects/Collidable/ObjectCollidable.hpp>
 
 namespace Objects {
 class Dokan_sfc : public ObjectCollidable { //ObjectNum 0x12e = 302
@@ -15,7 +15,6 @@ public:
     void UpdateShadow() override; //0x70 80778ea8
     void UpdateCollision() override; //0x74 80778d50
     ObjToKartHit OnCollision(const Kart::Player& kartPlayer, ObjToKartHit default, KartToObjHit kartToObj) const override; //0xc0 80778c0c
-    //depends on factors like speed and obviously the kartToObj as a goomba does not do anything to a player in a mega
     ObjToItemInteraction GetItemCollisionType(const Kart::Player& kartPlayer,
         ObjToItemInteraction default, ItemToObjInteraction itemToObj) const override; //0xc4 80778cc4
     virtual bool vf_0xec(); //80778fdc

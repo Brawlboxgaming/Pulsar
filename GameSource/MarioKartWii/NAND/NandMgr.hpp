@@ -4,8 +4,8 @@
 #include <core/rvl/tpl.hpp>
 #include <core/egg/mem/Disposer.hpp>
 #include <core/egg/SaveBanner.hpp>
-#include <game/File/RKG.hpp>
-#include <game/NAND/NandUtils.hpp>
+#include <MarioKartWii/File/RKG.hpp>
+#include <MarioKartWii/NAND/NandUtils.hpp>
 
 class NandMgr {
 public:

@@ -2,7 +2,7 @@
 #define _KARTOBJECT_
 
 #include <kamek.hpp>
-#include <game/Objects/ObjectCollision.hpp>
+#include <MarioKartWii/Objects/ObjectCollision.hpp>
 
 namespace Kart {
 class Player;

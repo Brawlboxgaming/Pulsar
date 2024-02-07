@@ -1,12 +1,12 @@
 #ifndef _RECOGNIZEPAD_
 #define _RECOGNIZEPAD_
 #include <kamek.hpp>
-#include <game/UI/Page/System/System.hpp>
-#include <game/UI/Ctrl/MessageWindowControl.hpp>
+#include <MarioKartWii/UI/Page/System/System.hpp>
+#include <MarioKartWii/UI/Ctrl/MessageWindowControl.hpp>
 
 
 //_sinit_ at 80601958
-class PadControl: LayoutUIControl {
+class PadControl : LayoutUIControl {
     PadControl(); //806012bc
     ~PadControl() override; //806012f8 808ba4f8
     void InitSelf() override; //80601410 0x18
@@ -26,7 +26,7 @@ class PadControl: LayoutUIControl {
 }; //total size 0x184
 size_assert(PadControl, 0x184);
 
-class RecognizePadWindow: public LayoutUIControl {
+class RecognizePadWindow : public LayoutUIControl {
     RecognizePadWindow(); //806017e4
     ~RecognizePadWindow() override; //80601820
     void InitSelf() override; //806018f4 0x18
@@ -39,7 +39,7 @@ class RecognizePadWindow: public LayoutUIControl {
 size_assert(RecognizePadWindow, 0x174);
 
 namespace Pages {
-class RecognizePad: public System {
+class RecognizePad : public System {
 
     RecognizePad(); //8061bffc always inlined
     ~RecognizePad() override; //8061c058 vtable 808bb594
@@ -63,7 +63,7 @@ class RecognizePad: public System {
 };//total size 0x4c0
 size_assert(RecognizePad, 0x4c0);
 
-class RecognizePadMenu: public RecognizePad {
+class RecognizePadMenu : public RecognizePad {
     RecognizePadMenu(); //8061c53c
     ~RecognizePadMenu() override; //8061c5a4 vtable 808bb528
     const char* GetClassName() const override; //8061d1c8 0xc

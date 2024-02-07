@@ -8,9 +8,9 @@ Melg
 #ifndef _PAGE_
 #define _PAGE_
 #include <kamek.hpp>
-#include <game/System/Identifiers.hpp>
-#include <game/UI/Ctrl/UIControl.hpp>
-#include <game/UI/Ctrl/Manipulator.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/UI/Ctrl/Manipulator.hpp>
 
 enum PageState {
     STATE_UNLOADED   = 0,

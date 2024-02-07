@@ -1,9 +1,9 @@
 #ifndef _OBJECTCOLLIDABLE_
 #define _OBJECTCOLLIDABLE_
 #include <kamek.hpp>
-#include <game/Objects/Object.hpp>
+#include <MarioKartWii/Objects/Object.hpp>
 #include <Item/Obj/ItemObj.hpp>
-#include <game/Objects/ObjectCollision.hpp>
+#include <MarioKartWii/Objects/ObjectCollision.hpp>
 
 /*
 Contributors:

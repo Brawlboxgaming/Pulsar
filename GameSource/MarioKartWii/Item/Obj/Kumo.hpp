@@ -1,7 +1,7 @@
 #ifndef _ITEMOBJBANANA_
 #define _ITEMOBJBANANA_
 #include <kamek.hpp>
-#include <game/Item/Obj/ItemObj.hpp>
+#include <MarioKartWii/Item/Obj/ItemObj.hpp>
 
 namespace Item {
 class ObjKumo : public Obj { //TC

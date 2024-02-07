@@ -5,7 +5,7 @@
 #include <core/egg/Audio/AudioMgr.hpp>
 #include <core/egg/mem/Heap.hpp>
 #include <core/egg/mem/Disposer.hpp>
-#include <game/System/Identifiers.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
 
 /*
 Contributors:
@@ -40,7 +40,7 @@ public:
     using EGG::ExpAudioMgr::SetupMemoryArchive; //0x40 thunk 80717c10
     int SetupMemoryArchive(const void* soundArchiveData, snd::SoundHeap* heap, s32 r6) override; //0x44 thunk 80717c18 func 807179b4  
     using EGG::ExpAudioMgr::CloseArchive;  //0x48 thunk 80717c08
-    
+
     using EGG::SimpleAudioMgr::LoadGroup;  //0x4c thunk 80717bf0
     //using EGG::SimpleAudioMgr::LoadGroup; //0x50 thunk 80717bf8
     //using EGG::SimpleAudioMgr::LoadGroup; //0x54 thunk 80717c00

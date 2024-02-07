@@ -1,6 +1,6 @@
 #ifndef _POTI_
 #define _POTI_
-#include <game/KMP/KMPBlockBase.hpp>
+#include <MarioKartWii/KMP/KMPBlockBase.hpp>
 
 struct POTIPoint {
     Vec3 position;

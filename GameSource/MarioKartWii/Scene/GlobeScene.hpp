@@ -1,8 +1,8 @@
 #ifndef _GLOBESCENE_
 #define _GLOBESCENE_
-#include <game/Scene/GameScene.hpp>
+#include <MarioKartWii/Scene/GameScene.hpp>
 
-class GlobeScene: public GameScene {
+class GlobeScene : public GameScene {
 public:
     GlobeScene(); //80553850
     ~GlobeScene() override; //80553894 vtable 808b41c0

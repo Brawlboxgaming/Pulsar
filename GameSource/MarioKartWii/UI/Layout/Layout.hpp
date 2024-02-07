@@ -7,9 +7,9 @@
 #include <core/nw4r/lyt/Pane.hpp>
 #include <core/nw4r/lyt/Picture.hpp>
 #include <core/nw4r/lyt/TextBox.hpp>
-#include <game/UI/Text.hpp>
-#include <game/UI/Movie.hpp>
-using namespace nw4r::lyt;
+#include <MarioKartWii/UI/Text.hpp>
+#include <MarioKartWii/UI/Movie.hpp>
+using namespace nw4r;
 
 class MainLayout;
 class PaneManagerHolder;
@@ -19,12 +19,12 @@ class LayoutResourceAccessor;
 class PictureLayout;
 
 class PaneAction {
-    virtual void Calc(Pane* pane) = 0;
+    virtual void Calc(lyt::Pane* pane) = 0;
 };
 
 class PaneTypeCounter : PaneAction {
     //ctor inlined, sets all counts to 0
-    virtual void Calc(Pane* pane); //808b94dc 805e94d8 increments counts based on type
+    virtual void Calc(lyt::Pane* pane); //808b94dc 805e94d8 increments counts based on type
     u32 paneCount; //total count excluding pan and boundary panes
     u32 txt1Count;
     u32 moviePicPaneCount; //not sure which ones are counted
@@ -32,7 +32,7 @@ class PaneTypeCounter : PaneAction {
 
 class TextPaneHandler::Initializer : PaneAction {
     //ctor inlined
-    virtual void Calc(Pane* pane);//808b94f4 805e92d0 if pane is a text pane, increments curPaneId and calls init on the handler
+    virtual void Calc(lyt::Pane* pane);//808b94f4 805e92d0 if pane is a text pane, increments curPaneId and calls init on the handler
     TextPaneHandler* firstHandler;
     u32 textPaneCount;
     u32 curPaneId;
@@ -40,49 +40,49 @@ class TextPaneHandler::Initializer : PaneAction {
 
 class MoviePaneHandler::Initializer : PaneAction {
     //ctor inlined
-    virtual void Calc(Pane* pane);//808b94e8 805e93d4 if pane is a movie pane, increments curPaneId and calls init on the handler
+    virtual void Calc(lyt::Pane* pane);//808b94e8 805e93d4 if pane is a movie pane, increments curPaneId and calls init on the handler
     MoviePaneHandler* firstHandler;
     u32 moviePaneCount;
     u32 curPaneId;
 };
 
 class PaneManager {
-    virtual void Draw(DrawInfo* drawInfo) = 0; //abstract
-    static bool SearchPane(Pane* pane, Pane* otherPane); //805e7460 checks if pane or any of its parents are equal to otherPane
-    static Pane* GetParentPane(Pane* pane); //805e74f8
-    static bool isPaneAndParentsVisible(Pane* pane); //805e7700
-    static bool isPaneVisible(Pane* pane); //805e77f8
-    static bool CheckForUserInfo(Pane* pane, char info); //805e7a6c
-    static bool CheckForUserInfo2(Pane* pane, char info); //805e7aac
-    static char GetNextUserInfo(Pane* pane, char info); //805e7aec
-    static void DoAction(Pane* pane, PaneAction* action); //805e78f0 does it for a pane and all its parents
-    static void SetTextBoxMessage(TextBox* pane, BMGHolder* curFileBmgs, BMGHolder* commonBmgs, u32 bmgId); //805e7804
+    virtual void Draw(lyt::DrawInfo* drawInfo) = 0; //abstract
+    static bool SearchPane(lyt::Pane* pane, lyt::Pane* otherPane); //805e7460 checks if pane or any of its parents are equal to otherPane
+    static lyt::Pane* GetParentPane(lyt::Pane* pane); //805e74f8
+    static bool isPaneAndParentsVisible(lyt::Pane* pane); //805e7700
+    static bool isPaneVisible(lyt::Pane* pane); //805e77f8
+    static bool CheckForUserInfo(lyt::Pane* pane, char info); //805e7a6c
+    static bool CheckForUserInfo2(lyt::Pane* pane, char info); //805e7aac
+    static char GetNextUserInfo(lyt::Pane* pane, char info); //805e7aec
+    static void DoAction(lyt::Pane* pane, PaneAction* action); //805e78f0 does it for a pane and all its parents
+    static void SetTextBoxMessage(lyt::TextBox* pane, BMGHolder* curFileBmgs, BMGHolder* commonBmgs, u32 bmgId); //805e7804
     PaneManager* prevHolder;
     class Initializer;
 };
 
 class PaneManager::Initializer : PaneAction {
     //ctor inlined
-    virtual void Calc(Pane* pane); //805e9708 vtable 808b94d0 checks type of pane and updates group accordingly
+    virtual void Calc(lyt::Pane* pane); //805e9708 vtable 808b94d0 checks type of pane and updates group accordingly
     MainLayout* layout;
     PaneManagerHolder* holder;
 };
 
 class PicturePaneManager : PaneManager {
     PicturePaneManager(); //805e7d94
-    virtual void Draw(DrawInfo* drawInfo); //805e7f38 vtable 808b9530 
-    Pane* pane;
+    virtual void Draw(lyt::DrawInfo* drawInfo); //805e7f38 vtable 808b9530 
+    lyt::Pane* pane;
 }; //total size 0xC
 
 class TextPaneHolder : PaneManager {
     TextPaneHolder(); //805e7db0
-    virtual void Draw(DrawInfo* drawInfo); //805e805c vtable 808b9524
+    virtual void Draw(lyt::DrawInfo* drawInfo); //805e805c vtable 808b9524
     TextPaneHandler* handler;
 }; //total size 0xC
 
 class MoviePaneHolder : PaneManager {
     MoviePaneHolder(); //805e7dcc
-    virtual void Draw(DrawInfo* drawInfo); //805e8178 vtable 808b9518 
+    virtual void Draw(lyt::DrawInfo* drawInfo); //805e8178 vtable 808b9518 
     MoviePaneHandler* handler;
 }; //total size 0xC
 
@@ -90,10 +90,10 @@ class MoviePaneHolder : PaneManager {
 class PaneManagerHolder {
     PaneManagerHolder(); //805e7ca8 inlined
     ~PaneManagerHolder(); //805e7c1c
-    void InsertPicturePane(Picture* pane); //805e7dec inlined inserts it into the "last" unused holder, updates prevHolder and increments count
-    void InsertTextPane(TextBox* pane); //805e7e3c    inlined same
-    void InsertMoviePane(Picture* pane); //805e7e8c   inlined same
-    void Draw(DrawInfo* draw); //805e7dc inlined
+    void InsertPicturePane(lyt::Picture* pane); //805e7dec inlined inserts it into the "last" unused holder, updates prevHolder and increments count
+    void InsertTextPane(lyt::TextBox* pane); //805e7e3c    inlined same
+    void InsertMoviePane(lyt::Picture* pane); //805e7e8c   inlined same
+    void Draw(lyt::DrawInfo* draw); //805e7dc inlined
     void InsertManager(PaneManager* holder); //805e8294
     PaneManager* firstHolder; //0 <=> 0x7c
     PaneManager* lastHolder; //0x4 <=> 0x80
@@ -105,7 +105,7 @@ class PaneManagerHolder {
     u32 activeMoviePanesCount; //0x1c <=> 0x98 not sure which ones are counted
 };//total size 0x20
 
-class LayoutResourceLink : public ArcResourceLink {
+class LayoutResourceLink : public lyt::ArcResourceLink {
     LayoutResourceLink(); //805ea770
     ~LayoutResourceLink(); //805ea490
 }; //0xa4
@@ -118,7 +118,7 @@ class LayoutResources {
     u8 padding[2];
 }; //total size 0xC
 
-class LayoutFont : FontRefLink {
+class LayoutFont : lyt::FontRefLink {
     ~LayoutFont(); //805ea358
 }; //total size 0x8c
 size_assert(LayoutFont, 0x8c);
@@ -133,7 +133,7 @@ class LayoutResourceAccessor {
 public:
     LayoutResourceAccessor(); // inlined
     void Init(const char* folderName); //805ea66c inlined
-    MultiArcResourceAccessor multiArcResourceAccessor;
+    lyt::MultiArcResourceAccessor multiArcResourceAccessor;
     LayoutResources resources; //0x1c
     LayoutFont fonts[6]; //0x28
     char folderName[0x40]; //0x370
@@ -145,10 +145,10 @@ class BaseLayout {
 public:
     BaseLayout(); //805e82c4 inlined
     virtual ~BaseLayout(); //805e830c vtable 808b950c
-    Pane* GetPaneByName(const char* paneName) const; //805e8368
+    lyt::Pane* GetPaneByName(const char* paneName) const; //805e8368
     void CreateResourceAcccessor(const char* folderName); //805e8380 inlined, looks in curSection's list else allocates it
     void Build(const char* lytName); //805e8528 inlined gets resource using accessor and then builds nw4r::lyt
-    Layout layout; //from 0x4 to 0x24
+    lyt::Layout layout; //from 0x4 to 0x24
     LayoutResourceAccessor* resources;    //0x24
 }; //Total size 0x28
 size_assert(BaseLayout, 0x28);
@@ -160,12 +160,12 @@ public:
     void CreateResourceAcccessor(const char* folderName); //805e86f4 completely identical to layout's
     void Build(const char* lytName); //805e889c
     void Animate(); //805e91a8
-    void Update(nw4r::lyt::Pane* pane); //805e91bc updates matrix
+    void Update(lyt::Pane* pane); //805e91bc updates matrix
     void Draw(); //calls all the holders' draw
     TextPaneHandler* GetTextPaneHandlerByName(const char* paneName) const; //805e9028
-    TextPaneHandler* GetTextPaneHandlerByPane(Pane* pane) const; //805e90a0 returns 0 if none are tied to the pane
+    TextPaneHandler* GetTextPaneHandlerByPane(lyt::Pane* pane) const; //805e90a0 returns 0 if none are tied to the pane
     MoviePaneHandler* GetMoviePaneHandlerByName(const char* paneName) const; //805e90e8
-    MoviePaneHandler* GetMoviePaneHandlerByPane(Pane* pane) const; //805e9160
+    MoviePaneHandler* GetMoviePaneHandlerByPane(lyt::Pane* pane) const; //805e9160
     char lytName[0x41]; //from 0x28 to 0x6c
     u8 padding[3];
     TextPaneHandler* textPaneHandlerArray; //0x6c size nbr of text Panes

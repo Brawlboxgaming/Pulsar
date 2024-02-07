@@ -1,7 +1,7 @@
 #ifndef _AUDIOITEMALTERATIONMGR_
 #define _AUDIOITEMALTERATIONMGR_
 #include <kamek.hpp>
-#include <game/Sound/Other/AudioValues.hpp>
+#include <MarioKartWii/Sound/Other/AudioValues.hpp>
 
 class AudioItemAlterationMgr { //changes the music or the pitch when using a mega/a star/getting small or squished
 public:

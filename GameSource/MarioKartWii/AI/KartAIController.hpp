@@ -1,8 +1,8 @@
 #ifndef _KARTAICONTROLLER_
 #define _KARTAICONTROLLER_
 #include <kamek.hpp>
-#include <game/AI/AIPlayer.hpp>
-#include <game/Kart/KartLink.hpp>
+#include <MarioKartWii/AI/AIPlayer.hpp>
+#include <MarioKartWii/Kart/KartLink.hpp>
 
 
 class KartAIController {

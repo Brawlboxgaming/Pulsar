@@ -1,11 +1,11 @@
 #ifndef _CTRLRACEBASE_
 #define _CTRLRACEBASE_
-#include <game/UI/Ctrl/UIControl.hpp>
-#include <game/UI/SectionMgr/SectionMgr.hpp>
-#include <game/Race/RaceData.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/UI/SectionMgr/SectionMgr.hpp>
+#include <MarioKartWii/Race/RaceData.hpp>
 
 
-class CtrlRaceBase: public LayoutUIControl { //one element is one CtrlRaceBase
+class CtrlRaceBase : public LayoutUIControl { //one element is one CtrlRaceBase
 public:
     //no ctor
     ~CtrlRaceBase() override; //807ea8d8 vtable 808d3a98

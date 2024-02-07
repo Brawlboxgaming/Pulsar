@@ -1,7 +1,7 @@
 #ifndef _ITEMOBJKINOKOBIG_
 #define _ITEMOBJKINOKOBIG_
 #include <kamek.hpp>
-#include <game/Item/Obj/ItemObj.hpp>
+#include <MarioKartWii/Item/Obj/ItemObj.hpp>
 
 //_sinit_ at 807a9ec0
 namespace Item {

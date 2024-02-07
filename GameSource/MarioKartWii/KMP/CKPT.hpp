@@ -1,6 +1,6 @@
 #ifndef _CKPT_
 #define _CKPT_
-#include <game/KMP/KMPBlockBase.hpp>
+#include <MarioKartWii/KMP/KMPBlockBase.hpp>
 
 struct CKPT {
     Vec2 leftPoint;

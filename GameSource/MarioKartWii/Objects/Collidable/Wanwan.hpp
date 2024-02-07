@@ -1,7 +1,7 @@
 #ifndef _WANWAN_
 #define _WANWAN_
 #include <kamek.hpp>
-#include <game/Objects/Collidable/ObjectCollidable.hpp>
+#include <MarioKartWii/Objects/Collidable/ObjectCollidable.hpp>
 
 //Chomp with a wedge (pile)
 namespace Objects {

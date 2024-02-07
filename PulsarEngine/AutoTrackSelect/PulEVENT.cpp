@@ -1,7 +1,7 @@
-#include <game/Race/RaceData.hpp>
-#include <game/RKNet/EVENT.hpp>
-#include <game/RKNet/RKNetController.hpp>
-#include <game/UI/Page/Other/WWRaceSupporting.hpp>
+#include <MarioKartWii/Race/RaceData.hpp>
+#include <MarioKartWii/RKNet/EVENT.hpp>
+#include <MarioKartWii/RKNet/RKNetController.hpp>
+#include <MarioKartWii/UI/Page/Other/WWRaceSupporting.hpp>
 #include <PulsarSystem.hpp>
 #include <AutoTrackSelect/ChooseNextTrack.hpp>
 

@@ -1,7 +1,7 @@
 #ifndef _TTFRIENDGHOSTENDPAGE_
 #define _TTFRIENDGHOSTENDPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/RaceMenu/RaceMenu.hpp>
+#include <MarioKartWii/UI/Page/RaceMenu/RaceMenu.hpp>
 
 namespace Pages {
 class TTFriendGhostEnd : public RaceMenu { //ID 0x29 "Congrats you beat XXX's ghost, Would you like to send"

@@ -1,5 +1,5 @@
 #include <Ghost/GhostManager.hpp>
-#include <game/UI/Page/Other/TTSplits.hpp>
+#include <MarioKartWii/UI/Page/Other/TTSplits.hpp>
 #include <UI/UI.hpp>
 #include <IO/IO.hpp>
 
@@ -54,9 +54,9 @@ void Manager::Init(PulsarId id) {
     u32 counter = 0;
     RKG* decompressed = new (system->heap) RKG;
     for(int i = 0; i < io->GetFileCount(); ++i) {
-        rkg.ClearBuffer();
+        this->rkg.ClearBuffer();
         GhostData& curData = this->files[counter];
-        s32 ret = io->ReadFolderFile(&rkg, i, FILE_MODE_READ, sizeof(RKG));
+        s32 ret = io->ReadFolderFile(&this->rkg, i, FILE_MODE_READ, sizeof(RKG));
         if(ret > 0 && rkg.CheckValidity()) {
 
             curData.Init(rkg);
@@ -142,7 +142,10 @@ void Manager::LoadAllGhosts(u32 maxGhosts, bool isGhostRace) {
             if(this->LoadGhost(this->rkg, this->GetGhostData(this->selGhostsIndex[i]).padding)) {
                 RaceData* racedata = RaceData::sInstance;
                 RKG& dest = racedata->ghosts[position];
-                if(this->rkg.header.compressed) this->rkg.DecompressTo(dest); //0x2800
+                bool isCompressed = false;
+                if(this->rkg.header.compressed) {
+                    this->rkg.DecompressTo(dest); //0x2800
+                }
                 else memcpy(&dest, &this->rkg, sizeof(RKG));
                 if(this->cb != nullptr) {
                     this->cb(dest, IS_SETTING_RACE, i);

@@ -1,9 +1,9 @@
 #ifndef _W_ITEMBOX_LINE_
 #define _W_ITEMBOX_LINE_
 #include <kamek.hpp>
-#include <game/Objects/Collidable/ObjectCollidable.hpp>
-#include <game/Objects/Collidable/Press.hpp>
-#include <game/Objects/Collidable/Itembox/Itembox.hpp>
+#include <MarioKartWii/Objects/Collidable/ObjectCollidable.hpp>
+#include <MarioKartWii/Objects/Collidable/Press.hpp>
+#include <MarioKartWii/Objects/Collidable/Itembox/Itembox.hpp>
 
 namespace Objects {
 

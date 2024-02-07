@@ -1,9 +1,9 @@
 #ifndef _KARTAIMGR_
 #define _KARTAIMGR_
 #include <kamek.hpp>
-#include <game/AI/AIBase.hpp>
-#include <game/AI/AIParams.hpp>
-#include <game/AI/KartAIController.hpp>
+#include <MarioKartWii/AI/AIBase.hpp>
+#include <MarioKartWii/AI/AIParams.hpp>
+#include <MarioKartWii/AI/KartAIController.hpp>
 
 namespace AI {
 

@@ -1,7 +1,7 @@
 #ifndef _BELT_CROSSING_
 #define _BELT_CROSSING_
 #include <kamek.hpp>
-#include <game/Objects/KCL/ObjectKCL.hpp>
+#include <MarioKartWii/Objects/KCL/ObjectKCL.hpp>
 
 namespace Objects {
 

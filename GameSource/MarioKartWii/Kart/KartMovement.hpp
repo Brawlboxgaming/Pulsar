@@ -3,7 +3,7 @@
 
 //Formerly PlayerSub10
 #include <kamek.hpp>
-#include <game/Kart/KartLink.hpp>
+#include <MarioKartWii/Kart/KartLink.hpp>
 
 namespace Kart {
 

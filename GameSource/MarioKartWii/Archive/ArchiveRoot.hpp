@@ -3,7 +3,7 @@
 #include <kamek.hpp>
 #include <core/nw4r/lyt/ArcResourceAccessor.hpp>
 #include <core/nw4r/g3d/res/ResFile.hpp>
-#include <game/Archive/ArchiveHolder.hpp>
+#include <MarioKartWii/Archive/ArchiveHolder.hpp>
 
 class LayoutResources;
 class LayoutResourceLink;

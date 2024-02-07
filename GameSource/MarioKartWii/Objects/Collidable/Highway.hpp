@@ -2,7 +2,7 @@
 #define _HIGHWAY_OBJECT_
 #include <kamek.hpp>
 #include <core/egg/Effect/Effect.hpp>
-#include <game/Objects/Collidable/ObjectCollidable.hpp>
+#include <MarioKartWii/Objects/Collidable/ObjectCollidable.hpp>
 
 namespace Objects {
 class HighwayCar;
@@ -15,6 +15,7 @@ class Kbomneji;
 
 class HighwayManager : public ObjectCollidable {
 public:
+    HighwayManager(); //806d2908
     ~HighwayManager() override; //806d2fe8 vtable 808c55b8
     void OnStart() override; //0xC 806d332c
     void Update() override; //0x14 806d345c

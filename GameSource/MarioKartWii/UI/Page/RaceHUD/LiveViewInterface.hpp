@@ -1,6 +1,6 @@
 #ifndef _LIVEVIEW_
 #define _LIVEVIEW_
-#include <game/UI/Page/RaceHUD/RaceHUD.hpp>
+#include <MarioKartWii/UI/Page/RaceHUD/RaceHUD.hpp>
 
 namespace Pages {
 class LiveViewInterface : public RaceHUD { //ID 0x49

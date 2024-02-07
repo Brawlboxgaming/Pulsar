@@ -2,12 +2,12 @@
 #define _CHARACTERSELECT_
 
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Page/Menu/Menu.hpp>
-#include <game/UI/Ctrl/PushButton.hpp>
-#include <game/UI/Ctrl/CountDown.hpp>
-#include <game/UI/Ctrl/ModelControl.hpp>
-#include <game/UI/Ctrl/Menu/CtrlMenuCharacterSelect.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/Menu/Menu.hpp>
+#include <MarioKartWii/UI/Ctrl/PushButton.hpp>
+#include <MarioKartWii/UI/Ctrl/CountDown.hpp>
+#include <MarioKartWii/UI/Ctrl/ModelControl.hpp>
+#include <MarioKartWii/UI/Ctrl/Menu/CtrlMenuCharacterSelect.hpp>
 /*
 Contributors:
 -kHacker35000vr, Melg

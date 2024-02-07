@@ -2,8 +2,8 @@
 #ifndef _PUL_GHOSTMANAGER__
 #define _PUL_GHOSTMANAGER__
 #include <kamek.hpp>
-#include <game/UI/Page/Other/GhostManager.hpp>
-#include <game/UI/Page/Other/TTSplits.hpp>
+#include <MarioKartWii/UI/Page/Other/GhostManager.hpp>
+#include <MarioKartWii/UI/Page/Other/TTSplits.hpp>
 #include <PulsarSystem.hpp>
 #include <Settings/Settings.hpp>
 #include <Ghost/PULLeaderboard.hpp>
@@ -24,7 +24,7 @@ public:
         IS_SETTING_RACE,
         IS_SAVING_GHOST
     };
-    typedef void(*RKGCallback)(const RKG&, CBTiming, int);
+    typedef void(*RKGCallback)(const RKG& decompressed, CBTiming, int);
 
     static const Manager* GetInstance() { return sInstance; }
     static Manager* CreateInstance();
@@ -52,11 +52,16 @@ public:
         else crc32 = rkg.uncompressedCRC32;
         return crc32;
     }
-    static inline u32 GetRKGLength(const RKG& rkg) {
-        u32 length = sizeof(RKG);
-        if(rkg.header.compressed) length = reinterpret_cast<const CompressedRKG*>(&rkg)->dataLength + sizeof(RKGHeader) + 0x4 + 0x4;
-        return length;
+    static inline u32 GetCompressedRKGLength(const CompressedRKG& rkg) {
+        return rkg.dataLength + sizeof(RKGHeader) + 0x4 + 0x4;
     }
+    static inline u32 GetRKGLength(const RKG& rkg) {
+        if(rkg.header.compressed) return GetCompressedRKGLength(reinterpret_cast<const CompressedRKG&>(rkg));
+        else return sizeof(RKG);
+    }
+
+
+
 private:
     Manager() : pulsarId(PULSARID_NONE), files(nullptr), areGhostsSaving(true) {
         RaceData* racedata = RaceData::sInstance;

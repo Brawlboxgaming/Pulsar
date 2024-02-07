@@ -1,7 +1,7 @@
 #ifndef _SECTIONPAD_
 #define _SECTIONPAD_
 #include <kamek.hpp>
-#include <game/Input/ControllerHolder.hpp>
+#include <MarioKartWii/Input/ControllerHolder.hpp>
 
 struct PadInfo {
     enum Status {
@@ -10,8 +10,8 @@ struct PadInfo {
         STATUS_DISCONNECTED,
         STATUS_UNKNOWN_3
     };
-    struct ControllerID{ //don't use, bad codegen
-        u32 channel : 24; 
+    struct ControllerID { //don't use, bad codegen
+        u32 channel : 24;
         u32 kind : 8; //0x11, 12, 13, 24 for wheel, nunchuck, classic, gcn
     };
     u32 controllerID; //0x0, new pads will be there, so this is kind of an "old ID" variable

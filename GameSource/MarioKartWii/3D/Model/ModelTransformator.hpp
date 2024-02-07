@@ -3,10 +3,10 @@
 #include <kamek.hpp>
 #include <core/nw4r/g3d.hpp>
 #include <core/egg/3D/Scn.hpp>
-#include <game/Archive/ArchiveRoot.hpp>
-#include <game/Sound/Actors/RaceActor.hpp>
-#include <game/3D/Scn/ScnManager.hpp>
-#include <game/3D/Model/AnmHolder.hpp>
+#include <MarioKartWii/Archive/ArchiveRoot.hpp>
+#include <MarioKartWii/Sound/Actors/RaceActor.hpp>
+#include <MarioKartWii/3D/Scn/ScnManager.hpp>
+#include <MarioKartWii/3D/Model/AnmHolder.hpp>
 
 /*
 Contributors:

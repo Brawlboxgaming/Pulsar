@@ -1,16 +1,16 @@
 #ifndef _PULCHANGECOMBO_
 #define _PULCHANGECOMBO_
 #include <kamek.hpp>
-#include <game/UI/SectionMgr/SectionMgr.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Page/Menu/CharacterSelect.hpp>
-#include <game/UI/Page/Menu/KartSelect.hpp>
-#include <game/UI/Page/Menu/MultiKartSelect.hpp>
-#include <game/UI/Page/Menu/BattleKartSelect.hpp>
-#include <game/UI/Page/Menu/DriftSelect.hpp>
-#include <game/UI/Page/Menu/MultiDriftSelect.hpp>
-#include <game/UI/Page/Other/VR.hpp>
-#include <game/UI/Page/Other/CountDownTimer.hpp>
+#include <MarioKartWii/UI/SectionMgr/SectionMgr.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/Menu/CharacterSelect.hpp>
+#include <MarioKartWii/UI/Page/Menu/KartSelect.hpp>
+#include <MarioKartWii/UI/Page/Menu/MultiKartSelect.hpp>
+#include <MarioKartWii/UI/Page/Menu/BattleKartSelect.hpp>
+#include <MarioKartWii/UI/Page/Menu/DriftSelect.hpp>
+#include <MarioKartWii/UI/Page/Menu/MultiDriftSelect.hpp>
+#include <MarioKartWii/UI/Page/Other/VR.hpp>
+#include <MarioKartWii/UI/Page/Other/CountDownTimer.hpp>
 
 /*Implements a custom version of the well known "change combo btw race":
 -Extends the VR page and adds 2 buttons, one to randomize and the other to manually change
@@ -50,7 +50,7 @@ public:
     CharacterId randomizedCharIdx[2];
     CharacterId rolledCharIdx[2];
     s32 rouletteCounter;
-    
+
 };
 
 class ExpBattleKartSelect : public Pages::BattleKartSelect {

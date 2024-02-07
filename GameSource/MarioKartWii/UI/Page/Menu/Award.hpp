@@ -3,7 +3,7 @@
 #ifndef _AWARD_
 #define _AWARD_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
 
 class AwardCupModel;
 

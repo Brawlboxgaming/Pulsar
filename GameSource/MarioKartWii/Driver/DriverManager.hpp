@@ -2,9 +2,9 @@
 #define _DRIVERMGR_
 #include <kamek.hpp>
 #include <core/egg/mem/Disposer.hpp>
-#include <game/3D/Camera/Camera.hpp>
-#include <game/System/Timer.hpp>
-#include <game/Driver/DriverController.hpp>
+#include <MarioKartWii/3D/Camera/Camera.hpp>
+#include <MarioKartWii/System/Timer.hpp>
+#include <MarioKartWii/Driver/DriverController.hpp>
 
 class DriverMgr {
 public:

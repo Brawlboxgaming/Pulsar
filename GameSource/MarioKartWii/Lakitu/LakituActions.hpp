@@ -2,7 +2,7 @@
 #define _LAKITUACTIONS_
 #include <kamek.hpp>
 #include <core/egg/mem/Disposer.hpp>
-#include <game/AI/AIBase.hpp>
+#include <MarioKartWii/AI/AIBase.hpp>
 
 /*
 Contributors:

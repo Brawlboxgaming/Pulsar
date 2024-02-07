@@ -1,6 +1,6 @@
 #ifndef _ROOTSCENE_
 #define _ROOTSCENE_
-#include <game/Scene/GameScene.hpp>
+#include <MarioKartWii/Scene/GameScene.hpp>
 
 class RootScene : public BaseScene {
 public:

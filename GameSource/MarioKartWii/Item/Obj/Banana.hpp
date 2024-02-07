@@ -1,10 +1,10 @@
 #ifndef _ITEMOBJBANANA_
 #define _ITEMOBJBANANA_
 #include <kamek.hpp>
-#include <game/Item/Obj/ItemObj.hpp>
+#include <MarioKartWii/Item/Obj/ItemObj.hpp>
 
-namespace Item{
-class ObjBanana: public Obj {
+namespace Item {
+class ObjBanana : public Obj {
 public:
     static Obj** CreateArray(u32 count); //807a3a24
     void InitSelf() override; //0x8 807a4070 vtable 808d1a38

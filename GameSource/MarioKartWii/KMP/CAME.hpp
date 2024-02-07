@@ -1,6 +1,6 @@
 #ifndef _CAME_
 #define _CAME_
-#include <game/KMP/KMPBlockBase.hpp>
+#include <MarioKartWii/KMP/KMPBlockBase.hpp>
 
 struct CAME {
     u8 type;

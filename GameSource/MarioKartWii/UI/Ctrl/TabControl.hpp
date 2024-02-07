@@ -1,13 +1,13 @@
 #ifndef _TABCONTROL_
 #define _TABCONTROL_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/UIControl.hpp>
-#include <game/UI/Ctrl/Manipulator.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/UI/Ctrl/Manipulator.hpp>
 
 //_sinit_ at 80638e6c
-class TabControl: public LayoutUIControl { //change mii top buttons contains OptionButtons 808beb80
+class TabControl : public LayoutUIControl { //change mii top buttons contains OptionButtons 808beb80
 public:
-    class OptionButton: public LayoutUIControl {
+    class OptionButton : public LayoutUIControl {
     public:
         OptionButton(); //80638048
         ~OptionButton() override; //8063813c vtable 808beb80

@@ -1,7 +1,7 @@
 #ifndef _TOPMENUOVERLAYPAGE_
 #define _TOPMENUOVERLAYPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/Menu/Menu.hpp>
+#include <MarioKartWii/UI/Page/Menu/Menu.hpp>
 
 //_sinit_ at 8084edf8
 namespace Pages {

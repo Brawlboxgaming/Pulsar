@@ -1,7 +1,7 @@
 #ifndef _GAMESCENE_
 #define _GAMESCENE_
 #include <core/RK/RKSceneManager.hpp>
-#include <game/Archive/ArchiveRoot.hpp>
+#include <MarioKartWii/Archive/ArchiveRoot.hpp>
 
 enum SceneId {
     SCENE_ID_MENU = 0x1,

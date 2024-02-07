@@ -1,7 +1,7 @@
 #ifndef _CHECKRANKINGSPAGE_
 #define _CHECKRANKINGSPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/RaceMenu/RaceMenu.hpp>
+#include <MarioKartWii/UI/Page/RaceMenu/RaceMenu.hpp>
 
 namespace Pages {
 class CheckRankings : public RaceMenu { //ID 0x2B "Go to the MK Channel to view rankings?"

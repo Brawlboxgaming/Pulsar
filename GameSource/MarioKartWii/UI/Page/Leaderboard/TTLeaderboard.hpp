@@ -1,9 +1,9 @@
 #ifndef _TT_LEADERBOARD_
 #define _TT_LEADERBOARD_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Page/Leaderboard/GPVSLeaderboardUpdate.hpp>
-#include <game/System/Timer.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/Leaderboard/GPVSLeaderboardUpdate.hpp>
+#include <MarioKartWii/System/Timer.hpp>
 
 namespace Pages {
 class TTLeaderboard : public GPVSLeaderboardUpdate { //unsure why it inherits from VSLeaderboardUpdate, might be wrong and could be an intermediate class

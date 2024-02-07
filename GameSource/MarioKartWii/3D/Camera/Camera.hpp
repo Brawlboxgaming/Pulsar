@@ -9,9 +9,9 @@ Contributors:
 #include <kamek.hpp>
 #include <core/nw4r/ut/List.hpp>
 #include <core/egg/3D/Camera.hpp>
-#include <game/3D/Scn/GameScreen.hpp>
-#include <game/AI/AIBase.hpp>
-#include <game/3D/Camera/CameraBinaries.hpp>
+#include <MarioKartWii/3D/Scn/GameScreen.hpp>
+#include <MarioKartWii/AI/AIBase.hpp>
+#include <MarioKartWii/3D/Camera/CameraBinaries.hpp>
 
 class GameCamera;
 class GameScreen;

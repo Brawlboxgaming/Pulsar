@@ -2,7 +2,7 @@
 #define _BASABASA_OBJECT_
 #include <kamek.hpp>
 #include <core/egg/Effect/Effect.hpp>
-#include <game/Objects/Collidable/ObjectCollidable.hpp>
+#include <MarioKartWii/Objects/Collidable/ObjectCollidable.hpp>
 
 namespace Objects {
 

@@ -1,7 +1,7 @@
 #ifndef _OBJECTSOUND_
 #define _OBJECTSOUND_
 #include <kamek.hpp>
-#include <game/Sound/Actors/RaceActor.hpp>
+#include <MarioKartWii/Sound/Actors/RaceActor.hpp>
 
 using namespace nw4r;
 //ObjFlow has 3 sound values, not sure what they do hence the names

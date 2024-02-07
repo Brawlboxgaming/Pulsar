@@ -1,6 +1,6 @@
 #include <kamek.hpp>
-#include <game/Archive/ArchiveRoot.hpp>
-#include <game/Scene/GameScene.hpp>
+#include <MarioKartWii/Archive/ArchiveRoot.hpp>
+#include <MarioKartWii/Scene/GameScene.hpp>
 #include <PulsarSystem.hpp>
 
 namespace Pulsar {

@@ -1,13 +1,13 @@
 #ifndef _PUL_WFC_
 #define _PUL_WFC_
 #include <kamek.hpp>
-#include <game/UI/Page/Other/WFCMenu.hpp>
+#include <MarioKartWii/UI/Page/Other/WFCMenu.hpp>
 #include <Settings/UI/SettingsPanel.hpp>
 
 //Extends WFCMainMenu to add a settings button
 namespace Pulsar {
 namespace UI {
-class ExpWFCMain: public Pages::WFCMainMenu {
+class ExpWFCMain : public Pages::WFCMainMenu {
 public:
     ExpWFCMain() {
         this->onSettingsClick.subject = this;

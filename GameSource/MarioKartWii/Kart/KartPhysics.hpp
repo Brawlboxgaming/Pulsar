@@ -2,8 +2,8 @@
 #define _KARTPHYSICS_
 //Formerly KartStatus
 #include <kamek.hpp>
-#include <game/Kart/KartValues.hpp>
-#include <game/Kart/Hitbox.hpp>
+#include <MarioKartWii/Kart/KartValues.hpp>
+#include <MarioKartWii/Kart/Hitbox.hpp>
 
 namespace Kart {
 

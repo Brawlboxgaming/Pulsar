@@ -3,7 +3,7 @@
 
 #include <kamek.hpp>
 #include <core/egg/3D/Fog.hpp>
-#include <game/File/BFG.hpp>
+#include <MarioKartWii/File/BFG.hpp>
 
 class BFGHolder {
     explicit BFGHolder(BFG* raw); //805adff0 built with the 0th entry

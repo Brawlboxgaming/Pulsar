@@ -1,7 +1,7 @@
 #ifndef _ENDING_
 #define _ENDING_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
 
 //_sinit_ at 805cd91c
 class StaffRollControl : public LayoutUIControl {

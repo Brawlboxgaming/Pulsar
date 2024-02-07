@@ -1,7 +1,7 @@
 #ifndef _CRANE_
 #define _CRANE_
 #include <kamek.hpp>
-#include <game/Objects/KCL/ExternalKCL/ObjectExternKCL.hpp>
+#include <MarioKartWii/Objects/KCL/ExternalKCL/ObjectExternKCL.hpp>
 
 namespace Objects {
 class Crane : public ObjectExternKCL { //ObjectNum 0x1fb = 507

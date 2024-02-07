@@ -1,7 +1,7 @@
 #ifndef _VSRACEINTRO_
 #define _VSRACEINTRO_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
 namespace Pages {
 //_sinit_ at 808556d0
 class VSRaceIntro : public Page { //ID 0x8, also ID 0x7 ID 0x9 ID 0xa ID 0xb

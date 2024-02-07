@@ -5,8 +5,8 @@
 #include <core/egg/mem/ExpHeap.hpp>
 #include <core/egg/mem/Disposer.hpp>
 #include <core/egg/Thread.hpp>
-#include <game/System/identifiers.hpp>
-#include <game/Archive/ArchiveFile.hpp>
+#include <MarioKartWii/System/identifiers.hpp>
+#include <MarioKartWii/Archive/ArchiveFile.hpp>
 
 class LayoutResources;
 

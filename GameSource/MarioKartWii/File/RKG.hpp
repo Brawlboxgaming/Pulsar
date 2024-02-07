@@ -2,7 +2,7 @@
 #define _RKG_
 #include <kamek.hpp>
 #include <core/rvl/RFL.hpp>
-#include <game/Input/GhostWriter.hpp>
+#include <MarioKartWii/Input/GhostWriter.hpp>
 
 enum GhostType {
     GHOST_NONE = 0x0,

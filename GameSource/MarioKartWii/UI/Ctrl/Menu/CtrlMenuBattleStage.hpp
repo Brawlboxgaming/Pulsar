@@ -1,12 +1,12 @@
 #ifndef _CTRLMENUBATTLESTAGE_
 #define _CTRLMENUBATTLESTAGE_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/UIControl.hpp>
-#include <game/UI/Ctrl/PushButton.hpp>
-#include <game/UI/Ctrl/Menu/CtrlMenuMovie.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/UI/Ctrl/PushButton.hpp>
+#include <MarioKartWii/UI/Ctrl/Menu/CtrlMenuMovie.hpp>
 
 //_sinit_ at 807e2540
-class StageButton: public CtrlMenuMovieButton {
+class StageButton : public CtrlMenuMovieButton {
 public:
     StageButton(); //80629df0
     ~StageButton() override; //80629e50 vtable 808d2f40 CtrlMenuMovieHandler
@@ -17,7 +17,7 @@ public:
 }; //total size 0x26C
 size_assert(StageButton, 0x26c);
 
-class CtrlMenuBattleStageSelectCupSub: public LayoutUIControl {
+class CtrlMenuBattleStageSelectCupSub : public LayoutUIControl {
     CtrlMenuBattleStageSelectCupSub(); //80629ce8
     ~CtrlMenuBattleStageSelectCupSub() override; //80629d24 vtable 808d2ff8
     void InitSelf() override; //807e15cc
@@ -29,7 +29,7 @@ class CtrlMenuBattleStageSelectCupSub: public LayoutUIControl {
 }; //total size 0x18c
 size_assert(CtrlMenuBattleStageSelectCupSub, 0x18c);
 
-class CtrlMenuBattleStageSelectCup: public LayoutUIControl {
+class CtrlMenuBattleStageSelectCup : public LayoutUIControl {
     //ctor inlined
     ~CtrlMenuBattleStageSelectCup() override; //80629d7c vtable 808d2fb8
     void InitSelf() override; //807e1444 0x18
@@ -40,7 +40,7 @@ class CtrlMenuBattleStageSelectCup: public LayoutUIControl {
 };  //total 0x48c
 size_assert(CtrlMenuBattleStageSelectCup, 0x48c);
 
-class CtrlMenuBattleStageSelectStage: public LayoutUIControl { //layoutUIControl are Stagebutton in the ptmfholder
+class CtrlMenuBattleStageSelectStage : public LayoutUIControl { //layoutUIControl are Stagebutton in the ptmfholder
     ~CtrlMenuBattleStageSelectStage() override; //80629eb0 vtable 808d2f00
     void InitSelf() override; //807e1ed0 0x18
     int GetRuntimeTypeInfo() const override; //0x28 807e2508

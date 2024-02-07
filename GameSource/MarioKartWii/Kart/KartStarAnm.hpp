@@ -1,10 +1,10 @@
 #ifndef _KARTSTARANM_
 #define _KARTSTARANM_
 #include <kamek.hpp>
-#include <game/Kart/KartLink.hpp>
-#include <game/3D/Model/ModelDirector.hpp>
-#include <game/3D/Model/ShadowModelDirector.hpp>
-#include <game/Kart/KartBRRESHandle.hpp>
+#include <MarioKartWii/Kart/KartLink.hpp>
+#include <MarioKartWii/3D/Model/ModelDirector.hpp>
+#include <MarioKartWii/3D/Model/ShadowModelDirector.hpp>
+#include <MarioKartWii/Kart/KartBRRESHandle.hpp>
 
 namespace Kart {
 

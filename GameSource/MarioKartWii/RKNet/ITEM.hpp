@@ -1,7 +1,7 @@
 #ifndef _RKNETITEM_
 #define _RKNETITEM_
 #include <kamek.hpp>
-#include <game/System/Identifiers.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
 //https://wiki.tockdom.com/wiki/MKWii_Network_Protocol/SELECT
 
 

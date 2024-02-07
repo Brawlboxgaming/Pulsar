@@ -1,10 +1,10 @@
 #include <kamek.hpp>
-#include <game/Race/racedata.hpp>
-#include <game/RKNet/RKNetController.hpp>
-#include <game/UI/Ctrl/CtrlRace/CtrlRaceBalloon.hpp>
-#include <game/UI/Ctrl/CtrlRace/CtrlRaceResult.hpp>
-#include <game/Item/ItemManager.hpp>
-#include <game/GlobalFunctions.hpp>
+#include <MarioKartWii/Race/racedata.hpp>
+#include <MarioKartWii/RKNet/RKNetController.hpp>
+#include <MarioKartWii/UI/Ctrl/CtrlRace/CtrlRaceBalloon.hpp>
+#include <MarioKartWii/UI/Ctrl/CtrlRace/CtrlRaceResult.hpp>
+#include <MarioKartWii/Item/ItemManager.hpp>
+#include <MarioKartWii/GlobalFunctions.hpp>
 #include <Settings/Settings.hpp>
 #include <Info.hpp>
 

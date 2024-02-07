@@ -1,7 +1,7 @@
 #ifndef _FRIENDLIST_
 #define _FRIENDLIST_
 #include <kamek.hpp>
-#include <game/System/Friend.hpp>
+#include <MarioKartWii/System/Friend.hpp>
 
 class FriendList;
 
@@ -31,7 +31,7 @@ class FriendList {
     FriendList(); //805d1e84
     ~FriendList(); //805d2040
     void Init(); //805d20a4
-    const FriendListEntry *GetFriendEntry(u32 idx); //805d2874
+    const FriendListEntry* GetFriendEntry(u32 idx); //805d2874
     const Friend* GetFriend(u32 idx) const; //805d2890
     u32 GetFriendStatus(u32 idx) const; //805d28c8 returns -1 if not friend, 0 if slot open, friendStatus otherwise
     int GetFriendCount() const; //805d24c0

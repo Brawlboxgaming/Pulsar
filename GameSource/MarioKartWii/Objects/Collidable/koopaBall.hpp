@@ -1,7 +1,7 @@
 #ifndef _KOOPABALL_
 #define _KOOPABALL_
 #include <kamek.hpp>
-#include <game/Objects/Collidable/ObjectCollidable.hpp>
+#include <MarioKartWii/Objects/Collidable/ObjectCollidable.hpp>
 
 namespace Objects {
 

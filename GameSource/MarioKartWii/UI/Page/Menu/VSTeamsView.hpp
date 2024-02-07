@@ -1,8 +1,8 @@
 #ifndef _VSTEAMSVIEWPAGE_
 #define _VSTEAMSVIEWPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/Menu/Menu.hpp>
-#include <game/UI/Ctrl/Menu/CtrlMenuTeamConfirmTeam.hpp>
+#include <MarioKartWii/UI/Page/Menu/Menu.hpp>
+#include <MarioKartWii/UI/Ctrl/Menu/CtrlMenuTeamConfirmTeam.hpp>
 
 
 //_sinit_ at 808502b8

@@ -1,11 +1,11 @@
-#include <game/Race/RaceInfo/RaceInfo.hpp>
-#include <game/Race/RaceData.hpp>
-#include <game/UI/SectionMgr/SectionMgr.hpp>
-#include <game/UI/Page/RaceHUD/RaceHUD.hpp>
-#include <game/UI/Page/RaceMenu/GhostReplayPause.hpp>
-#include <game/Kart/KartManager.hpp>
-#include <game/Mii/MiiHeadsModel.hpp>
-#include <game/3D/Camera/CameraMgr.hpp>
+#include <MarioKartWii/Race/RaceInfo/RaceInfo.hpp>
+#include <MarioKartWii/Race/RaceData.hpp>
+#include <MarioKartWii/UI/SectionMgr/SectionMgr.hpp>
+#include <MarioKartWii/UI/Page/RaceHUD/RaceHUD.hpp>
+#include <MarioKartWii/UI/Page/RaceMenu/GhostReplayPause.hpp>
+#include <MarioKartWii/Kart/KartManager.hpp>
+#include <MarioKartWii/Mii/MiiHeadsModel.hpp>
+#include <MarioKartWii/3D/Camera/CameraMgr.hpp>
 #include <UI/UI.hpp>
 
 

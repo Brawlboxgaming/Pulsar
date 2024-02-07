@@ -1,8 +1,8 @@
 #ifndef _GHOSTMANAGER_
 #define _GHOSTMANAGER_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/System/Ghost.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/System/Ghost.hpp>
 
 
 /*

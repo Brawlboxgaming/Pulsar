@@ -2,8 +2,8 @@
 #define _UPDOWNCONTROL_
 
 #include <kamek.hpp>
-#include <game/UI/Ctrl/UIControl.hpp>
-#include <game/UI/Ctrl/Manipulator.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/UI/Ctrl/Manipulator.hpp>
 
 
 //_sinit_ at 80642a20

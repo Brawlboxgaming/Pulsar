@@ -5,11 +5,11 @@ Stebler, CLF (main documentation), Melg
 #define _ITEMMANAGER_
 #include <kamek.hpp>
 #include <core/egg/mem/Disposer.hpp>
-#include <game/Item/Obj/ItemObj.hpp>
-#include <game/Item/ItemPlayer.hpp>
-#include <game/Kart/KartPointers.hpp>
-#include <game/KMP/KMPManager.hpp>
-#include <game/System/Identifiers.hpp>
+#include <MarioKartWii/Item/Obj/ItemObj.hpp>
+#include <MarioKartWii/Item/ItemPlayer.hpp>
+#include <MarioKartWii/Kart/KartPointers.hpp>
+#include <MarioKartWii/KMP/KMPManager.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
 
 
 

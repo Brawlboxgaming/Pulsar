@@ -1,8 +1,8 @@
 #ifndef _SECTIONPARAMS_
 #define _SECTIONPARAMS_
 #include <kamek.hpp>
-#include <game/System/Identifiers.hpp>
-#include <game/MII/MiiGroup.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
+#include <MarioKartWii/MII/MiiGroup.hpp>
 
 struct PlayerCombo {
     CharacterId selCharacter;

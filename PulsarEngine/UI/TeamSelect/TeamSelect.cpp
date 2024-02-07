@@ -1,7 +1,7 @@
-#include <game/UI/Page/Menu/MiiSelect.hpp>
-#include <game/UI/SectionMgr/SectionMgr.hpp>
-#include <game/UI/Page/Other/FriendRoom.hpp>
-#include <game/RKNet/RKNetController.hpp>
+#include <MarioKartWii/UI/Page/Menu/MiiSelect.hpp>
+#include <MarioKartWii/UI/SectionMgr/SectionMgr.hpp>
+#include <MarioKartWii/UI/Page/Other/FriendRoom.hpp>
+#include <MarioKartWii/RKNet/RKNetController.hpp>
 #include <core/System/SystemManager.hpp>
 #include <UI/TeamSelect/TeamSelect.hpp>
 #include <UI/UI.hpp>
@@ -10,7 +10,7 @@
 namespace Pulsar {
 namespace UI {
 
-u8 TeamSelect::teams[12] ={ 0 };
+u8 TeamSelect::teams[24] = { 0 };
 bool TeamSelect::isEnabled = false;
 const char* TeamSelect::border = "border";
 const char* TeamSelect::miiBg = "bg";
@@ -55,13 +55,21 @@ TeamSelect::TeamSelect() {
 
 }
 
+
 void TeamSelect::OnInit() {
     this->miiGroup = &SectionMgr::sInstance->curSection->Get<Pages::FriendRoomManager>()->miiGroup;
     Menu::OnInit();
-    for(int idx = 0; idx < 12; idx++) {
-        if(this->teams[idx] == 1) this->RotateArrow(this->arrows[idx]);
+    /*
+    for(u8 aid = 0; aid < 12; aid++) {
+        u32 idx = this->CalcIdx(aid);
+        if(idx != 0xFF && this->teams[aid] == 1) {
+            this->RotateArrow(this->arrows[idx], 1);
+        }
+
     }
+    */
 }
+
 
 void TeamSelect::BeforeEntranceAnimations() {
     Pages::Menu::BeforeEntranceAnimations();
@@ -70,12 +78,21 @@ void TeamSelect::BeforeEntranceAnimations() {
     const u32 bmgId = this->toggle.GetState() == false ? BMG_TEAMS_DISABLED : BMG_TEAMS_ENABLED;
     this->toggle.SetMsgId(bmgId);
     this->isLocked = false;
+
     for(int idx = 0; idx < 12; idx++) {
-        u8 curTeam = this->teams[idx];
-        if(curTeam == 1) this->RotateArrow(this->arrows[idx]);
-        this->SetColours(idx, curTeam);
-        this->miis[idx].animator.GetAnimationGroupById(0).PlayAnimationAtFrameAndDisable(!curTeam, 0.0f);
+        this->miis[idx].animator.GetAnimationGroupById(0).PlayAnimationAtFrameAndDisable(0, 0.0f);
     }
+    for(u8 teamsArrayIdx = 0; teamsArrayIdx < 24; teamsArrayIdx++) {
+        u32 idx = this->CalcIdx(teamsArrayIdx);
+        u8 curTeam = 0;
+        if(idx != 0xFF) {
+            u8 curTeam = this->teams[teamsArrayIdx];
+            if(curTeam == 1) this->RotateArrow(this->arrows[idx], 1);
+            this->SetColours(idx, curTeam);
+            this->miis[idx].animator.GetAnimationGroupById(0).PlayAnimationAtFrameAndDisable(!curTeam, 0.0f);
+        }
+    }
+
 }
 
 void TeamSelect::BeforeControlUpdate() {
@@ -87,17 +104,28 @@ void TeamSelect::BeforeControlUpdate() {
     for(int aid = 0; aid < 12; ++aid) {
         if(sub->availableAids & (1 << aid)) {
             for(int player = 0; player < sub->connectionUserDatas[aid].playersAtConsole; player++) {
-                this->miis[idx].SetMiiPane("chara", *this->miiGroup, aid * 2 + player, 2);
-                this->miis[idx].SetMiiPane("chara_shadow", *this->miiGroup, aid * 2 + player, 2);
-                this->miis[idx].isHidden = false;
-                this->arrows[idx].isHidden = false;
-                this->arrows[idx].manipulator.inaccessible = false;
+                LayoutUIControl& mii = this->miis[idx];
+                mii.SetMiiPane("chara", *this->miiGroup, aid * 2 + player, 2);
+                mii.SetMiiPane("chara_shadow", *this->miiGroup, aid * 2 + player, 2);
+                mii.isHidden = false;
+                mii.animator.GetAnimationGroupById(0).PlayAnimationAtFrameAndDisable(!this->teams[aid + 12 * player], 0.0f);
                 this->arrowMiiIdx[idx] = aid * 2 + player;
+                this->SetColours(idx, this->teams[aid + 12 * player]);
+                this->RotateArrow(this->arrows[idx], this->teams[aid + 12 * player]);
+
+                PushButton& arrow = this->arrows[idx];
+                arrow.isHidden = false;
+                arrow.manipulator.inaccessible = false;
+                if(arrow.IsSelected()) {
+                    this->text.miis[0] = this->miiGroup->GetMii(this->arrowMiiIdx[arrow.buttonId]);
+                    this->name.SetMsgId(BMG_MII_NAME, &this->text);
+                }
                 ++idx;
             }
         }
     }
     for(int remIdx = idx; remIdx < 12; remIdx++) {
+
         this->miis[remIdx].isHidden = true;
         this->arrows[remIdx].isHidden = true;
         this->arrows[remIdx].manipulator.inaccessible = true;
@@ -146,11 +174,14 @@ UIControl* TeamSelect::CreateControl(u32 id) {
 
 void TeamSelect::OnArrowClick(PushButton& button, u32 hudSlotId) {
     const u32 id = button.buttonId;
-    this->RotateArrow(button);
-    const u8 newTeam = TeamSelect::teams[id] ^ 1;
-    TeamSelect::teams[id] = newTeam;
-    this->SetColours(id, newTeam);
-    this->miis[id].animator.GetAnimationGroupById(0).PlayAnimationAtFrameAndDisable(!TeamSelect::teams[id], 0.0f);
+    u8 teamsArrayIdx = this->CalcTeamsArrayIdx(id);
+    if(teamsArrayIdx != 0xFF) {
+        const u8 newTeam = TeamSelect::teams[teamsArrayIdx] ^ 1;
+        TeamSelect::teams[teamsArrayIdx] = newTeam;
+        this->RotateArrow(button, newTeam);
+        this->SetColours(id, newTeam);
+        this->miis[id].animator.GetAnimationGroupById(0).PlayAnimationAtFrameAndDisable(!newTeam, 0.0f);
+    }
 }
 
 void TeamSelect::OnArrowSelect(PushButton& button, u32 hudSlotId) {
@@ -194,20 +225,59 @@ void TeamSelect::OnButtonClick(PushButton& button, u32 hudSlotId) {
     this->EndStateAnimated(button.GetAnimationFrameSize(), 1);
 }
 
-void TeamSelect::RotateArrow(PushButton& button) {
-    RotateArrowPane(button, "chara_shadow");
-    RotateArrowPane(button, "color_yajirushi");
-    RotateArrowPane(button, "chara_c_down");
-    RotateArrowPane(button, "chara_light_01");
+u8 TeamSelect::CalcTeamsArrayIdx(u32 idx) {
+    const RKNet::Controller* controller = RKNet::Controller::sInstance;
+    const RKNet::ControllerSub* sub = &controller->subs[0];
+    if(sub->connectionUserDatas[0].playersAtConsole == 0) sub = &controller->subs[1];
+
+    u32 curIdx = 0;
+    for(u8 curAid = 0; curAid < 12; ++curAid) {
+        if(sub->availableAids & (1 << curAid)) {
+            for(int player = 0; player < sub->connectionUserDatas[curAid].playersAtConsole; player++) {
+                if(curIdx == idx) return curAid + 12 * player;
+                ++curIdx;
+            }
+        }
+    }
+    return 0xFF;
 }
 
-void TeamSelect::RotateArrowPane(PushButton& button, const char* name) {
-    Picture* pane = static_cast<Picture*>(button.layout.GetPaneByName(name));
+u32 TeamSelect::CalcIdx(u8 teamsArrayIdx) {
+    const RKNet::Controller* controller = RKNet::Controller::sInstance;
+    const RKNet::ControllerSub* sub = &controller->subs[0];
+    if(sub->connectionUserDatas[0].playersAtConsole == 0) sub = &controller->subs[1];
+
+    bool isGuest = teamsArrayIdx >= 12;
+    u8 aid = isGuest ? teamsArrayIdx - 12 : teamsArrayIdx;
+    if(!(sub->availableAids & (1 << aid)) || isGuest && sub->connectionUserDatas[aid].playersAtConsole < 2) return 0xFF;
+
+    //the aid is valid, therefore it has an idx
+    u32 idx = 0;
+    for(u8 curAid = 0; curAid < aid; ++curAid) {
+        if(sub->availableAids & (1 << curAid)) {
+            for(int player = 0; player < sub->connectionUserDatas[curAid].playersAtConsole; player++) ++idx;
+        }
+    }
+    return isGuest ? idx + 1 : idx;
+}
+
+void TeamSelect::RotateArrow(PushButton& button, u8 team) {
+    RotateArrowPane(button, "chara_shadow", team);
+    RotateArrowPane(button, "color_yajirushi", team);
+    RotateArrowPane(button, "chara_c_down", team);
+    RotateArrowPane(button, "chara_light_01", team);
+}
+
+void TeamSelect::RotateArrowPane(PushButton& button, const char* name, u8 team) {
+    lyt::Picture* pane = static_cast<lyt::Picture*>(button.layout.GetPaneByName(name));
     nw4r::math::VEC2* vec = reinterpret_cast<nw4r::math::VEC2*>(pane->texCoords.data);
-    vec[0].x = 1.0f - vec[0].x;
-    vec[1].x = 1.0f - vec[1].x;
-    vec[2].x = 1.0f - vec[2].x;
-    vec[3].x = 1.0f - vec[3].x;
+
+    bool isRed = team == 1;
+    vec[0].x = isRed ? 0.0f : 1.0f;
+    vec[1].x = isRed ? 1.0f : 0.0f;
+    vec[2].x = isRed ? 0.0f : 1.0f;
+    vec[3].x = isRed ? 1.0f : 0.0f;
+
 }
 
 void TeamSelect::SetColours(u32 idx, u8 team) {
@@ -252,5 +322,6 @@ void TeamSelect::SetColours(u32 idx, u8 team) {
     miiBorder->tevColours[1].b = b;
     miiBorder->tevColours[1].a = 255;
 }
+
 }//namespace UI
 }//namespace Pulsar

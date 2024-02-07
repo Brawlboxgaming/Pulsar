@@ -1,9 +1,9 @@
-#include <game/UI/SectionMgr/SectionMgr.hpp>
-#include <game/UI/Page/Menu/CupSelect.hpp>
-#include <game/UI/Page/Menu/CourseSelect.hpp>
-#include <game/UI/Page/Other/GhostSelect.hpp>
-#include <game/UI/Page/Other/Votes.hpp>
-#include <game/GlobalFunctions.hpp>
+#include <MarioKartWii/UI/SectionMgr/SectionMgr.hpp>
+#include <MarioKartWii/UI/Page/Menu/CupSelect.hpp>
+#include <MarioKartWii/UI/Page/Menu/CourseSelect.hpp>
+#include <MarioKartWii/UI/Page/Other/GhostSelect.hpp>
+#include <MarioKartWii/UI/Page/Other/Votes.hpp>
+#include <MarioKartWii/GlobalFunctions.hpp>
 #include <SlotExpansion/CupsDef.hpp>
 #include <SlotExpansion/UI/ExpCupSelect.hpp>
 #include <SlotExpansion/UI/ExpansionUIMisc.hpp>

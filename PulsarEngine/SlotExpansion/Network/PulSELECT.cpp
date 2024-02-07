@@ -1,8 +1,8 @@
 #include <kamek.hpp>
-#include <game/RKNet/RKNetController.hpp>
-#include <game/RKNet/Select.hpp>
-#include <game/System/random.hpp>
-#include <game/Archive/ArchiveRoot.hpp>
+#include <MarioKartWii/RKNet/RKNetController.hpp>
+#include <MarioKartWii/RKNet/Select.hpp>
+#include <MarioKartWii/System/random.hpp>
+#include <MarioKartWii/Archive/ArchiveRoot.hpp>
 #include <SlotExpansion/Network/PulSELECT.hpp>
 #include <SlotExpansion/CupsDef.hpp>
 #include <PulsarSystem.hpp>

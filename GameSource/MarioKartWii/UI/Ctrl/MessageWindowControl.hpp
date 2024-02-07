@@ -1,7 +1,7 @@
 #ifndef _MESSAGEWINDOWCONTROL_
 #define _MESSAGEWINDOWCONTROL_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
 
 class MessageWindowControl : public LayoutUIControl {
     MessageWindowControl(); //805f9700

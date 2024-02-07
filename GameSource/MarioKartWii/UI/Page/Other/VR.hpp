@@ -1,10 +1,10 @@
 #ifndef _VRPAGE_
 #define _VRPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Ctrl/CountDown.hpp>
-#include <game/UI/Ctrl/PushButton.hpp>
-#include <game/UI/Ctrl/Menu/CtrlMenuText.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Ctrl/CountDown.hpp>
+#include <MarioKartWii/UI/Ctrl/PushButton.hpp>
+#include <MarioKartWii/UI/Ctrl/Menu/CtrlMenuText.hpp>
 
 /*
 Contributors:

@@ -1,12 +1,12 @@
 #ifndef _RKNETPACKETMGR_
 #define _RKNETPACKETMGR_
 #include <kamek.hpp>
-#include <game/System/Identifiers.hpp>
-#include <game/RKNet/EVENT.hpp>
-#include <game/RKNet/ITEM.hpp>
-#include <game/RKNet/RH1.hpp>
-#include <game/RKNet/RACEDATA.hpp>
-#include <game/RKNet/RH2.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
+#include <MarioKartWii/RKNet/EVENT.hpp>
+#include <MarioKartWii/RKNet/ITEM.hpp>
+#include <MarioKartWii/RKNet/RH1.hpp>
+#include <MarioKartWii/RKNet/RACEDATA.hpp>
+#include <MarioKartWii/RKNet/RH2.hpp>
 
 
 namespace RKNet {

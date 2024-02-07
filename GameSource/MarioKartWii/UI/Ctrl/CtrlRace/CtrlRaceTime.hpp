@@ -1,7 +1,7 @@
 #ifndef _CTRLRACETIME_
 #define _CTRLRACETIME_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/CtrlRace/CtrlRaceBase.hpp>
+#include <MarioKartWii/UI/Ctrl/CtrlRace/CtrlRaceBase.hpp>
 
 //_sinit_CtrlRaceTime_cpp; //807f8974
 class CtrlRaceTime : public CtrlRaceBase {

@@ -1,7 +1,7 @@
 #ifndef _FRIEND_
 #define _FRIEND_
 #include <kamek.hpp>
-#include <game/System/SaveDataManager.hpp>
+#include <MarioKartWii/System/SaveDataManager.hpp>
 
 class Friend {
     virtual ~Friend(); //80519670 vtable 808b2c88

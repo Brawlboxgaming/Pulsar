@@ -1,8 +1,8 @@
 #ifndef _WIFIVSINTERFACE_
 #define _WIFIVSINTERFACE_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Page/RaceHUD/RaceHUD.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/RaceHUD/RaceHUD.hpp>
 
 // Contributors: Melg
 namespace Pages {

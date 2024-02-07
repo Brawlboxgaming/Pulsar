@@ -12,8 +12,8 @@ Contributors:
 #include <core/rvl/pad.hpp>
 #include <core/rvl/kpad.hpp>
 #include <core/rvl/wpad.hpp>
-#include <game/Input/InputState.hpp>
-#include <game/Input/GhostWriter.hpp>
+#include <MarioKartWii/Input/InputState.hpp>
+#include <MarioKartWii/Input/GhostWriter.hpp>
 
 enum ControllerType {
     WHEEL = 0x0, //0xCHANNEL11

@@ -1,9 +1,9 @@
 #ifndef _CTRLMENUCHARACTERSELECT_
 #define _CTRLMENUCHARACTERSELECT_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/UIControl.hpp>
-#include <game/UI/Ctrl/PushButton.hpp>
-#include <game/UI/Page/Other/CountDownTimer.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/UI/Ctrl/PushButton.hpp>
+#include <MarioKartWii/UI/Page/Other/CountDownTimer.hpp>
 
 //_sinit_ at 807e43ec
 class CtrlMenuCharacterSelect : public LayoutUIControl {

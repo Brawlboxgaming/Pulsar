@@ -1,7 +1,7 @@
 #ifndef _ITEMOBJKOURARED_
 #define _ITEMOBJKOURARED_
 #include <kamek.hpp>
-#include <game/Item/Obj/Targeting.hpp>
+#include <MarioKartWii/Item/Obj/Targeting.hpp>
 
 //_sinit_ at 807ab96c
 namespace Item {

@@ -3,11 +3,11 @@
 #include <kamek.hpp>
 #include <core/egg/mem/Disposer.hpp>
 #include <core/rvl/DWC/DWC.hpp>
-#include <game/UI/SectionMgr/SectionPad.hpp>
-#include <game/Mii/Mii.hpp>
-#include <game/System/Timer.hpp>
-#include <game/System/identifiers.hpp>
-#include <game/System/Ghost.hpp>
+#include <MarioKartWii/UI/SectionMgr/SectionPad.hpp>
+#include <MarioKartWii/Mii/Mii.hpp>
+#include <MarioKartWii/System/Timer.hpp>
+#include <MarioKartWii/System/identifiers.hpp>
+#include <MarioKartWii/System/Ghost.hpp>
 
 /*
 Contributors:

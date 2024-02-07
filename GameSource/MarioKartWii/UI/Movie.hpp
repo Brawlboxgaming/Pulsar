@@ -5,7 +5,7 @@
 #include <core/nw4r/lyt/Picture.hpp>
 #include <core/nw4r/ut/Rect.hpp>
 #include <core/egg/Thread.hpp>
-#include <game/THP/THPStructs.hpp>
+#include <MarioKartWii/THP/THPStructs.hpp>
 
 using namespace nw4r;
 class Page;
@@ -77,7 +77,7 @@ class MovieManager : public EGG::Disposer {
     char thpName[0x80]; //0x28
     u32 isLooped; //0xa8
     Status status; //0xAC 1 = isPrepared
-    EGG::TaskThread *task; //0xB0
+    EGG::TaskThread* task; //0xB0
 }; //0xb4
 size_assert(MovieManager, 0xb4);
 

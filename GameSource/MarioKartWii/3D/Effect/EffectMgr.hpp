@@ -6,9 +6,9 @@
 #include <core/egg/Effect/EffectManager.hpp>
 #include <core/egg/Effect/EffectResource.hpp>
 #include <core/egg/mem/Heap.hpp>
-#include <game/3D/Model/ModelDirector.hpp>
-#include <game/3D/Effect/PlayerEffects.hpp>
-#include <game/KMP/KMPManager.hpp>
+#include <MarioKartWii/3D/Model/ModelDirector.hpp>
+#include <MarioKartWii/3D/Effect/PlayerEffects.hpp>
+#include <MarioKartWii/KMP/KMPManager.hpp>
 
 /*
 Contributors:

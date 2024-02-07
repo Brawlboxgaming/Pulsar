@@ -1,9 +1,9 @@
 #ifndef _TT_SPLITS_
 #define _TT_SPLITS_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Ctrl/CtrlRace/CtrlRaceTime.hpp>
-#include <game/UI/Ctrl/CtrlRace/CtrlRaceCount.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Ctrl/CtrlRace/CtrlRaceTime.hpp>
+#include <MarioKartWii/UI/Ctrl/CtrlRace/CtrlRaceCount.hpp>
 
 //_sinit_TTSplitsPAGE_cpp; //80856264
 namespace Pages {

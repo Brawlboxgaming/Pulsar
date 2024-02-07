@@ -1,11 +1,11 @@
 #ifndef _RACEHUDPAGE_
 #define _RACEHUDPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Ctrl/CtrlRace/CtrlRaceBase.hpp>
-#include <game/UI/Ctrl/CtrlRace/CtrlRaceCount.hpp>
-#include <game/UI/Ctrl/CtrlRace/CtrlRaceWifi.hpp>
-#include <game/UI/Ctrl/CtrlRace/CtrlRaceBalloon.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Ctrl/CtrlRace/CtrlRaceBase.hpp>
+#include <MarioKartWii/UI/Ctrl/CtrlRace/CtrlRaceCount.hpp>
+#include <MarioKartWii/UI/Ctrl/CtrlRace/CtrlRaceWifi.hpp>
+#include <MarioKartWii/UI/Ctrl/CtrlRace/CtrlRaceBalloon.hpp>
 
 class Pause;
 

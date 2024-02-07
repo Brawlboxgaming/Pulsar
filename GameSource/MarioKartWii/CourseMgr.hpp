@@ -1,8 +1,8 @@
 #ifndef _COURSE_MODEL_
 #define _COURSE_MODEL_
 #include <kamek.hpp>
-#include <game/3D/Model/ModelDirector.hpp>
-#include <game/KCL/KCLManager.hpp>
+#include <MarioKartWii/3D/Model/ModelDirector.hpp>
+#include <MarioKartWii/KCL/KCLManager.hpp>
 
 
 struct SoftWallInfo {

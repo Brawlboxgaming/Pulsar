@@ -1,7 +1,7 @@
 #ifndef _TITLEPAGE_
 #define _TITLEPAGE_
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Ctrl/Menu/CtrlMenuPressStart.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Ctrl/Menu/CtrlMenuPressStart.hpp>
 
 //_sinit_ at 8063c3b8
 class TitleImage : public LayoutUIControl {

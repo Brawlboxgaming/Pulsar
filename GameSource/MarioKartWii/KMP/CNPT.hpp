@@ -1,6 +1,6 @@
 #ifndef _CNPT_
 #define _CNPT_
-#include <game/KMP/KMPBlockBase.hpp>
+#include <MarioKartWii/KMP/KMPBlockBase.hpp>
 
 struct CNPT {
     Vec3 destPos;

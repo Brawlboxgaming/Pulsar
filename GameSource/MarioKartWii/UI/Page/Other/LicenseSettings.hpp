@@ -1,10 +1,10 @@
 #ifndef _LICENSESETTINGSPAGE_
 #define _LICENSESETTINGSPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Page/Other/Message.hpp>
-#include <game/UI/Ctrl/MessageWindowControl.hpp>
-#include <game/UI/Page/Other/Approve.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/Other/Message.hpp>
+#include <MarioKartWii/UI/Ctrl/MessageWindowControl.hpp>
+#include <MarioKartWii/UI/Page/Other/Approve.hpp>
 
 //_sinit_ at 805ee894
 class LicenseControl : public LayoutUIControl {

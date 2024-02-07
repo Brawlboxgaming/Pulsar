@@ -3,11 +3,11 @@
 
 #include <kamek.hpp>
 #include <core/egg/mem/Heap.hpp>
-#include <game/File/RKG.hpp>
-#include <game/Input/Controller.hpp>
-#include <game/Mii/Mii.hpp>
-#include <game/System/identifiers.hpp>
-#include <game/System/Timer.hpp>
+#include <MarioKartWii/File/RKG.hpp>
+#include <MarioKartWii/Input/Controller.hpp>
+#include <MarioKartWii/Mii/Mii.hpp>
+#include <MarioKartWii/System/identifiers.hpp>
+#include <MarioKartWii/System/Timer.hpp>
 
 enum GhostGroupType {
     GROUP_SAVED,

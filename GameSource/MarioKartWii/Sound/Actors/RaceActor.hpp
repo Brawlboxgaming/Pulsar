@@ -4,8 +4,8 @@
 #include <core/nw4r/snd/AnimSound.hpp>
 #include <core/nw4r/snd/AnimSoundFile.hpp>
 #include <core/egg/Audio/Audio3DActor.hpp>
-#include <game/Sound/AudioManager.hpp>
-#include <game/Sound/SingleSoundPlayer.hpp>
+#include <MarioKartWii/Sound/AudioManager.hpp>
+#include <MarioKartWii/Sound/SingleSoundPlayer.hpp>
 #include <kamek.hpp>
 
 

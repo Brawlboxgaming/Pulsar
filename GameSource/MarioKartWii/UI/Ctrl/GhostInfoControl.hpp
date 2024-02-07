@@ -2,7 +2,7 @@
 #define _GHOSTINFOCONTROL_
 
 #include <kamek.hpp>
-#include <game/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
 
 
 //_sinit_ at 805e2f4c

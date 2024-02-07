@@ -1,8 +1,8 @@
 #ifndef _MODELRENDERERPAGE_
 #define _MODELRENDERERPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/3D/Model/Menu/BackModel.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/3D/Model/Menu/BackModel.hpp>
 
 
 struct ModelRendererParams {

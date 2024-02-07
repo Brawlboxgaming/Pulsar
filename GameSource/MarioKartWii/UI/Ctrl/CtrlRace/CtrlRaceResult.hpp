@@ -1,10 +1,10 @@
 #ifndef _CTRLRACERESULT_
 #define _CTRLRACERESULT_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
 
 //_sinit_ at 807f64f4
-class CtrlRaceResult: public LayoutUIControl {
+class CtrlRaceResult : public LayoutUIControl {
 public:
     //ctor inlined
     ~CtrlRaceResult() override; //807f6490 vtable 808d3ee8

@@ -1,8 +1,8 @@
 #ifndef _OBJECT_EXTERNALKCL_
 #define _OBJECT_EXTERNALKCL_
 #include <kamek.hpp>
-#include <game/Objects/KCL/ObjectKCL.hpp>
-#include <game/KCL/KCLController.hpp>
+#include <MarioKartWii/Objects/KCL/ObjectKCL.hpp>
+#include <MarioKartWii/KCL/KCLController.hpp>
 
 class ObjectKCLController {
 public:

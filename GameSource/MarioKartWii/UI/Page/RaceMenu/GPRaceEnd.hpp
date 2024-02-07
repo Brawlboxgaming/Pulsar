@@ -1,7 +1,7 @@
 #ifndef _GPRACEENDPAGE_
 #define _GPRACEENDPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/RaceMenu/RaceMenu.hpp>
+#include <MarioKartWii/UI/Page/RaceMenu/RaceMenu.hpp>
 
 namespace Pages {
 class GPRaceEnd : public RaceMenu { //ID 0x20

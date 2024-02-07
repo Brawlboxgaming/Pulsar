@@ -3,8 +3,8 @@
 
 //Formerly PlayerSub1c
 #include <kamek.hpp>
-#include <game/Kart/KartLink.hpp>
-#include <game/Kart/KartValues.hpp>
+#include <MarioKartWii/Kart/KartLink.hpp>
+#include <MarioKartWii/Kart/KartValues.hpp>
 
 namespace Kart {
 

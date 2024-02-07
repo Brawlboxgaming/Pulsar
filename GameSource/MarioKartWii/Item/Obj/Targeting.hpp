@@ -1,7 +1,7 @@
 #ifndef _ITEMOBJTARGETING_
 #define _ITEMOBJTARGETING_
 #include <kamek.hpp>
-#include <game/Item/Obj/ItemObj.hpp>
+#include <MarioKartWii/Item/Obj/ItemObj.hpp>
 
 namespace Item {
 class ObjTargeting : public Obj {

@@ -1,7 +1,7 @@
 #ifndef _ITEMWARNINGSOUNDMGR_
 #define _ITEMWARNINGSOUNDMGR_
 #include <kamek.hpp>
-#include <game/Sound/Other/AudioValues.hpp>
+#include <MarioKartWii/Sound/Other/AudioValues.hpp>
 
 class KartSound;
 

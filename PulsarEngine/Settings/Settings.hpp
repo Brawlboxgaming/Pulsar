@@ -4,7 +4,7 @@
 #include <SlotExpansion/CupsDef.hpp>
 #include <PulsarSystem.hpp>
 #include <Settings/UI/SettingsPanel.hpp>
-#include <game/UI/Page/Menu/SinglePlayer.hpp>
+#include <MarioKartWii/UI/Page/Menu/SinglePlayer.hpp>
 
 namespace Pulsar {
 namespace UI { class SettingsPanel; }

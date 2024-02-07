@@ -1,10 +1,10 @@
 #ifndef _CTRLMENUPRESSSTART_
 #define _CTRLMENUPRESSSTART_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
 
 //_sinit_ at 807e9d9c
-class CtrlMenuPressStart: public LayoutUIControl {
+class CtrlMenuPressStart : public LayoutUIControl {
 public:
     //no ctor
     ~CtrlMenuPressStart() override; //8063aa8c vtable 808d3798

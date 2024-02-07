@@ -1,7 +1,7 @@
 #ifndef _CTRLRACEGHOSTDIFFTIME_
 #define _CTRLRACEGHOSTDIFFTIME_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/CtrlRace/CtrlRaceBase.hpp>
+#include <MarioKartWii/UI/Ctrl/CtrlRace/CtrlRaceBase.hpp>
 
 //_sinit_ at 807eea20
 class CtrlRaceGhostDiffTime : public CtrlRaceBase {

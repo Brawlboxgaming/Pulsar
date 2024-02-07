@@ -1,7 +1,7 @@
 #ifndef _WIFIVSRESULTSPAGE_
 #define _WIFIVSRESULTSPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
 
 
 //_sinit_ at 

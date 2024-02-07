@@ -2,12 +2,12 @@
 #define _KARTBODY_
 
 #include <kamek.hpp>
-#include <game/Kart/KartPart.hpp>
-#include <game/Kart/KartBRRESHandle.hpp>
-#include <game/File/DispParams/BikePartsDisp.hpp>
-#include <game/File/DispParams/KartPartsDisp.hpp>
-#include <game/File/DispParams/DriverDisp.hpp>
-#include <game/File/DispParams/KartDriverDisp.hpp>
+#include <MarioKartWii/Kart/KartPart.hpp>
+#include <MarioKartWii/Kart/KartBRRESHandle.hpp>
+#include <MarioKartWii/File/DispParams/BikePartsDisp.hpp>
+#include <MarioKartWii/File/DispParams/KartPartsDisp.hpp>
+#include <MarioKartWii/File/DispParams/DriverDisp.hpp>
+#include <MarioKartWii/File/DispParams/KartDriverDisp.hpp>
 
 
 namespace Kart {

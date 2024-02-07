@@ -2,7 +2,7 @@
 #define _DRIVERLIMBS_
 #include <kamek.hpp>
 #include <core/nw4r/g3d/res/ResNode.hpp>
-#include <game/3D/Model/ModelDirector.hpp>
+#include <MarioKartWii/3D/Model/ModelDirector.hpp>
 
 
 using namespace nw4r;

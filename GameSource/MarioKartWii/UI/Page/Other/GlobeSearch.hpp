@@ -1,10 +1,10 @@
 #ifndef _GLOBESEARCHPAGE_
 #define _GLOBESEARCHPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Ctrl/UIControl.hpp>
-#include <game/UI/Ctrl/Menu/CtrlMenuText.hpp>
-#include <game/UI/Ctrl/CountDown.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/UI/Ctrl/Menu/CtrlMenuText.hpp>
+#include <MarioKartWii/UI/Ctrl/CountDown.hpp>
 
 //_sinit_ at 805e6b2c
 namespace Pages {

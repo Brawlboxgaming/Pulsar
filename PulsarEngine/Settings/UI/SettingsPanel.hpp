@@ -2,10 +2,10 @@
 #define _PUL_SETTINGSPAGE_
 #include <kamek.hpp>
 #include <core/nw4r/ut/Misc.hpp>
-#include <game/UI/SectionMgr/SectionMgr.hpp>
-#include <game/UI/Ctrl/PushButton.hpp>
-#include <game/UI/Page/Menu/Menu.hpp>
-#include <game/UI/Page/Menu/VSSettings.hpp>
+#include <MarioKartWii/UI/SectionMgr/SectionMgr.hpp>
+#include <MarioKartWii/UI/Ctrl/PushButton.hpp>
+#include <MarioKartWii/UI/Page/Menu/Menu.hpp>
+#include <MarioKartWii/UI/Page/Menu/VSSettings.hpp>
 #include <Settings/UI/ExpOptionsPage.hpp>
 #include <Settings/UI/ExpWFCMainPage.hpp>
 #include <Settings/UI/ExpFroomPage.hpp>

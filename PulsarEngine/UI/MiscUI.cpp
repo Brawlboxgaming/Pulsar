@@ -1,9 +1,9 @@
 #include <kamek.hpp>
-#include <game/UI/Ctrl/PushButton.hpp>
-#include <game/UI/SectionMgr/SectionMgr.hpp>
-#include <game/UI/Ctrl/CtrlRace/CtrlRaceWifi.hpp>
-#include <game/UI/Page/Other/Title.hpp>
-#include <game/UI/Page/Other/Message.hpp>
+#include <MarioKartWii/UI/Ctrl/PushButton.hpp>
+#include <MarioKartWii/UI/SectionMgr/SectionMgr.hpp>
+#include <MarioKartWii/UI/Ctrl/CtrlRace/CtrlRaceWifi.hpp>
+#include <MarioKartWii/UI/Page/Other/Title.hpp>
+#include <MarioKartWii/UI/Page/Other/Message.hpp>
 #include <PulsarSystem.hpp>
 #include <Debug/Debug.hpp>
 #include <UI/UI.hpp>

@@ -5,7 +5,7 @@
 #include <core/nw4r/snd.hpp>
 #include <core/egg/mem/Heap.hpp>
 #include <core/egg/mem/Disposer.hpp>
-#include <game/System/Identifiers.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
 
 /*
 Contributors:

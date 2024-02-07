@@ -1,11 +1,11 @@
 
 #include <kamek.hpp>
-#include <game/Archive/ArchiveRoot.hpp>
-#include <game/3D/Effect/EffectMgr.hpp>
-#include <game/3D/Model/ModelDirector.hpp>
-#include <game/Race/RaceData.hpp>
-#include <game/File/Tables/ObjFlow.hpp>
-#include <game/KMP/KMPManager.hpp>
+#include <MarioKartWii/Archive/ArchiveRoot.hpp>
+#include <MarioKartWii/3D/Effect/EffectMgr.hpp>
+#include <MarioKartWii/3D/Model/ModelDirector.hpp>
+#include <MarioKartWii/Race/RaceData.hpp>
+#include <MarioKartWii/File/Tables/ObjFlow.hpp>
+#include <MarioKartWii/KMP/KMPManager.hpp>
 
 //A bunch of patches to prevent common slot related crashes
 kmWrite32(0x8068dfc8, 0x60000000);

@@ -1,7 +1,7 @@
 #include <kamek.hpp>
-#include <game/KMP/KMPManager.hpp>
-#include <game/Race/RaceInfo/RaceInfo.hpp>
-#include <game/Kart/KartPointers.hpp>
+#include <MarioKartWii/KMP/KMPManager.hpp>
+#include <MarioKartWii/Race/RaceInfo/RaceInfo.hpp>
+#include <MarioKartWii/Kart/KartPointers.hpp>
 
 s16 COOB(KMP::Manager* kmpMgr, const Vec& position, u32 areaIdToTestFirst, u8 areaType) {
 

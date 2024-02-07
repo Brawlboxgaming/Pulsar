@@ -2,10 +2,10 @@
 #ifndef _GAMEMODEDATA_
 #define _GAMEMODEDATA_
 #include <kamek.hpp>
-#include <game/File/KRT.hpp>
-#include <game/System/Timer.hpp>
-#include <game/KMP/KMPManager.hpp>
-#include <game/RKNet/RH2.hpp>
+#include <MarioKartWii/File/KRT.hpp>
+#include <MarioKartWii/System/Timer.hpp>
+#include <MarioKartWii/KMP/KMPManager.hpp>
+#include <MarioKartWii/RKNet/RH2.hpp>
 
 class RaceInfo;
 class GMData { //Abstract

@@ -1,5 +1,5 @@
 #include <kamek.hpp>
-#include <game/Sound/AudioManager.hpp>
+#include <MarioKartWii/Sound/AudioManager.hpp>
 #include <SlotExpansion/CupsDef.hpp>
 #include <SlotExpansion/UI/ExpansionUIMisc.hpp>
 

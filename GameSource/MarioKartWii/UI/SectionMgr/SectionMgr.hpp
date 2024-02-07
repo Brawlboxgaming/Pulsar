@@ -8,11 +8,11 @@ Melg
 #ifndef _SECTIONMGR_
 #define _SECTIONMGR_
 #include <kamek.hpp>
-#include <game/UI/SectionMgr/Section.hpp>
-#include <game/UI/SectionMgr/SectionPad.hpp>
-#include <game/UI/SectionMgr/SavedGhostsHandler.hpp>
-#include <game/UI/SectionMgr/SystemBMGHolder.hpp>
-#include <game/UI/SectionMgr/SectionParams.hpp>
+#include <MarioKartWii/UI/SectionMgr/Section.hpp>
+#include <MarioKartWii/UI/SectionMgr/SectionPad.hpp>
+#include <MarioKartWii/UI/SectionMgr/SavedGhostsHandler.hpp>
+#include <MarioKartWii/UI/SectionMgr/SystemBMGHolder.hpp>
+#include <MarioKartWii/UI/SectionMgr/SectionParams.hpp>
 
 
 class Page;

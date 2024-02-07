@@ -1,6 +1,6 @@
 #ifndef _OBJFLOW_
 #define _OBJFLOW_
-#include <game/File/Tables/Table.hpp>
+#include <MarioKartWii/File/Tables/Table.hpp>
 
 //https://wiki.tockdom.com/wiki/Filesystem/Race/Common.szs/ObjFlow.bin
 //Objects params

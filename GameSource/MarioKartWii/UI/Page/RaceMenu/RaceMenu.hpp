@@ -1,10 +1,10 @@
 #ifndef _RACEMENUPAGE_
 #define _RACEMENUPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Ctrl/MessageWindowControl.hpp>
-#include <game/UI/Ctrl/PushButton.hpp>
-#include <game/UI/Page/Other/WWRaceSupporting.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Ctrl/MessageWindowControl.hpp>
+#include <MarioKartWii/UI/Ctrl/PushButton.hpp>
+#include <MarioKartWii/UI/Page/Other/WWRaceSupporting.hpp>
 
 namespace Pages {
 class RaceMenu : public Page { //also used for end of races

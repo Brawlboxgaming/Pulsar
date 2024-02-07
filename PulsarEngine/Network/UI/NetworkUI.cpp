@@ -1,5 +1,5 @@
 #include <kamek.hpp>
-#include <game/UI/Page/Other/GlobeSearch.hpp>
+#include <MarioKartWii/UI/Page/Other/GlobeSearch.hpp>
 #include <PulsarSystem.hpp>
 #include <UI/UI.hpp>
 

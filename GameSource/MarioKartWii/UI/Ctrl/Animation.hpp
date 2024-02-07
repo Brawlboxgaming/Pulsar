@@ -27,7 +27,7 @@ public:
     void Update(); //8063cbe4
     Animation* animations; //0x0
     u32 animationsCount; //0x4
-    Group group; //0x8
+    lyt::Group group; //0x8
     bool isRecursive; //0x34
     bool isActive; //0x35
     u8 unknown_0x36[2];
@@ -43,7 +43,7 @@ public:
     void Init(u32 animationCount); //8063c470
     void InitAnimationGroup(u32 groupId, u32 animationCount); //8063c4d4
     void AppendGroup(u32 groupId, const char* groupName); //8063c560 appends brlyt group to animationGroup
-    void SetLayout(MainLayout* layout, Pane* rootPane); //8063c464
+    void SetLayout(MainLayout* layout, lyt::Pane* rootPane); //8063c464
     void Update(); //8063c7bc
     void LoadAnimation(u32 groupId, u32 animationId, const char* brlanName, u32 onEndAnimationId, bool unknown_0xc, float speed); //8063c714
     void LoadNewAnimation(u32 groupId, u32 animationId, const char* brlanName, u32 onEndAnimationId, bool unknown_0xc, float speed);
@@ -51,7 +51,7 @@ public:
     AnimationGroup& GetAnimationGroupById(u32 groupId) const; //8063c820
     AnimationGroup* animationGroups; //array of animation groups
     u32 animationCount; //Unsure
-    Pane* rootPane;
+    lyt::Pane* rootPane;
     MainLayout* layout; //0xC
 }; //Total Size 0x10
 size_assert(UIAnimator, 0x10);

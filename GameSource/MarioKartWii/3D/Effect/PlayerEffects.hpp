@@ -2,7 +2,7 @@
 #define _PLAYER_EFECTS_
 #include <kamek.hpp>
 #include <core/egg/Effect/Effect.hpp>
-#include <game/Kart/KartPlayer.hpp>
+#include <MarioKartWii/Kart/KartPlayer.hpp>
 
 
 class PlayerEffects {

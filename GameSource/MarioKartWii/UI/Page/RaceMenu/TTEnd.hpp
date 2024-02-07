@@ -1,7 +1,7 @@
 #ifndef _TTENDPAGE_
 #define _TTENDPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/RaceMenu/RaceMenu.hpp>
+#include <MarioKartWii/UI/Page/RaceMenu/RaceMenu.hpp>
 
 namespace Pages {
 class TTEnd : public RaceMenu { //ID 0x21

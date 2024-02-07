@@ -1,10 +1,10 @@
 #ifndef _VSSETTINGS_
 #define _VSSETTINGS_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Page/Menu/Menu.hpp>
-#include <game/UI/Ctrl/UpDown.hpp>
-#include <game/UI/Ctrl/RadioButton.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/Menu/Menu.hpp>
+#include <MarioKartWii/UI/Ctrl/UpDown.hpp>
+#include <MarioKartWii/UI/Ctrl/RadioButton.hpp>
 
 /*
 Contributors:

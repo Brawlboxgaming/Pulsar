@@ -1,11 +1,11 @@
 #include <kamek.hpp>
-#include <game/Input/InputManager.hpp>
-#include <game/Kart/KartManager.hpp>
-#include <game/3D/Effect/EffectMgr.hpp> 
-#include <game/UI/SectionMgr/SectionMgr.hpp>
-#include <game/Item/Obj/ItemObj.hpp>
-#include <game/KMP/KMPManager.hpp>
-#include <game/Race/RaceData.hpp>
+#include <MarioKartWii/Input/InputManager.hpp>
+#include <MarioKartWii/Kart/KartManager.hpp>
+#include <MarioKartWii/3D/Effect/EffectMgr.hpp> 
+#include <MarioKartWii/UI/SectionMgr/SectionMgr.hpp>
+#include <MarioKartWii/Item/Obj/ItemObj.hpp>
+#include <MarioKartWii/KMP/KMPManager.hpp>
+#include <MarioKartWii/Race/RaceData.hpp>
 #include <Race/200ccParams.hpp>
 
 

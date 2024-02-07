@@ -1,7 +1,7 @@
 #include <kamek.hpp>
 #include <core/rvl/DWC/DWC.hpp>
 #include <core/System/SystemManager.hpp>
-#include <game/RKNet/RKNetController.hpp>
+#include <MarioKartWii/RKNet/RKNetController.hpp>
 #include <Info.hpp>
 #include <PulsarSystem.hpp>
 

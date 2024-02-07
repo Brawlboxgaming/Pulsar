@@ -1,8 +1,8 @@
 #ifndef _TOGGLEBUTTON_
 #define _TOGGLEBUTTON_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/PushButton.hpp>
-#include <game/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Ctrl/PushButton.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
 
 
 class ToggleButton : public PushButton {

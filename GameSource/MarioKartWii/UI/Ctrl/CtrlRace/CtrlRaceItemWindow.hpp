@@ -1,8 +1,8 @@
 #ifndef _CTRLRACEITEMWINDOW_
 #define _CTRLRACEITEMWINDOW_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/CtrlRace/CtrlRaceBase.hpp>
-#include <game/Item/ItemManager.hpp>
+#include <MarioKartWii/UI/Ctrl/CtrlRace/CtrlRaceBase.hpp>
+#include <MarioKartWii/Item/ItemManager.hpp>
 
 //_sinit_ at 807ef6c8
 class CtrlRaceItemWindow : public CtrlRaceBase {

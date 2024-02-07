@@ -2,9 +2,9 @@
 #define _KARTCOLLISION_
 //Formerly PlayerSub18
 #include <kamek.hpp>
-#include <game/Kart/KartPhysics.hpp>
-#include <game/Kart/KartLink.hpp>
-#include <game/KCL/Collision.hpp>
+#include <MarioKartWii/Kart/KartPhysics.hpp>
+#include <MarioKartWii/Kart/KartLink.hpp>
+#include <MarioKartWii/KCL/Collision.hpp>
 
 namespace Kart {
 

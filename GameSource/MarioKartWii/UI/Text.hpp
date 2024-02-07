@@ -2,8 +2,8 @@
 #define _TEXT_
 #include <kamek.hpp>
 #include <core/nw4r/lyt/TextBox.hpp>
-#include <game/File/BMG.hpp>
-#include <game/Mii/MiiGroup.hpp>
+#include <MarioKartWii/File/BMG.hpp>
+#include <MarioKartWii/Mii/MiiGroup.hpp>
 
 using namespace nw4r;
 

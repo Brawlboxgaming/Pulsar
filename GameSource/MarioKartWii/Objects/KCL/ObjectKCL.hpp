@@ -1,8 +1,8 @@
 #ifndef _OBJECT_KCL_
 #define _OBJECT_KCL_
 #include <kamek.hpp>
-#include <game/Objects/Object.hpp>
-#include <game/KCL/KCLController.hpp>
+#include <MarioKartWii/Objects/Object.hpp>
+#include <MarioKartWii/KCL/KCLController.hpp>
 
 
 /*

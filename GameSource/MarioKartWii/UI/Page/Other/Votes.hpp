@@ -1,9 +1,9 @@
 #ifndef _VOTESPAGE_
 #define _VOTESPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Ctrl/Menu/CtrlMenuText.hpp>
-#include <game/UI/Page/Other/Message.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Ctrl/Menu/CtrlMenuText.hpp>
+#include <MarioKartWii/UI/Page/Other/Message.hpp>
 
 class VoteControl : public LayoutUIControl {
 public:

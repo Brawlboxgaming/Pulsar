@@ -4,8 +4,8 @@
 #include <kamek.hpp>
 #include <core/egg/mem/Heap.hpp>
 #include <core/egg/mem/Disposer.hpp>
-#include <game/Sound/Other/AudioValues.hpp>
-#include <game/System/Identifiers.hpp>
+#include <MarioKartWii/Sound/Other/AudioValues.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
 
 using namespace nw4r;
 

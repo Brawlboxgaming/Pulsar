@@ -1,8 +1,8 @@
 #ifndef _CTRLMENUMOVIEBUTTON_
 #define _CTRLMENUMOVIEBUTTON_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/UIControl.hpp>
-#include <game/UI/Ctrl/PushButton.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/UI/Ctrl/PushButton.hpp>
 
 class Page;
 class MovieScale {
@@ -29,7 +29,7 @@ public:
 size_assert(CtrlMenuMovieHandler, 0x18);
 
 
-class CtrlMenuMovieLayout: public CtrlMenuMovieHandler, public LayoutUIControl {
+class CtrlMenuMovieLayout : public CtrlMenuMovieHandler, public LayoutUIControl {
     //no ctor
     ~CtrlMenuMovieLayout() override; //80627a80 808d34b0 for thp part
     int GetMovieCount() const override; //807e8e04
@@ -44,7 +44,7 @@ class CtrlMenuMovieLayout: public CtrlMenuMovieHandler, public LayoutUIControl {
 size_assert(CtrlMenuMovieLayout, 0x18c);
 
 
-class CtrlMenuMovieButton: public CtrlMenuMovieHandler, public PushButton {
+class CtrlMenuMovieButton : public CtrlMenuMovieHandler, public PushButton {
 public:
     CtrlMenuMovieButton() {};
     ~CtrlMenuMovieButton() override; //806280d4 vtable 808d3590 for Movie
@@ -60,7 +60,7 @@ public:
 }; //total size 0x26C
 size_assert(CtrlMenuMovieButton, 0x26c);
 
-class CtrlMenuSingleTopMovieButton: public CtrlMenuMovieHandler, public PushButton {
+class CtrlMenuSingleTopMovieButton : public CtrlMenuMovieHandler, public PushButton {
     ~CtrlMenuSingleTopMovieButton() override; //807e9114 vtable 808d3518 for thp
     int GetMovieCount() const override; //807e8954
     char** GetPaneNames() const override; //807e82e8

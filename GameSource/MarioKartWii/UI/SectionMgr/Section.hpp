@@ -1,14 +1,14 @@
 #ifndef _SECTION_
 #define _SECTION_
 #include <kamek.hpp>
-#include <game/System/Identifiers.hpp>
-#include <game/UI/Layout/Layout.hpp>
-#include <game/UI/Movie.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Page/System/RecognizePad.hpp>
-#include <game/UI/Page/System/DpdPointer.hpp>
-#include <game/UI/FriendList.hpp>
-#include <game/Scene/GameScene.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
+#include <MarioKartWii/UI/Layout/Layout.hpp>
+#include <MarioKartWii/UI/Movie.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/System/RecognizePad.hpp>
+#include <MarioKartWii/UI/Page/System/DpdPointer.hpp>
+#include <MarioKartWii/UI/FriendList.hpp>
+#include <MarioKartWii/Scene/GameScene.hpp>
 
 
 class Section {

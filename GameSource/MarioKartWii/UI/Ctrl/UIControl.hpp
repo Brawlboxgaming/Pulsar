@@ -1,10 +1,10 @@
 #ifndef _CTRL_
 #define _CTRL_
 #include <kamek.hpp>
-#include <game/UI/Layout/Layout.hpp>
-#include <game/UI/Layout/ControlGroup.hpp>
-#include <game/UI/Layout/ControlLoader.hpp>
-#include <game/UI/Ctrl/Animation.hpp>
+#include <MarioKartWii/UI/Layout/Layout.hpp>
+#include <MarioKartWii/UI/Layout/ControlGroup.hpp>
+#include <MarioKartWii/UI/Layout/ControlLoader.hpp>
+#include <MarioKartWii/UI/Ctrl/Animation.hpp>
 
 /*
 Contributors:
@@ -103,7 +103,7 @@ public:
 
     class MessageRequester : PaneAction {
         //ctor inlined
-        void Calc(Pane* pane) override; //8063ddf4 808beffc
+        void Calc(lyt::Pane* pane) override; //8063ddf4 808beffc
         LayoutUIControl* control; //0x4
         u32 bmgId; //0x8
         TextInfo* info; //0xc
@@ -111,7 +111,7 @@ public:
 
     class MessageResetter : PaneAction {
         //ctor inlined
-        void Calc(Pane* pane) override; //8063e000 vtable 808beff0
+        void Calc(lyt::Pane* pane) override; //8063e000 vtable 808beff0
         LayoutUIControl* control;
     };
 

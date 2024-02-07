@@ -1,8 +1,8 @@
 #ifndef _CTRLRACEBALLOON_
 #define _CTRLRACEBALLOON_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/UIControl.hpp>
-#include <game/3D/Camera/Camera.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/3D/Camera/Camera.hpp>
 
 class CtrlRaceNameBalloon;
 class CtrlRaceItemBalloon;

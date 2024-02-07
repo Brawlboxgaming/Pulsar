@@ -2,10 +2,10 @@
 #define _MULTIDRIFTSELECT_
 
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Page/Menu/Menu.hpp>
-#include <game/UI/Page/Menu/MultiKartSelect.hpp>
-#include <game/UI/Ctrl/CountDown.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/Menu/Menu.hpp>
+#include <MarioKartWii/UI/Page/Menu/MultiKartSelect.hpp>
+#include <MarioKartWii/UI/Ctrl/CountDown.hpp>
 
 /*
 Contributors:

@@ -1,10 +1,10 @@
 #ifndef _AIPLAYER_
 #define _AIPLAYER_
 #include <kamek.hpp>
-#include <game/Input/InputState.hpp>
-#include <game/AI/AIBase.hpp>
-#include <game/AI/CharacterAI.hpp>
-#include <game/AI/CPUDriving.hpp>
+#include <MarioKartWii/Input/InputState.hpp>
+#include <MarioKartWii/AI/AIBase.hpp>
+#include <MarioKartWii/AI/CharacterAI.hpp>
+#include <MarioKartWii/AI/CPUDriving.hpp>
 
 class KartAIController;
 

@@ -2,7 +2,7 @@
 #define _KARTMANAGER_
 #include <kamek.hpp>
 #include <core/nw4r/ut/List.hpp>
-#include <game/Kart/KartPlayer.hpp>
+#include <MarioKartWii/Kart/KartPlayer.hpp>
 
 namespace Kart {
 

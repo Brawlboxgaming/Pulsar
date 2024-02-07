@@ -1,9 +1,9 @@
 #include <kamek.hpp>
-#include <game/UI/Page/Other/GhostManager.hpp>
-#include <game/UI/Page/Other/GhostSelect.hpp>
-#include <game/UI/Page/Menu/CourseSelect.hpp>
-#include <game/UI/Ctrl/SheetSelect.hpp>
-#include <game/UI/SectionMgr/SectionMgr.hpp>
+#include <MarioKartWii/UI/Page/Other/GhostManager.hpp>
+#include <MarioKartWii/UI/Page/Other/GhostSelect.hpp>
+#include <MarioKartWii/UI/Page/Menu/CourseSelect.hpp>
+#include <MarioKartWii/UI/Ctrl/SheetSelect.hpp>
+#include <MarioKartWii/UI/SectionMgr/SectionMgr.hpp>
 #include <UI/ToggleButton.hpp>
 #include <PulsarSystem.hpp>
 

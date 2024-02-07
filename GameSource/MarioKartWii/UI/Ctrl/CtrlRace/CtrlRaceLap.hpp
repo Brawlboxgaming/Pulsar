@@ -1,10 +1,10 @@
 #ifndef _CTRLRACELAP_
 #define _CTRLRACELAP_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/CtrlRace/CtrlRaceBase.hpp>
+#include <MarioKartWii/UI/Ctrl/CtrlRace/CtrlRaceBase.hpp>
 
 //_sinit_ at 807ef9e4
-class CtrlRaceLap: public CtrlRaceBase {
+class CtrlRaceLap : public CtrlRaceBase {
     ~CtrlRaceLap() override; //807ef97c vtable 808d3d18
     void Init() override; //807ef6e8
     void OnUpdate() override; //807ef810

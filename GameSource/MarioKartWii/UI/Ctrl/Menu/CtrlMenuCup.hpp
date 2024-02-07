@@ -1,11 +1,11 @@
 #ifndef _CTRLMENUCUP_
 #define _CTRLMENUCUP_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/UIControl.hpp>
-#include <game/UI/Ctrl/PushButton.hpp>
-#include <game/UI/Ctrl/Menu/CtrlMenuMovie.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/UI/Ctrl/PushButton.hpp>
+#include <MarioKartWii/UI/Ctrl/Menu/CtrlMenuMovie.hpp>
 //CtrlMenuCup _sinit_ at 807e63ec 
-class CtrlMenuCupSelectCup: public LayoutUIControl {
+class CtrlMenuCupSelectCup : public LayoutUIControl {
 public:
     //ctor inlined
     ~CtrlMenuCupSelectCup() override; //80627adc vtable 808d3234
@@ -24,7 +24,7 @@ public:
 }; //total size 0x15cc
 size_assert(CtrlMenuCupSelectCup, 0x15cc);
 
-class CtrlMenuCupSelectCourse: public LayoutUIControl {
+class CtrlMenuCupSelectCourse : public LayoutUIControl {
 public:
     static CourseId idxToCourseId[32]; //808a8410
     //ctor inlined

@@ -7,10 +7,10 @@
 #include <core/egg/3D/Camera.hpp>
 #include <core/nw4r/g3d.hpp>
 #include <core/egg/3D/Scn.hpp>
-#include <game/Scene/GameScene.hpp>
-#include <game/3D/Scn/Fog.hpp>
-#include <game/3D/Scn/GameScreen.hpp>
-#include <game/3D/TextureHolder.hpp>
+#include <MarioKartWii/Scene/GameScene.hpp>
+#include <MarioKartWii/3D/Scn/Fog.hpp>
+#include <MarioKartWii/3D/Scn/GameScreen.hpp>
+#include <MarioKartWii/3D/TextureHolder.hpp>
 
 
 enum ScnType {

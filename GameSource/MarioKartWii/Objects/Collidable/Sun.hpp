@@ -1,7 +1,7 @@
 #ifndef _SUN_
 #define _SUN_
 #include <kamek.hpp>
-#include <game/Objects/Collidable/ObjectCollidable.hpp>
+#include <MarioKartWii/Objects/Collidable/ObjectCollidable.hpp>
 
 class Sun : public ObjectCollidable { //ObjectNum 0x06f = 111
 public:

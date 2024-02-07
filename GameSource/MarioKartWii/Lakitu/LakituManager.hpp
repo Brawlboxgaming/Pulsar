@@ -3,7 +3,7 @@
 
 #include <kamek.hpp>
 #include <core/egg/mem/Disposer.hpp>
-#include <game/Lakitu/LakituPlayer.hpp>
+#include <MarioKartWii/Lakitu/LakituPlayer.hpp>
 
 namespace Lakitu {
 

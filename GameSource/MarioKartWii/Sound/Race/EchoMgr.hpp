@@ -1,7 +1,7 @@
 #ifndef _ECHOMGR_
 #define _ECHOMGR_
 #include <kamek.hpp>
-#include <game/Sound/Other/AudioValues.hpp>
+#include <MarioKartWii/Sound/Other/AudioValues.hpp>
 
 struct Echo {
     u32 unknown_0x0;

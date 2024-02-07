@@ -1,6 +1,6 @@
 #ifndef _CKPH_
 #define _CKPH_
-#include <game/KMP/KMPBlockBase.hpp>
+#include <MarioKartWii/KMP/KMPBlockBase.hpp>
 
 struct CKPH : PointGroup {};
 typedef struct KMPBlock<CKPH> CKPHBlock;

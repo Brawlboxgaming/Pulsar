@@ -1,8 +1,8 @@
 #ifndef _CONTROLLOADER_
 #define _CONTROLLOADER_
 #include <kamek.hpp>
-#include <game/UI/Layout/Layout.hpp>
-#include <game/File/BRCTR.hpp>
+#include <MarioKartWii/UI/Layout/Layout.hpp>
+#include <MarioKartWii/File/BRCTR.hpp>
 
 class LayoutUIControl;
 

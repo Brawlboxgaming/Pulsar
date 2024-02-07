@@ -1,9 +1,9 @@
 #ifndef _KARTBRRESHANDLE_
 #define _KARTBRRESHANDLE_
 #include <kamek.hpp>
-#include <game/3D/Scn/Light.hpp>
-#include <game/3D/Model/ModelDirector.hpp>
-#include <game/3D/Model/ShadowModelDirector.hpp>
+#include <MarioKartWii/3D/Scn/Light.hpp>
+#include <MarioKartWii/3D/Model/ModelDirector.hpp>
+#include <MarioKartWii/3D/Model/ShadowModelDirector.hpp>
 
 namespace Kart {
 

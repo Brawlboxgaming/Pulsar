@@ -2,10 +2,10 @@
 #define _KARTLINK_
 #include <kamek.hpp>
 #include <core/nw4r/ut/List.hpp>
-#include <game/Kart/KartValues.hpp>
-#include <game/Sound/Actors/KartSound.hpp>
-#include <game/Sound/Actors/CharacterSound.hpp>
-#include <game/File/BSP.hpp>
+#include <MarioKartWii/Kart/KartValues.hpp>
+#include <MarioKartWii/Sound/Actors/KartSound.hpp>
+#include <MarioKartWii/Sound/Actors/CharacterSound.hpp>
+#include <MarioKartWii/File/BSP.hpp>
 
 namespace Input {
 class ControllerHolder;

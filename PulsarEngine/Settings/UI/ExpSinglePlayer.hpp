@@ -2,9 +2,9 @@
 #define _EXPSINGLEPLAYER_
 
 #include <kamek.hpp>
-#include <game/UI/Page/Menu/SinglePlayer.hpp>
-#include <game/Item/ItemPlayer.hpp>
-#include <game/UI/Ctrl/CtrlRace/CtrlRaceItemWindow.hpp>
+#include <MarioKartWii/UI/Page/Menu/SinglePlayer.hpp>
+#include <MarioKartWii/Item/ItemPlayer.hpp>
+#include <MarioKartWii/UI/Ctrl/CtrlRace/CtrlRaceItemWindow.hpp>
 #include <Info.hpp>
 #include <Ghost/GhostManager.hpp>
 #include <UI/UI.hpp>

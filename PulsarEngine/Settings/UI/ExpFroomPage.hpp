@@ -1,9 +1,9 @@
 #ifndef _PUL_FROOMPAGE_
 #define _PUL_FROOMPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/Other/FriendRoom.hpp>
-#include <game/UI/Page/Other/Message.hpp>
-#include <game/RKNet/RKNetController.hpp>
+#include <MarioKartWii/UI/Page/Other/FriendRoom.hpp>
+#include <MarioKartWii/UI/Page/Other/Message.hpp>
+#include <MarioKartWii/RKNet/RKNetController.hpp>
 #include <Settings/UI/SettingsPanel.hpp>
 
 /*Extends FriendRoom to add a settings and a change teams button; contrary to the other two pages where the settings are present,

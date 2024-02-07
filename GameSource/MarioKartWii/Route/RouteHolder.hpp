@@ -1,8 +1,8 @@
 #ifndef _ROUTEHOLDER_
 #define _ROUTEHOLDER_
 #include <kamek.hpp>
-#include <game/KMP/KMPManager.hpp>
-#include <game/Route/Route.hpp>
+#include <MarioKartWii/KMP/KMPManager.hpp>
+#include <MarioKartWii/Route/Route.hpp>
 
 class RouteHolder {
     static RouteHolder* sInstance; //809c22b0

@@ -2,9 +2,9 @@
 #define _RANDOMAUDIOMGR_
 #include <kamek.hpp>
 #include <core/egg/mem/Disposer.hpp>
-#include <game/System/Random.hpp>
+#include <MarioKartWii/System/Random.hpp>
 
-class AudioRandomMgr: public Random { //is used to get 12 seeds 809c4740 + 4728[id] which impact character sounds etc...
+class AudioRandomMgr : public Random { //is used to get 12 seeds 809c4740 + 4728[id] which impact character sounds etc...
     static AudioRandomMgr* sInstance; //809c4738
     static AudioRandomMgr* CreateInstance(); //80866ddc
     static void DestroyInstance(); //80866e64
@@ -14,7 +14,7 @@ class AudioRandomMgr: public Random { //is used to get 12 seeds 809c4740 + 4728[
     EGG::TDisposer<AudioRandomMgr> disposer; //80866d44 vtable 808dbdfc
 }; //0x28
 
-class RandomSoundPicker: public Random { //one per type
+class RandomSoundPicker : public Random { //one per type
     RandomSoundPicker(); //8086708c
     ~RandomSoundPicker() override; //80863a44 vtable 808dbe08
     u32 initialSoundId; //depends on character/object Id

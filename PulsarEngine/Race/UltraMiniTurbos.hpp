@@ -1,7 +1,7 @@
 #ifndef _PUL_UMT_
 #define _PUL_UMT_
 #include <kamek.hpp>
-#include <game/3D/Effect/EffectMgr.hpp>
+#include <MarioKartWii/3D/Effect/EffectMgr.hpp>
 
 
 namespace Pulsar {

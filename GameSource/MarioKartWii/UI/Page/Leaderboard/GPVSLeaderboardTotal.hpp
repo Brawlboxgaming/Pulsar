@@ -1,8 +1,8 @@
 #ifndef _GPVS_LEADERBOARDTOTAL_PAGE_
 #define _GPVS_LEADERBOARDTOTAL_PAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Page/Leaderboard/GPVSLeaderboardUpdate.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/Leaderboard/GPVSLeaderboardUpdate.hpp>
 
 //_sinit_ at 8085e644
 namespace Pages {

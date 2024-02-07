@@ -3,8 +3,8 @@
 #define _KARTDAMAGE_
 //Formerly PlayerSub14
 #include <kamek.hpp>
-#include <game/System/Identifiers.hpp>
-#include <game/Kart/KartLink.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
+#include <MarioKartWii/Kart/KartLink.hpp>
 
 namespace Kart {
 

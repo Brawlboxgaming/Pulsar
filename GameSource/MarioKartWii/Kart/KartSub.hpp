@@ -1,16 +1,16 @@
 #ifndef _KARTSUB_
 #define _KARTSUB_
 #include <kamek.hpp>
-#include <game/Kart/KartLink.hpp>
-#include <game/Kart/KartCollision.hpp>
-#include <game/Kart/KartDamage.hpp>
-#include <game/Kart/KartBody.hpp>
-#include <game/Kart/KartMovement.hpp>
-#include <game/Kart/KartPhysics.hpp>
-#include <game/Kart/KartStatus.hpp>
-#include <game/Kart/KartSuspensions.hpp>
-#include <game/Kart/KartWheel.hpp>
-#include <game/AI/KartAIController.hpp>
+#include <MarioKartWii/Kart/KartLink.hpp>
+#include <MarioKartWii/Kart/KartCollision.hpp>
+#include <MarioKartWii/Kart/KartDamage.hpp>
+#include <MarioKartWii/Kart/KartBody.hpp>
+#include <MarioKartWii/Kart/KartMovement.hpp>
+#include <MarioKartWii/Kart/KartPhysics.hpp>
+#include <MarioKartWii/Kart/KartStatus.hpp>
+#include <MarioKartWii/Kart/KartSuspensions.hpp>
+#include <MarioKartWii/Kart/KartWheel.hpp>
+#include <MarioKartWii/AI/KartAIController.hpp>
 
 namespace Kart {
 

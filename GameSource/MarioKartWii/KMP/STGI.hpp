@@ -1,7 +1,7 @@
 
 #ifndef _STGI_
 #define _STGI_
-#include <game/KMP/KMPBlockBase.hpp>
+#include <MarioKartWii/KMP/KMPBlockBase.hpp>
 
 struct STGI {
     u8 lapCount; //0x0

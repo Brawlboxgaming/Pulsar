@@ -2,7 +2,7 @@
 #define _CAMERAMGR_
 #include <kamek.hpp>
 #include <core/egg/mem/Disposer.hpp>
-#include <game/3D/Camera/Camera.hpp>
+#include <MarioKartWii/3D/Camera/Camera.hpp>
 
 
 class RaceCamMgrSub30 {

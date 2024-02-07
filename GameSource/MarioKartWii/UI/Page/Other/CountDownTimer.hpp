@@ -1,10 +1,10 @@
 #ifndef _COUNTDOWNTIMERPAGE_
 #define _COUNTDOWNTIMERPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/Mii/MiiGroup.hpp>
-#include <game/UI/Ctrl/CountDown.hpp>
-#include <game/UI/Page/Other/Message.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/Mii/MiiGroup.hpp>
+#include <MarioKartWii/UI/Ctrl/CountDown.hpp>
+#include <MarioKartWii/UI/Page/Other/Message.hpp>
 
 /*
 Contributors:

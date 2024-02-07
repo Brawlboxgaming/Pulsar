@@ -2,7 +2,7 @@
 #define _MIIGROUP_
 #include <kamek.hpp>
 #include <core/egg/mem/UnitHeap.hpp>
-#include <game/Mii/Mii.hpp>
+#include <MarioKartWii/Mii/Mii.hpp>
 
 class MiiGroupSub {
     virtual ~MiiGroupSub(); //805f9f18 vtable 808b9f74

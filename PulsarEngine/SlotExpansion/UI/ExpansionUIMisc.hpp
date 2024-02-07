@@ -1,7 +1,7 @@
 #ifndef _EXPANSIONUIMISC_
 #define _EXPANSIONUIMISC_
 #include <kamek.hpp>
-#include <game/System/Identifiers.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
 #include <PulsarSystem.hpp>
 #include <UI/UI.hpp>
 

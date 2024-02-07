@@ -1,10 +1,10 @@
 #ifndef _ITEMOBJKOURAGREEN_
 #define _ITEMOBJKOURAGREEN_
 #include <kamek.hpp>
-#include <game/Item/Obj/ItemObj.hpp>
+#include <MarioKartWii/Item/Obj/ItemObj.hpp>
 
 namespace Item {
-class ObjKouraGreen: public Obj {
+class ObjKouraGreen : public Obj {
 public:
     static Obj** CreateArray(u32 count); //807aeaec
     void InitSelf() override; //0x8 807aefb4 vtable 808d2430

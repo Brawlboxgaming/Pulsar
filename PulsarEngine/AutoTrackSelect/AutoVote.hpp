@@ -2,11 +2,11 @@
 #define _AUTOVOTE_
 
 #include <kamek.hpp>
-#include <game/UI/Page/Other/CountDownTimer.hpp>
-#include <game/UI/Page/Other/FriendRoom.hpp>
-#include <game/UI/SectionMgr/SectionMgr.hpp>
-#include <game/RKNet/RKNetController.hpp>
-#include <game/RKNet/Select.hpp>
+#include <MarioKartWii/UI/Page/Other/CountDownTimer.hpp>
+#include <MarioKartWii/UI/Page/Other/FriendRoom.hpp>
+#include <MarioKartWii/UI/SectionMgr/SectionMgr.hpp>
+#include <MarioKartWii/RKNet/RKNetController.hpp>
+#include <MarioKartWii/RKNet/Select.hpp>
 
 namespace Pulsar {
 namespace UI {

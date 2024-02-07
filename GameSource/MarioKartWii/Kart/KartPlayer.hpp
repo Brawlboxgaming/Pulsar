@@ -2,14 +2,14 @@
 #define _KARTPLAYER_
 
 #include <kamek.hpp>
-#include <game/System/Identifiers.hpp>
-#include <game/Kart/KartLink.hpp>
-#include <game/Kart/KartValues.hpp>
-#include <game/Kart/KartPointers.hpp>
-#include <game/File/DispParams/BikePartsDisp.hpp>
-#include <game/File/DispParams/KartPartsDisp.hpp>
-#include <game/File/DispParams/DriverDisp.hpp>
-#include <game/File/DispParams/KartDriverDisp.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
+#include <MarioKartWii/Kart/KartLink.hpp>
+#include <MarioKartWii/Kart/KartValues.hpp>
+#include <MarioKartWii/Kart/KartPointers.hpp>
+#include <MarioKartWii/File/DispParams/BikePartsDisp.hpp>
+#include <MarioKartWii/File/DispParams/KartPartsDisp.hpp>
+#include <MarioKartWii/File/DispParams/DriverDisp.hpp>
+#include <MarioKartWii/File/DispParams/KartDriverDisp.hpp>
 
 
 namespace Kart {

@@ -15,10 +15,10 @@ References:
 #define _RACEDATA_
 #include <kamek.hpp>
 #include <core/RK/ParameterFile.hpp>
-#include <game/Mii/Mii.hpp>
-#include <game/File/RKG.hpp>
-#include <game/System/Identifiers.hpp>
-#include <game/Input/Controller.hpp>
+#include <MarioKartWii/Mii/Mii.hpp>
+#include <MarioKartWii/File/RKG.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
+#include <MarioKartWii/Input/Controller.hpp>
 
 enum PlayerType {
     PLAYER_REAL_LOCAL,

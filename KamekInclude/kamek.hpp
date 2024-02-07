@@ -15,8 +15,8 @@
 #include <include/c_string.h>
 #include "hooks.hpp"
 
-#include <game/Math/Matrix.hpp>
-#include <game/Math/Vector.hpp>
+#include <MarioKartWii/Math/Matrix.hpp>
+#include <MarioKartWii/Math/Vector.hpp>
 #include <core/nw4r/ut/LinkList.hpp>
 #include <core/nw4r/ut/List.hpp>
  //just for usability in other structs

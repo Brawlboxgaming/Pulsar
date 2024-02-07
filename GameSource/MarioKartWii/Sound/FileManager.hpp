@@ -4,7 +4,7 @@
 #include <kamek.hpp>
 #include <core/egg/Audio/AudioMgr.hpp>
 #include <core/nw4r/snd.hpp>
-#include <game/System/Identifiers.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
 
 /*
 Contributors:

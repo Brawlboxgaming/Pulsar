@@ -2,7 +2,7 @@
 #define _COUNTDOWNCTRL_
 
 #include <kamek.hpp>
-#include <game/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
 
 //_sinit_ at 805c4754
 struct CountDown {

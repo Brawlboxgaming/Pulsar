@@ -2,10 +2,10 @@
 #define _BATTLESTAGESELECT_
 
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Page/Menu/Menu.hpp>
-#include <game/UI/Ctrl/PushButton.hpp>
-#include <game/UI/Ctrl/Menu/CtrlMenuBattleStage.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/Menu/Menu.hpp>
+#include <MarioKartWii/UI/Ctrl/PushButton.hpp>
+#include <MarioKartWii/UI/Ctrl/Menu/CtrlMenuBattleStage.hpp>
 
 //_sinit_ at 8083d42c
 namespace Pages {

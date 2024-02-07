@@ -1,14 +1,14 @@
 #include <UI/UI.hpp>
 #include <PulsarSystem.hpp>
-#include <game/UI/Page/RaceHUD/RaceHUD.hpp>
-#include <game/Input/InputManager.hpp>
+#include <MarioKartWii/UI/Page/RaceHUD/RaceHUD.hpp>
+#include <MarioKartWii/Input/InputManager.hpp>
 
 namespace Pulsar {
 namespace UI {
 
 void ChangeImage(LayoutUIControl& control, const char* paneName, const char* tplName) {
-    void* tplRes = control.layout.resources->multiArcResourceAccessor.GetResource(res::RESOURCETYPE_TEXTURE, tplName);
-    if(tplRes != nullptr) control.layout.GetPaneByName(paneName)->GetMaterial()->GetTexMapAry()->ReplaceImage((TPLPalettePtr)tplRes);
+    TPLPalettePtr tplRes = static_cast<TPLPalettePtr>(control.layout.resources->multiArcResourceAccessor.GetResource(lyt::res::RESOURCETYPE_TEXTURE, tplName));
+    if(tplRes != nullptr) control.layout.GetPaneByName(paneName)->GetMaterial()->GetTexMapAry()->ReplaceImage(tplRes);
 };
 
 //Implements the use of Pulsar's BMGHolder when needed

@@ -1,9 +1,9 @@
 #ifndef _PULCTRLRACEBASE_
 #define _PULCTRLRACEBASE_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Ctrl/CtrlRace/CtrlRaceBase.hpp>
-#include <game/UI/Page/RaceHUD/RaceHUD.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Ctrl/CtrlRace/CtrlRaceBase.hpp>
+#include <MarioKartWii/UI/Page/RaceHUD/RaceHUD.hpp>
 #include <UI/UI.hpp>
 
 //A builder to create any kind of ctrlracebase by registering a count and a create function

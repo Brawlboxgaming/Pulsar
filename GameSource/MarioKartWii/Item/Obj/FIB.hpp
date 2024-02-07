@@ -1,10 +1,10 @@
 #ifndef _ITEMOBJFIB
 #define _ITEMOBJFIB
 #include <kamek.hpp>
-#include <game/Item/Obj/ItemObj.hpp>
+#include <MarioKartWii/Item/Obj/ItemObj.hpp>
 
-namespace Item{
-class ObjFIB: public Obj {
+namespace Item {
+class ObjFIB : public Obj {
 public:
     static Obj** CreateArray(u32 count); //807a78a8
 

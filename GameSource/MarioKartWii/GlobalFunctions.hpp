@@ -1,9 +1,9 @@
 #ifndef _GLOBALFUNCTIONS_
 #define _GLOBALFUNCTIONS_
-#include <game/System/Identifiers.hpp>
-#include <game/UI/SectionMgr/SectionMgr.hpp>
-#include <game/UI/Text.hpp>
-#include <game/Item/ItemManager.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
+#include <MarioKartWii/UI/SectionMgr/SectionMgr.hpp>
+#include <MarioKartWii/UI/Text.hpp>
+#include <MarioKartWii/Item/ItemManager.hpp>
 
 bool IsOnlineSection(SectionId id); //80860484 online but outside of races 
 CourseId GetNextVSTrack(u32 raceNumber); //808606a4

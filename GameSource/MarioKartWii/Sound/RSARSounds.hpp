@@ -1,7 +1,7 @@
 #ifndef _RACERSARSOUNDS_
 #define _RACERSARSOUNDS_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
 /*
 Contributors:
 -Melg

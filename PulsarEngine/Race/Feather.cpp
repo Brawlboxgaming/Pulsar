@@ -1,9 +1,9 @@
-#include <game/Item/ItemManager.hpp>
-#include <game/Input/InputManager.hpp>
-#include <game/Item/Obj/Gesso.hpp>
-#include <game/CourseMgr.hpp>
-#include <game/3D/Model/ModelDirector.hpp>
-#include <game/Driver/DriverManager.hpp>
+#include <MarioKartWii/Item/ItemManager.hpp>
+#include <MarioKartWii/Input/InputManager.hpp>
+#include <MarioKartWii/Item/Obj/Gesso.hpp>
+#include <MarioKartWii/CourseMgr.hpp>
+#include <MarioKartWii/3D/Model/ModelDirector.hpp>
+#include <MarioKartWii/Driver/DriverManager.hpp>
 #include <Info.hpp>
 
 

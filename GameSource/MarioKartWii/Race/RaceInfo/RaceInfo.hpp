@@ -13,13 +13,13 @@ Contributors:
 #ifndef _RACEINFO_
 #define _RACEINFO_
 #include <kamek.hpp>
-#include <game/File/KMG.hpp>
-#include <game/System/Timer.hpp>
-#include <game/System/ElineManager.hpp>
-#include <game/System/Random.hpp>
-#include <game/Input/ControllerHolder.hpp>
-#include <game/Race/RaceData.hpp>
-#include <game/Race/RaceInfo/GameModeData.hpp>
+#include <MarioKartWii/File/KMG.hpp>
+#include <MarioKartWii/System/Timer.hpp>
+#include <MarioKartWii/System/ElineManager.hpp>
+#include <MarioKartWii/System/Random.hpp>
+#include <MarioKartWii/Input/ControllerHolder.hpp>
+#include <MarioKartWii/Race/RaceData.hpp>
+#include <MarioKartWii/Race/RaceInfo/GameModeData.hpp>
 
 enum RaceStage {
     RACESTAGE_INTRO,

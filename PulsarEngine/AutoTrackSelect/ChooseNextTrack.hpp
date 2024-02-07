@@ -1,14 +1,14 @@
 #ifndef _CHOOSENEXTTRACK_
 #define _CHOOSENEXTTRACK_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/SheetSelect.hpp>
-#include <game/UI/Page/RaceMenu/RaceMenu.hpp>
-#include <game/UI/SectionMgr/SectionMgr.hpp>
-#include <game/Sound/RSARSounds.hpp>
-#include <game/RKNet/RKNetController.hpp>
-#include <game/RKNet/EVENT.hpp>
-#include <game/UI/Ctrl/CountDown.hpp>
-#include <game/Race/RaceInfo/RaceInfo.hpp>
+#include <MarioKartWii/UI/Ctrl/SheetSelect.hpp>
+#include <MarioKartWii/UI/Page/RaceMenu/RaceMenu.hpp>
+#include <MarioKartWii/UI/SectionMgr/SectionMgr.hpp>
+#include <MarioKartWii/Sound/RSARSounds.hpp>
+#include <MarioKartWii/RKNet/RKNetController.hpp>
+#include <MarioKartWii/RKNet/EVENT.hpp>
+#include <MarioKartWii/UI/Ctrl/CountDown.hpp>
+#include <MarioKartWii/Race/RaceInfo/RaceInfo.hpp>
 #include <SlotExpansion/CupsDef.hpp>
 
 namespace Pulsar {

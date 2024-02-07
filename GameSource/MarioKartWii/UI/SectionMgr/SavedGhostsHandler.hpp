@@ -1,7 +1,7 @@
 #ifndef _SAVEDGHOSTSHANDLER_
 #define _SAVEDGHOSTSHANDLER_
 #include <kamek.hpp>
-#include <game/System/Ghost.hpp>
+#include <MarioKartWii/System/Ghost.hpp>
 
 enum SavedGhostsRequest { //array position in the class
     REQUEST_ERASE_ALL_GHOSTS = 0x0,

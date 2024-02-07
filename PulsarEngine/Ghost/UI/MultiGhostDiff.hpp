@@ -1,10 +1,10 @@
 #ifndef _MULTIGHOSTDIFF_
 #define _MULTIGHOSTDIFF_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/UIControl.hpp>
-#include <game/UI/Ctrl/CtrlRace/CtrlRaceGhostDiffTime.hpp>
-#include <game/UI/Page/RaceHUD/RaceHUD.hpp>
-#include <game/Race/Racedata.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/UI/Ctrl/CtrlRace/CtrlRaceGhostDiffTime.hpp>
+#include <MarioKartWii/UI/Page/RaceHUD/RaceHUD.hpp>
+#include <MarioKartWii/Race/Racedata.hpp>
 
 //Completely replaces the usual ghost diff with a control that holds as many as there are ghosts. Also moves them to the top left corner
 namespace Pulsar {

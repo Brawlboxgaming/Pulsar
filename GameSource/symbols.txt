@@ -433,6 +433,7 @@ __dt__5TimerFv = 0x8051c334
 sInstance__8RaceData = 0x809bd728
 GetPlayerIdOfLocalPlayer__8RaceDataFUc = 0x80531f70
 GetHudSlotId__8RaceDataCFUc = 0x80531f18
+InitRNG__16RacedataScenarioFv = 0x8052f924
 
 #RaceInfo
 sInstance__8RaceInfo = 0x809bd730
@@ -1264,6 +1265,8 @@ DisplayMii__8GlobeMgrFv = 0x807509b4
 #DriverMgr
 sInstance__9DriverMgr = 0x809c23f8
 isOnlineRace__9DriverMgr = 0x809c38b9
+GetRaceInfoRandom__9DriverMgrFv = 0x807bd718
+isTT__9DriverMgr = 0x809c38bc
 
 #KartModel
 

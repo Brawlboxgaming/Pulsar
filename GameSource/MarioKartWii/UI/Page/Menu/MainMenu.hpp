@@ -2,7 +2,7 @@
 #ifndef _MAINMENU_
 #define _MAINMENU_
 #include <kamek.hpp>
-#include <game/UI/Page/Menu/Menu.hpp>
+#include <MarioKartWii/UI/Page/Menu/Menu.hpp>
 
 //_sinit_ at 80851d38
 namespace Pages {

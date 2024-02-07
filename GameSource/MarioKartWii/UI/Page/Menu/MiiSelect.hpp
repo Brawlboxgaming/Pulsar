@@ -1,10 +1,10 @@
 #ifndef _MIISELECTPAGE_
 #define _MIISELECTPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/Menu/Menu.hpp>
-#include <game/UI/Ctrl/UIControl.hpp>
-#include <game/UI/Ctrl/SheetSelect.hpp>
-#include <game/UI/Ctrl/TabControl.hpp>
+#include <MarioKartWii/UI/Page/Menu/Menu.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/UI/Ctrl/SheetSelect.hpp>
+#include <MarioKartWii/UI/Ctrl/TabControl.hpp>
 
 
 //_sinit_ at 80849570

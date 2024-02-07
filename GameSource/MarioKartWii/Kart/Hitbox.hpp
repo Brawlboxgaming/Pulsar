@@ -2,7 +2,7 @@
 #define _HITBOX_
 
 #include <kamek.hpp>
-#include <game/File/BSP.hpp>
+#include <MarioKartWii/File/BSP.hpp>
 
 namespace Kart {
 class CollisionData {

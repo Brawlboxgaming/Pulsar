@@ -1,6 +1,6 @@
 #ifndef _ENPT_
 #define _ENPT_
-#include <game/KMP/KMPBlockBase.hpp>
+#include <MarioKartWii/KMP/KMPBlockBase.hpp>
 
 struct ENPT {
     Vec3 position;

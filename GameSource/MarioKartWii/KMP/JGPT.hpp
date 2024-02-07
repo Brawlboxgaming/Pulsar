@@ -1,6 +1,6 @@
 #ifndef _JGPT_
 #define _JGPT_
-#include <game/KMP/KMPBlockBase.hpp>
+#include <MarioKartWii/KMP/KMPBlockBase.hpp>
 
 struct JGPT {
     Vec3 position;

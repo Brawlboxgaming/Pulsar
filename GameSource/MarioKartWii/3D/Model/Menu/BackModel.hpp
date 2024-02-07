@@ -2,8 +2,8 @@
 #define _BACKMODEL_
 #include <kamek.hpp>
 #include <core/egg/mem/Disposer.hpp>
-#include <game/3D/Model/ModelDirector.hpp>
-#include <game/3D/Model/Menu/MenuModelMgr.hpp>
+#include <MarioKartWii/3D/Model/ModelDirector.hpp>
+#include <MarioKartWii/3D/Model/Menu/MenuModelMgr.hpp>
 
 using namespace nw4r;
 class BackModelMgr {

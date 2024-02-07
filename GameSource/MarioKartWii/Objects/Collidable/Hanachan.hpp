@@ -2,9 +2,9 @@
 #define _HANACHAN_OBJECT_
 #include <kamek.hpp>
 #include <core/egg/Effect/Effect.hpp>
-#include <game/Objects/Collidable/ObjectCollidable.hpp>
-#include <game/Math/Vector.hpp>
-#include <game/Route/Linked3DPoints.hpp>
+#include <MarioKartWii/Objects/Collidable/ObjectCollidable.hpp>
+#include <MarioKartWii/Math/Vector.hpp>
+#include <MarioKartWii/Route/Linked3DPoints.hpp>
 
 namespace Objects {
 

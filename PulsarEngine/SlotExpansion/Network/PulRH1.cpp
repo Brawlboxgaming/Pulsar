@@ -1,6 +1,6 @@
 #include <kamek.hpp>
-#include <game/RKNet/RKNetController.hpp>
-#include <game/RKNet/RH1.hpp>
+#include <MarioKartWii/RKNet/RKNetController.hpp>
+#include <MarioKartWii/RKNet/RH1.hpp>
 #include <SlotExpansion/Network/PulRH1.hpp>
 
 #include <SlotExpansion/CupsDef.hpp>

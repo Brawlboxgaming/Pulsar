@@ -1,9 +1,9 @@
 #ifndef _CUPSDEF_
 #define _CUPSDEF_
 #include <kamek.hpp>
-#include <game/System/Identifiers.hpp>
-#include <game/System/Random.hpp>
-#include <game/UI/Ctrl/PushButton.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
+#include <MarioKartWii/System/Random.hpp>
+#include <MarioKartWii/UI/Ctrl/PushButton.hpp>
 
 namespace Pulsar {
 

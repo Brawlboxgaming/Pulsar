@@ -1,21 +1,21 @@
 #ifndef _KMP_FORMAT_
 #define _KMP_FORMAT_
 #include <kamek.hpp>
-#include <game/KMP/AREA.hpp>
-#include <game/KMP/CAME.hpp>
-#include <game/KMP/CKPH.hpp>
-#include <game/KMP/CKPT.hpp>
-#include <game/KMP/CNPT.hpp>
-#include <game/KMP/ENPH.hpp>
-#include <game/KMP/ENPT.hpp>
-#include <game/KMP/GOBJ.hpp>
-#include <game/KMP/ITPH.hpp>
-#include <game/KMP/ITPT.hpp>
-#include <game/KMP/JGPT.hpp>
-#include <game/KMP/KTPT.hpp>
-#include <game/KMP/MSPT.hpp>
-#include <game/KMP/POTI.hpp>
-#include <game/KMP/STGI.hpp>
+#include <MarioKartWii/KMP/AREA.hpp>
+#include <MarioKartWii/KMP/CAME.hpp>
+#include <MarioKartWii/KMP/CKPH.hpp>
+#include <MarioKartWii/KMP/CKPT.hpp>
+#include <MarioKartWii/KMP/CNPT.hpp>
+#include <MarioKartWii/KMP/ENPH.hpp>
+#include <MarioKartWii/KMP/ENPT.hpp>
+#include <MarioKartWii/KMP/GOBJ.hpp>
+#include <MarioKartWii/KMP/ITPH.hpp>
+#include <MarioKartWii/KMP/ITPT.hpp>
+#include <MarioKartWii/KMP/JGPT.hpp>
+#include <MarioKartWii/KMP/KTPT.hpp>
+#include <MarioKartWii/KMP/MSPT.hpp>
+#include <MarioKartWii/KMP/POTI.hpp>
+#include <MarioKartWii/KMP/STGI.hpp>
 
 enum Sections {
     KMP_SECTION_KTPT,

@@ -1,8 +1,8 @@
 #ifndef _KMPCONTROLLER_
 #define _KMPCONTROLLER_
 #include <kamek.hpp>
-#include <game/Archive/ArchiveRoot.hpp>
-#include <game/KMP/KMP.hpp>
+#include <MarioKartWii/Archive/ArchiveRoot.hpp>
+#include <MarioKartWii/KMP/KMP.hpp>
 
 /*
 Contributors:

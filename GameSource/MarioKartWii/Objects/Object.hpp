@@ -1,14 +1,14 @@
 #ifndef _OBJECT_
 #define _OBJECT_
 #include <kamek.hpp>
-#include <game/KMP/KMPManager.hpp>
-#include <game/File/Tables/GeoHitTable.hpp>
-#include <game/Sound/Actors/ObjectSound.hpp>
-#include <game/Route/RouteController.hpp>
-#include <game/3D/Model/ModelDirector.hpp>
-#include <game/3D/Model/ShadowModelDirector.hpp>
-#include <game/Entity/EntityManager.hpp>
-#include <game/3D/ClipInfoMgr.hpp>
+#include <MarioKartWii/KMP/KMPManager.hpp>
+#include <MarioKartWii/File/Tables/GeoHitTable.hpp>
+#include <MarioKartWii/Sound/Actors/ObjectSound.hpp>
+#include <MarioKartWii/Route/RouteController.hpp>
+#include <MarioKartWii/3D/Model/ModelDirector.hpp>
+#include <MarioKartWii/3D/Model/ShadowModelDirector.hpp>
+#include <MarioKartWii/Entity/EntityManager.hpp>
+#include <MarioKartWii/3D/ClipInfoMgr.hpp>
 #include <core/egg/Effect/Effect.hpp>
 
 /*
@@ -110,6 +110,7 @@ public:
     u8 unknown_0x54[4];
     Mtx34 transformationMtx; //0x58
     u16 objId; //0x88
+    u8 padding_0x8a[2];
     const char* name; //0x8c unsure, read by vf_0x3c
     u8 lodFlags; //0x90 1 = has lod
     u8 padding2[3];
@@ -130,7 +131,7 @@ class ObjectCycleManager {
     //virtual int vf_0xC() = 0; //0xC this might be wrong since kart_truck has no such function 
     u16 unknown_0x4;
     u8 padding[2];
-    u32 unknown_0x8;
+    u32 resetParam; //set to -1 initially, setting it to 1 resets the route, for example a HeyHoBallGBA gets rethrown
     u32 frames; //resets when the object reaches the end of its route//its cycle
     u16 routePtmfsCount; //unsure
     u8 padding2[2];

@@ -9,9 +9,9 @@ Contributors:
 #ifndef _INPUT_CONTROLLER_HOLDER_
 #define _INPUT_CONTROLLER_HOLDER_
 #include <kamek.hpp>
-#include <game/Input/InputState.hpp>
-#include <game/Input/Controller.hpp>
-#include <game/Input/GhostWriter.hpp>
+#include <MarioKartWii/Input/InputState.hpp>
+#include <MarioKartWii/Input/Controller.hpp>
+#include <MarioKartWii/Input/GhostWriter.hpp>
 
 namespace Input {
 

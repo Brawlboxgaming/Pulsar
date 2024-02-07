@@ -1,9 +1,9 @@
-#include <game/Race/RaceData.hpp>
+#include <MarioKartWii/Race/RaceData.hpp>
 #include <AutoTrackSelect/ChooseNextTrack.hpp>
 #include <SlotExpansion/UI/ExpansionUIMisc.hpp>
 #include <UI/UI.hpp>
 #include <PulsarSystem.hpp>
-#include <game/GlobalFunctions.hpp>
+#include <MarioKartWii/GlobalFunctions.hpp>
 
 
 namespace Pulsar {

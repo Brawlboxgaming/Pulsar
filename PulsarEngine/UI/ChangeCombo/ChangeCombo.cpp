@@ -1,6 +1,6 @@
 #include <core/nw4r/ut/Misc.hpp>
-#include <game/GlobalFunctions.hpp>
-#include <game/Race/RaceData.hpp>
+#include <MarioKartWii/GlobalFunctions.hpp>
+#include <MarioKartWii/Race/RaceData.hpp>
 #include <UI/UI.hpp>
 #include <UI/ChangeCombo/ChangeCombo.hpp>
 

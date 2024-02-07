@@ -1,8 +1,8 @@
 #ifndef _MIIHEADSMODEL_
 #define _MIIHEADSMODEL_
 #include <kamek.hpp>
-#include <game/Mii/Mii.hpp>
-#include <game/3D/Model/ModelDirector.hpp>
+#include <MarioKartWii/Mii/Mii.hpp>
+#include <MarioKartWii/3D/Model/ModelDirector.hpp>
 
 class MiiHeadsModel;
 

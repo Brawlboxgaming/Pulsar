@@ -1,6 +1,6 @@
-#include <game/Race/RaceData.hpp>
-#include <game/Race/RaceInfo/RaceInfo.hpp>
-#include <game/Input/InputManager.hpp>
+#include <MarioKartWii/Race/RaceData.hpp>
+#include <MarioKartWii/Race/RaceInfo/RaceInfo.hpp>
+#include <MarioKartWii/Input/InputManager.hpp>
 #include <Ghost/UI/GhostUI.hpp>
 #include <Ghost/GhostManager.hpp>
 #include <UI/UI.hpp>

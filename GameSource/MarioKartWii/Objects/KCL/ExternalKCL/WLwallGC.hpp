@@ -1,7 +1,7 @@
 #ifndef _WLWALLGC_
 #define _WLWALLGC_
 #include <kamek.hpp>
-#include <game/Objects/KCL/ExternalKCL/ObjectExternKCL.hpp>
+#include <MarioKartWii/Objects/KCL/ExternalKCL/ObjectExternKCL.hpp>
 
 namespace Objects {
 class WLwallGC : public ObjectExternKCL { //ObjectNum 0xcb = 203

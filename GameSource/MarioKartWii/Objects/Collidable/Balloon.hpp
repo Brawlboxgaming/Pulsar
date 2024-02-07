@@ -1,7 +1,7 @@
 #ifndef _BALLOON_OBJECT_
 #define _BALLOON_OBJECT_
 #include <kamek.hpp>
-#include <game/Objects/Collidable/ObjectCollidable.hpp>
+#include <MarioKartWii/Objects/Collidable/ObjectCollidable.hpp>
 
 namespace Objects {
 class Balloon : public ObjectCollidable { //ObjectNum 0xd2 = 210 skyship, 0xda = 218 castleballoon1, 0xca = 202 MashBalloonGC

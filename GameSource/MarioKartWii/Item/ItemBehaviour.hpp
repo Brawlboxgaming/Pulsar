@@ -10,8 +10,8 @@ References:
 #ifndef _ITEMBEHAVIOUR_
 #define _ITEMBEHAVIOUR_
 #include <kamek.hpp>
-#include <game/Item/ItemManager.hpp>
-#include <game/System/Identifiers.hpp>
+#include <MarioKartWii/Item/ItemManager.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
 
 namespace Item {
 enum UseType {

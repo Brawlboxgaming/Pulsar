@@ -1,7 +1,7 @@
 #ifndef _MIIOBJ01_OBJECT_
 #define _MIIOBJ01_OBJECT_
 #include <kamek.hpp>
-#include <game/Objects/Collidable/ObjectCollidable.hpp>
+#include <MarioKartWii/Objects/Collidable/ObjectCollidable.hpp>
 
 namespace Objects {
 class MiiObj01 : public ObjectCollidable { //ObjectNum 0x14d = 333

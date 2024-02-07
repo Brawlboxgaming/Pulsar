@@ -1,8 +1,8 @@
 #ifndef _KINOKO_
 #define _KINOKO_
 #include <kamek.hpp>
-#include <game/Objects/KCL/ExternalKCL/ObjectExternKCL.hpp>
-#include <game/Objects/Collidable/ObjectCollidable.hpp>
+#include <MarioKartWii/Objects/KCL/ExternalKCL/ObjectExternKCL.hpp>
+#include <MarioKartWii/Objects/Collidable/ObjectCollidable.hpp>
 
 namespace Objects {
 

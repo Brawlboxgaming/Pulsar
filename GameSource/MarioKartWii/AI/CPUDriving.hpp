@@ -2,7 +2,7 @@
 #define _CPUDRIVING_
 
 #include <kamek.hpp>
-#include <game/AI/AIBase.hpp>
+#include <MarioKartWii/AI/AIBase.hpp>
 
 class KartAIController;
 namespace KMP { class KTPTHolder; }

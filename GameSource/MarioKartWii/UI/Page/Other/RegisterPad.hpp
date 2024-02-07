@@ -1,9 +1,9 @@
 #ifndef _X61PAGE_
 #define _X61PAGE_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/Menu/CtrlMenuText.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Page/System/RecognizePad.hpp>
+#include <MarioKartWii/UI/Ctrl/Menu/CtrlMenuText.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/System/RecognizePad.hpp>
 
 //_sinit_ at 806056e4
 

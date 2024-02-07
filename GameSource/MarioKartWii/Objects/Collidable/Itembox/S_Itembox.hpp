@@ -1,9 +1,9 @@
 #ifndef _S_ITEMBOX_
 #define _S_ITEMBOX_
 #include <kamek.hpp>
-#include <game/Objects/Collidable/ObjectCollidable.hpp>
-#include <game/Objects/Collidable/Itembox/Itembox.hpp>
-#include <game/KCL/KCLController.hpp>
+#include <MarioKartWii/Objects/Collidable/ObjectCollidable.hpp>
+#include <MarioKartWii/Objects/Collidable/Itembox/Itembox.hpp>
+#include <MarioKartWii/KCL/KCLController.hpp>
 
 namespace Objects {
 

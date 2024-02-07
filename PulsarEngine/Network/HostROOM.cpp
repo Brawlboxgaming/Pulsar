@@ -1,6 +1,6 @@
 #include <kamek.hpp>
-#include <game/RKNet/ROOM.hpp>
-#include <game/RKNet/RKNetController.hpp>
+#include <MarioKartWii/RKNet/ROOM.hpp>
+#include <MarioKartWii/RKNet/RKNetController.hpp>
 #include <Settings/UI/SettingsPanel.hpp>
 #include <Settings/Settings.hpp>
 

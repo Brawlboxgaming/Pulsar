@@ -2,7 +2,7 @@
 #define _HANABI_OBJECT_
 #include <kamek.hpp>
 #include <core/egg/Effect/Effect.hpp>
-#include <game/Objects/Collidable/ObjectCollidable.hpp>
+#include <MarioKartWii/Objects/Collidable/ObjectCollidable.hpp>
 
 namespace Objects {
 class Hanabi : public ObjectCollidable { //ObjectNum 0x16a = 362a

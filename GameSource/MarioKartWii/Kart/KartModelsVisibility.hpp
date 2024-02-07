@@ -1,9 +1,9 @@
 #ifndef _KARTMODELSVISIBILITY_
 #define _KARTMODELSVISIBILITY_
 #include <kamek.hpp>
-#include <game/Kart/KartValues.hpp>
-#include <game/Kart/KartLink.hpp>
-#include <game/3D/Model/ModelDirector.hpp>
+#include <MarioKartWii/Kart/KartValues.hpp>
+#include <MarioKartWii/Kart/KartLink.hpp>
+#include <MarioKartWii/3D/Model/ModelDirector.hpp>
 
 namespace Kart {
 

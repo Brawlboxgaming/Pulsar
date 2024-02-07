@@ -3,13 +3,13 @@
 #include <kamek.hpp>
 #include <core/egg/mem/Heap.hpp>
 #include <core/egg/3D/GXRelated.hpp>
-#include <game/Mii/Mii.hpp>
-#include <game/Mii/MiiGroup.hpp>
-#include <game/Mii/MiiHeadsModel.hpp>
-#include <game/3D/Scn/ScnManager.hpp>
-#include <game/3D/Scn/Renderer.hpp>
-#include <game/3D/Model/ModelDirector.hpp>
-#include <game/3D/Model/ModelCalc.hpp>
+#include <MarioKartWii/Mii/Mii.hpp>
+#include <MarioKartWii/Mii/MiiGroup.hpp>
+#include <MarioKartWii/Mii/MiiHeadsModel.hpp>
+#include <MarioKartWii/3D/Scn/ScnManager.hpp>
+#include <MarioKartWii/3D/Scn/Renderer.hpp>
+#include <MarioKartWii/3D/Model/ModelDirector.hpp>
+#include <MarioKartWii/3D/Model/ModelCalc.hpp>
 
 
 class MiiRenderMgr {

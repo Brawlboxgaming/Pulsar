@@ -1,9 +1,9 @@
 #ifndef _CHARACTERAI_
 #define _CHARACTERAI_
 #include <kamek.hpp>
-#include <game/AI/AIBase.hpp>
-#include <game/Input/InputState.hpp>
-#include <game/Kart/KartLink.hpp>
+#include <MarioKartWii/AI/AIBase.hpp>
+#include <MarioKartWii/Input/InputState.hpp>
+#include <MarioKartWii/Kart/KartLink.hpp>
 
 
 class KartAIController;

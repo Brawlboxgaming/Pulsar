@@ -1,5 +1,5 @@
-#include <game/Kart/KartManager.hpp>
-#include <game/Race/RaceData.hpp>
+#include <MarioKartWii/Kart/KartManager.hpp>
+#include <MarioKartWii/Race/RaceData.hpp>
 #include <Race/UltraMiniTurbos.hpp>
 #include <Sound/MiscSound.hpp>
 #include <PulsarSystem.hpp>

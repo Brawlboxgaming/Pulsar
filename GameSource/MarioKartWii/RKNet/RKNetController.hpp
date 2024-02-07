@@ -4,8 +4,8 @@
 #include <kamek.hpp>
 #include <core/egg/mem/ExpHeap.hpp>
 #include <core/egg/Thread.hpp>
-#include <game/RKNet/PacketHolder.hpp>
-#include <game/RKNet/RACEHeader.hpp>
+#include <MarioKartWii/RKNet/PacketHolder.hpp>
+#include <MarioKartWii/RKNet/RACEHeader.hpp>
 #include <core/rvl/DWC/Error.hpp>
 #include <core/rvl/DWC/DWC.hpp>
 

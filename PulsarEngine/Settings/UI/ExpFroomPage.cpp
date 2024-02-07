@@ -1,5 +1,5 @@
-#include <game/UI/Page/Other/Globe.hpp>
-#include <game/3D/GlobeMgr.hpp>
+#include <MarioKartWii/UI/Page/Other/Globe.hpp>
+#include <MarioKartWii/3D/GlobeMgr.hpp>
 #include <PulsarSystem.hpp>
 #include <Settings/UI/ExpFroomPage.hpp>
 #include <UI/TeamSelect/TeamSelect.hpp>

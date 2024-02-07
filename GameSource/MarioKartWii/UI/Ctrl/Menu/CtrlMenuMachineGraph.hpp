@@ -1,9 +1,9 @@
 #ifndef _CTRLMENUMACHINEGRAPH_
 #define _CTRLMENUMACHINEGRAPH_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
 
-class MachineAbility: public LayoutUIControl { //somehow, get class name isn't changed
+class MachineAbility : public LayoutUIControl { //somehow, get class name isn't changed
     MachineAbility(); //807e7d88
     ~MachineAbility() override; //807e7dc4 vtable 808d345c
     void InitSelf() override; //807e7f44
@@ -12,7 +12,7 @@ class MachineAbility: public LayoutUIControl { //somehow, get class name isn't c
 }; //total size 0x17C
 
 //_sinit_ at 807e8124
-class CtrlMenuMachineGraph: public LayoutUIControl {
+class CtrlMenuMachineGraph : public LayoutUIControl {
 public:
     CtrlMenuMachineGraph(); //80627338
     ~CtrlMenuMachineGraph() override; //80627374 vtable 808d3420

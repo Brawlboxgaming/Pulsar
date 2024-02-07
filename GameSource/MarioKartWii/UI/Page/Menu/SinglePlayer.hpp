@@ -1,8 +1,8 @@
 #ifndef _SINGLEPLAYER_
 #define _SINGLEPLAYER_
 #include <kamek.hpp>
-#include <game/UI/Page/Menu/Menu.hpp>
-#include <game/UI/Ctrl/Menu/CtrlMenuMovie.hpp>
+#include <MarioKartWii/UI/Page/Menu/Menu.hpp>
+#include <MarioKartWii/UI/Ctrl/Menu/CtrlMenuMovie.hpp>
 
 
 //_sinit_ at 8084fc88

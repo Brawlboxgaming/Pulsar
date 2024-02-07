@@ -1,8 +1,8 @@
 #ifndef _PULSARCUPSELECT_
 #define _PULSARCUPSELECT_
 #include <kamek.hpp>
-#include <game/UI/Page/Menu/CupSelect.hpp>
-#include <game/UI/Ctrl/SheetSelect.hpp>
+#include <MarioKartWii/UI/Page/Menu/CupSelect.hpp>
+#include <MarioKartWii/UI/Ctrl/SheetSelect.hpp>
 #include <Settings/Settings.hpp>
 
 namespace Pulsar {

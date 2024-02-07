@@ -1,7 +1,7 @@
 #ifndef _ITEMOBJBOMB_
 #define _ITEMOBJBOMB_
 #include <kamek.hpp>
-#include <game/Item/Obj/ItemObj.hpp>
+#include <MarioKartWii/Item/Obj/ItemObj.hpp>
 
 //_sinit_ at 807a62d8
 namespace Item {

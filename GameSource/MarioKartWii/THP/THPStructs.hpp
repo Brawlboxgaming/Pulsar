@@ -6,7 +6,7 @@
 #include <core/rvl/VI/vi.hpp>
 #include <core/rvl/AI.hpp>
 #include <core/rvl/gx/GXStruct.hpp>
-#include <game/THP/THPFile.hpp>
+#include <MarioKartWii/THP/THPFile.hpp>
 
 namespace THP {
 

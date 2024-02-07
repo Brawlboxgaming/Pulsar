@@ -3,9 +3,9 @@
 #include <kamek.hpp>
 #include <core/egg/mem/Disposer.hpp>
 #include <core/egg/Effect/Effect.hpp>
-#include <game/System/Random.hpp>
-#include <game/Mii/MiiHeadsModel.hpp>
-#include <game/3D/Model/ModelDirector.hpp>
+#include <MarioKartWii/System/Random.hpp>
+#include <MarioKartWii/Mii/MiiHeadsModel.hpp>
+#include <MarioKartWii/3D/Model/ModelDirector.hpp>
 
 
 class GlobeMii {

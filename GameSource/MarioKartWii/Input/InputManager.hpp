@@ -9,10 +9,10 @@ Contributors:
 #ifndef _INPUTMANAGER_
 #define _INPUTMANAGER_
 #include <kamek.hpp>
-#include <game/Input/Controller.hpp>
-#include <game/Input/ControllerHolder.hpp>
-#include <game/Input/Rumble.hpp>
-#include <game/System/Ghost.hpp>
+#include <MarioKartWii/Input/Controller.hpp>
+#include <MarioKartWii/Input/ControllerHolder.hpp>
+#include <MarioKartWii/Input/Rumble.hpp>
+#include <MarioKartWii/System/Ghost.hpp>
 
 namespace Input {
 

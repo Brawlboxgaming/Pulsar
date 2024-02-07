@@ -1,11 +1,11 @@
 #ifndef _CTRLMENUTEXT_
 #define _CTRLMENUTEXT_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/UIControl.hpp>
-#include <game/UI/Ctrl/PushButton.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/UI/Ctrl/PushButton.hpp>
 
 //_sinit_ at 807e9c10
-class CtrlMenuObiTop: public LayoutUIControl {
+class CtrlMenuObiTop : public LayoutUIControl {
     //no ctor
     ~CtrlMenuObiTop() override; //807e9b7c vtable 808d365c
     void SetPositionAnim(PositionAndScale& positionAndScale, float curFrame) override; //807e9a68
@@ -14,7 +14,7 @@ class CtrlMenuObiTop: public LayoutUIControl {
 }; //0x174
 size_assert(CtrlMenuObiTop, 0x174);
 
-class CtrlMenuPageTitleText: public LayoutUIControl {
+class CtrlMenuPageTitleText : public LayoutUIControl {
 public:
     ~CtrlMenuPageTitleText() override; //805baf10 vtable 808d36d4
     void SetPositionAnim(PositionAndScale& positionAndScale, float curFrame) override; //0x20 807e9898
@@ -24,7 +24,7 @@ public:
     void Load(bool r4); //807e947c
 }; //total size 0x174
 
-class CtrlMenuInstructionText: public LayoutUIControl {
+class CtrlMenuInstructionText : public LayoutUIControl {
 public:
     ~CtrlMenuInstructionText() override; //805c00c0 vtable 808d3698
     void SetPositionAnim(PositionAndScale& positionAndScale, float curFrame) override; //0x20 807e999c
@@ -34,7 +34,7 @@ public:
     void SetMsgId(u32 bmgId, const TextInfo* text = nullptr); //807e9a38
 }; //total size 0x174
 
-class CtrlMenuBackButton: public PushButton {
+class CtrlMenuBackButton : public PushButton {
 public:
     CtrlMenuBackButton() {
         bmgId = 0x7d1;
@@ -55,7 +55,7 @@ public:
 }; //total size 0x264
 size_assert(CtrlMenuBackButton, 0x264);
 
-class CtrlMenuDummyBack: public LayoutUIControl { //a back button...but with just the visuals, useful if the page wants to use PageManipulatorManager
+class CtrlMenuDummyBack : public LayoutUIControl { //a back button...but with just the visuals, useful if the page wants to use PageManipulatorManager
     ~CtrlMenuDummyBack() override; //80603890 vtable 808d3710
     void OnUpdate() override; //0x1c 807e9724
     int GetRuntimeTypeInfo() const override; //0x28 807e9bf8

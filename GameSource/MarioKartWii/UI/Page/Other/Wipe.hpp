@@ -1,7 +1,7 @@
 #ifndef _WIPEPAGE_
 #define _WIPEPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
 
 
 //_sinit_ at 806522dc

@@ -1,5 +1,5 @@
 #include <kamek.hpp>
-#include <game/Race/RaceData.hpp>
+#include <MarioKartWii/Race/RaceData.hpp>
 #include <Settings/Settings.hpp>
 #include <Info.hpp>
 #include <SlotExpansion/CupsDef.hpp>

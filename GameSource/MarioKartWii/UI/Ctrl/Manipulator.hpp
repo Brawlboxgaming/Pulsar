@@ -2,8 +2,8 @@
 #define _MANIPULATOR_
 #include <kamek.hpp>
 #include <core/egg/List.hpp>
-#include <game/UI/Ctrl/UIControl.hpp>
-#include <game/Input/ControllerHolder.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/Input/ControllerHolder.hpp>
 
 class ControlManipulator;
 

@@ -1,7 +1,7 @@
 #ifndef _RKNETEVENT_
 #define _RKNETEVENT_
 #include <kamek.hpp>
-#include <game/System/Identifiers.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
 //https://wiki.tockdom.com/wiki/MKWii_Network_Protocol/EVENT
 
 

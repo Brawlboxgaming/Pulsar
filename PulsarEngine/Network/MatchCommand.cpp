@@ -1,4 +1,4 @@
-#include <game/RKNet/RKNetController.hpp>
+#include <MarioKartWii/RKNet/RKNetController.hpp>
 #include <Network/MatchCommand.hpp>
 #include <PulsarSystem.hpp>
 

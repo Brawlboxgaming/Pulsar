@@ -1,7 +1,7 @@
 #ifndef _SHADOW_MODEL_DIRECTOR_
 #define _SHADOW_MODEL_DIRECTOR_
 #include <kamek.hpp>
-#include <game/3D/Model/ModelDirector.hpp>
+#include <MarioKartWii/3D/Model/ModelDirector.hpp>
 
 using namespace nw4r;
 class ShadowModelDirector : public ModelDirector {

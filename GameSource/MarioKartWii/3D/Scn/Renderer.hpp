@@ -2,8 +2,8 @@
 #define _RENDERER_
 #include <kamek.hpp>
 #include <core/egg/mem/Disposer.hpp>
-#include <game/3D/Scn/GameScreen.hpp>
-#include <game/3D/Scn/ScnManager.hpp>
+#include <MarioKartWii/3D/Scn/GameScreen.hpp>
+#include <MarioKartWii/3D/Scn/ScnManager.hpp>
 
 
 class Renderer : public EGG::Disposer {

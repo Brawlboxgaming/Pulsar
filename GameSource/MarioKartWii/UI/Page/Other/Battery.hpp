@@ -1,8 +1,8 @@
 #ifndef _LOWBATTERY_
 #define _LOWBATTERY_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Page/System/RecognizePad.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/System/RecognizePad.hpp>
 
 //_sinit_ at 805c3bb0
 namespace Pages {

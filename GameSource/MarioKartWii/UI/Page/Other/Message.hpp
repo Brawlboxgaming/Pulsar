@@ -1,9 +1,9 @@
 #ifndef _MESSAGEPAGE_
 #define _MESSAGEPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Ctrl/MessageWindowControl.hpp>
-#include <game/UI/Ctrl/Menu/CtrlMenuText.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Ctrl/MessageWindowControl.hpp>
+#include <MarioKartWii/UI/Ctrl/Menu/CtrlMenuText.hpp>
 
 //sinit at 805f96d4
 namespace Pages {

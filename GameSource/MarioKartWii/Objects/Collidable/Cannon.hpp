@@ -1,7 +1,7 @@
 #ifndef _CANNON_OBJECT_
 #define _CANNON_OBJECT_
 #include <kamek.hpp>
-#include <game/Objects/Collidable/ObjectCollidable.hpp>
+#include <MarioKartWii/Objects/Collidable/ObjectCollidable.hpp>
 
 namespace Objects {
 //ObjectNum 0x17a = 378 StarRing, ObjectNum 0x259 = 601 DonkyCannonGC, ObjectNum 0x25f = 607 DonkyCannon_wii, ObjectNum 0x261 = 609 tree_cannon

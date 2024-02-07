@@ -1,7 +1,7 @@
 #ifndef _VOLCANOPIECE_
 #define _VOLCANOPIECE_
 #include <kamek.hpp>
-#include <game/Objects/KCL/ExternalKCL/ObjectExternKCL.hpp>
+#include <MarioKartWii/Objects/KCL/ExternalKCL/ObjectExternKCL.hpp>
 
 namespace Objects {
 class VolcanoPiece : public ObjectExternKCL { //ObjectNum 0x1fc = 508

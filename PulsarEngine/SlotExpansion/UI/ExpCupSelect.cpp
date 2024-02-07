@@ -1,7 +1,7 @@
 #include <core/nw4r/ut/Misc.hpp>
-#include <game/UI/SectionMgr/SectionMgr.hpp>
-#include <game/UI/Page/Menu/CourseSelect.hpp>
-#include <game/Race/RaceData.hpp>
+#include <MarioKartWii/UI/SectionMgr/SectionMgr.hpp>
+#include <MarioKartWii/UI/Page/Menu/CourseSelect.hpp>
+#include <MarioKartWii/Race/RaceData.hpp>
 #include <SlotExpansion/CupsDef.hpp>
 #include <SlotExpansion/UI/ExpCupSelect.hpp>
 #include <UI/UI.hpp>

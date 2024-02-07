@@ -1,9 +1,9 @@
 #ifndef _ITEMOBJGESSO_
 #define _ITEMOBJGESSO_
 #include <kamek.hpp>
-#include <game/Item/Obj/ItemObj.hpp>
-#include <game/Sound/Actors/ItemSound.hpp>
-#include <game/3D/Model/ModelDirector.hpp>
+#include <MarioKartWii/Item/Obj/ItemObj.hpp>
+#include <MarioKartWii/Sound/Actors/ItemSound.hpp>
+#include <MarioKartWii/3D/Model/ModelDirector.hpp>
 
 //_sinit_ at 807a9a58
 namespace Item {

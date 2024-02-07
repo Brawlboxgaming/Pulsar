@@ -1,7 +1,7 @@
 #ifndef _PULUI_
 #define _PULUI_
-#include <game/UI/Ctrl/UIControl.hpp>
-#include <game/UI/Ctrl/Manipulator.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/UI/Ctrl/Manipulator.hpp>
 
 namespace Pulsar {
 namespace UI {

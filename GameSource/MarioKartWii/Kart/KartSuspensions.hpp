@@ -2,8 +2,8 @@
 #define _SUSPENSIONS_
 
 #include <kamek.hpp>
-#include <game/Kart/KartWheel.hpp>
-#include <game/Kart/KartPart.hpp>
+#include <MarioKartWii/Kart/KartWheel.hpp>
+#include <MarioKartWii/Kart/KartPart.hpp>
 
 namespace Kart {
 

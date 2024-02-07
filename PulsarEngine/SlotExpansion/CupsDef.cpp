@@ -1,7 +1,7 @@
-#include <game/Sound/Race/AudioItemAlterationMgr.hpp>
-#include <game/Sound/RaceAudioMgr.hpp>
-#include <game/RKNet/RKNetController.hpp>
-#include <game/GlobalFunctions.hpp>
+#include <MarioKartWii/Sound/Race/AudioItemAlterationMgr.hpp>
+#include <MarioKartWii/Sound/RaceAudioMgr.hpp>
+#include <MarioKartWii/RKNet/RKNetController.hpp>
+#include <MarioKartWii/GlobalFunctions.hpp>
 #include <SlotExpansion/CupsDef.hpp>
 #include <PulsarSystem.hpp>
 

@@ -1,11 +1,11 @@
-#include <game/Archive/ArchiveRoot.hpp>
-#include <game/Race/RaceData.hpp>
-#include <game/UI/SectionMgr/SectionMgr.hpp>
-#include <game/UI/Page/Other/GhostManager.hpp>
-#include <game/UI/Page/Menu/CupSelect.hpp>
-#include <game/UI/Page/Menu/CourseSelect.hpp>
-#include <game/UI/Page/Other/Votes.hpp>
-#include <game/GlobalFunctions.hpp>
+#include <MarioKartWii/Archive/ArchiveRoot.hpp>
+#include <MarioKartWii/Race/RaceData.hpp>
+#include <MarioKartWii/UI/SectionMgr/SectionMgr.hpp>
+#include <MarioKartWii/UI/Page/Other/GhostManager.hpp>
+#include <MarioKartWii/UI/Page/Menu/CupSelect.hpp>
+#include <MarioKartWii/UI/Page/Menu/CourseSelect.hpp>
+#include <MarioKartWii/UI/Page/Other/Votes.hpp>
+#include <MarioKartWii/GlobalFunctions.hpp>
 #include <SlotExpansion/CupsDef.hpp>
 
 namespace Pulsar {

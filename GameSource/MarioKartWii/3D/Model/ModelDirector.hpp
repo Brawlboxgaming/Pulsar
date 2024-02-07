@@ -3,11 +3,11 @@
 #include <kamek.hpp>
 #include <core/nw4r/g3d.hpp>
 #include <core/egg/3D/Scn.hpp>
-#include <game/Archive/ArchiveRoot.hpp>
-#include <game/3D/Scn/ScnManager.hpp>
-#include <game/3D/Scn/Light.hpp>
-#include <game/3D/Model/ModelTransformator.hpp>
-#include <game/3D/Model/ModelCalc.hpp>
+#include <MarioKartWii/Archive/ArchiveRoot.hpp>
+#include <MarioKartWii/3D/Scn/ScnManager.hpp>
+#include <MarioKartWii/3D/Scn/Light.hpp>
+#include <MarioKartWii/3D/Model/ModelTransformator.hpp>
+#include <MarioKartWii/3D/Model/ModelCalc.hpp>
 
 /*
 Contributors:

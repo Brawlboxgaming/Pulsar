@@ -2,7 +2,7 @@
 #define _TOADETTE_
 #include <kamek.hpp>
 #include <core/egg/mem/Disposer.hpp>
-#include <game/3D/Model/ModelDirector.hpp>
+#include <MarioKartWii/3D/Model/ModelDirector.hpp>
 
 class DriverController;
 

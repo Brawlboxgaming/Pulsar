@@ -4,8 +4,8 @@
 #include <core/rvl/RFL.hpp>
 #include <core/rvl/gx/GX.hpp>
 #include <core/egg/mem/Heap.hpp>
-#include <game/System/Random.hpp>
-#include <game/System/Identifiers.hpp>
+#include <MarioKartWii/System/Random.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
 
 /*
 Contributors:

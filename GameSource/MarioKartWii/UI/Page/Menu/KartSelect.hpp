@@ -2,13 +2,13 @@
 #define _KARTSELECT_
 
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Page/Menu/Menu.hpp>
-#include <game/UI/Ctrl/Menu/CtrlMenuMachineGraph.hpp>
-#include <game/Race/racedata.hpp>
-#include <game/System/identifiers.hpp>
-#include <game/UI/Ctrl/ModelControl.hpp>
-#include <game/UI/Ctrl/CountDown.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/Menu/Menu.hpp>
+#include <MarioKartWii/UI/Ctrl/Menu/CtrlMenuMachineGraph.hpp>
+#include <MarioKartWii/Race/racedata.hpp>
+#include <MarioKartWii/System/identifiers.hpp>
+#include <MarioKartWii/UI/Ctrl/ModelControl.hpp>
+#include <MarioKartWii/UI/Ctrl/CountDown.hpp>
 
 /*
 Contributors:

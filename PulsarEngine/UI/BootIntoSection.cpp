@@ -2,9 +2,9 @@
 #include <core/rvl/pad.hpp>
 #include <core/rvl/kpad.hpp>
 #include <core/System/SystemManager.hpp>
-#include <game/Input/InputManager.hpp>
-#include <game/UI/SectionMgr/SectionMgr.hpp>
-#include <game/Race/racedata.hpp>
+#include <MarioKartWii/Input/InputManager.hpp>
+#include <MarioKartWii/UI/SectionMgr/SectionMgr.hpp>
+#include <MarioKartWii/Race/racedata.hpp>
 #include <Settings/Settings.hpp>
 
 namespace Pulsar {

@@ -1,6 +1,6 @@
 #ifndef _GOBJ_
 #define _GOBJ_
-#include <game/KMP/KMPBlockBase.hpp>
+#include <MarioKartWii/KMP/KMPBlockBase.hpp>
 
 
 struct GOBJ {

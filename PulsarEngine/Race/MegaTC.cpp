@@ -1,6 +1,6 @@
-#include <game/Item/ItemManager.hpp>
-#include <game/Item/Obj/Kumo.hpp>
-#include <game/Kart/KartMovement.hpp>
+#include <MarioKartWii/Item/ItemManager.hpp>
+#include <MarioKartWii/Item/Obj/Kumo.hpp>
+#include <MarioKartWii/Kart/KartMovement.hpp>
 #include <Info.hpp>
 
 

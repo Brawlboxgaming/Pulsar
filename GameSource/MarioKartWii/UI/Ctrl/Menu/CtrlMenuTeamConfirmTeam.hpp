@@ -1,10 +1,10 @@
 #ifndef _CTRLMENUTEAMCONFIRMTEAM_
 #define _CTRLMENUTEAMCONFIRMTEAM_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
 
 //_sinit_ at 807ea24c
-class CtrlMenuTeamConfirmTeam: public LayoutUIControl {
+class CtrlMenuTeamConfirmTeam : public LayoutUIControl {
     CtrlMenuTeamConfirmTeam(); //80628ab4
     ~CtrlMenuTeamConfirmTeam() override; //80628b10 vtable 808d37d8
     void InitSelf() override; //0x18 807e9f5c

@@ -1,7 +1,7 @@
 #ifndef _ITEMSOUND_
 #define _ITEMSOUND_
 #include <kamek.hpp>
-#include <game/Sound/Actors/RaceActor.hpp>
+#include <MarioKartWii/Sound/Actors/RaceActor.hpp>
 
 using namespace nw4r;
 

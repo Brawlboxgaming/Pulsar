@@ -1,9 +1,9 @@
 #ifndef _BATTLESETTINGS_
 #define _BATTLESETTINGS_
 #include <kamek.hpp>
-#include <game/UI/Page/Menu/Menu.hpp>
-#include <game/UI/Ctrl/UpDown.hpp>
-#include <game/UI/Ctrl/RadioButton.hpp>
+#include <MarioKartWii/UI/Page/Menu/Menu.hpp>
+#include <MarioKartWii/UI/Ctrl/UpDown.hpp>
+#include <MarioKartWii/UI/Ctrl/RadioButton.hpp>
 
 //_sinit_ at 8083cb44
 namespace Pages {

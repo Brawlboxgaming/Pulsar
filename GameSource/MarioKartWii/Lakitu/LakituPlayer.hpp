@@ -2,7 +2,7 @@
 #define _LAKITUPLAYER_
 #include <kamek.hpp>
 #include <core/egg/mem/Disposer.hpp>
-#include <game/Lakitu/LakituActions.hpp>
+#include <MarioKartWii/Lakitu/LakituActions.hpp>
 
 /*
 Contributors:

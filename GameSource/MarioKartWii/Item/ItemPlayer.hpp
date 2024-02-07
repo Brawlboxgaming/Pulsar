@@ -2,8 +2,8 @@
 #define _ITEM_PLAYER_
 
 #include <kamek.hpp>
-#include <game/System/Identifiers.hpp>
-#include <game/Kart/KartPointers.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
+#include <MarioKartWii/Kart/KartPointers.hpp>
 
 namespace Item {
 class Player;

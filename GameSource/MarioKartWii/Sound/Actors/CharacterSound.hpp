@@ -1,9 +1,9 @@
 #ifndef _CHARACTERSOUND_
 #define _CHARACTERSOUND_
 #include <kamek.hpp>
-#include <game/Race/RaceData.hpp>
-#include <game/Sound/Other/RandomAudioMgr.hpp>
-#include <game/Sound/Actors/RaceActor.hpp>
+#include <MarioKartWii/Race/RaceData.hpp>
+#include <MarioKartWii/Sound/Other/RandomAudioMgr.hpp>
+#include <MarioKartWii/Sound/Actors/RaceActor.hpp>
 
 using namespace nw4r;
 class DriverController;

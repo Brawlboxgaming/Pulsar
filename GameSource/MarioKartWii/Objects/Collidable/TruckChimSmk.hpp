@@ -1,7 +1,7 @@
 #ifndef _TRUCKCHIMSMK_OBJECT_
 #define _TRUCKCHIMSMK_OBJECT_
 #include <kamek.hpp>
-#include <game/Objects/Collidable/ObjectCollidable.hpp>
+#include <MarioKartWii/Objects/Collidable/ObjectCollidable.hpp>
 
 namespace Objects {
 

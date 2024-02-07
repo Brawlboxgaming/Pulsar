@@ -1,7 +1,7 @@
 #ifndef _KURIBO_
 #define _KURIBO_
 #include <kamek.hpp>
-#include <game/Objects/Collidable/ObjectCollidable.hpp>
+#include <MarioKartWii/Objects/Collidable/ObjectCollidable.hpp>
 
 //Goomba, just as an example
 namespace Objects {

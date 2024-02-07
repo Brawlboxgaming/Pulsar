@@ -1,10 +1,10 @@
 #ifndef _OPTIONS_
 #define _OPTIONS_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Ctrl/MessageWindowControl.hpp>
-#include <game/UI/Ctrl/Menu/CtrlMenuText.hpp>
-#include <game/UI/Ctrl/PushButton.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Ctrl/MessageWindowControl.hpp>
+#include <MarioKartWii/UI/Ctrl/Menu/CtrlMenuText.hpp>
+#include <MarioKartWii/UI/Ctrl/PushButton.hpp>
 
 /*
 Contributors:

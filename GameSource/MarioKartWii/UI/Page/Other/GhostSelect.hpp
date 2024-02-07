@@ -2,13 +2,13 @@
 #define _GHOSTSELECT_
 
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
 
-#include <game/UI/Page/Other/GhostManager.hpp>
-#include <game/Mii/MiiGroup.hpp>
-#include <game/UI/Ctrl/SheetSelect.hpp>
-#include <game/UI/Ctrl/GhostInfoControl.hpp>
-#include <game/UI/Ctrl/Menu/CtrlMenuText.hpp>
+#include <MarioKartWii/UI/Page/Other/GhostManager.hpp>
+#include <MarioKartWii/Mii/MiiGroup.hpp>
+#include <MarioKartWii/UI/Ctrl/SheetSelect.hpp>
+#include <MarioKartWii/UI/Ctrl/GhostInfoControl.hpp>
+#include <MarioKartWii/UI/Ctrl/Menu/CtrlMenuText.hpp>
 
 /*
 Contributors:

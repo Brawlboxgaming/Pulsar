@@ -1,7 +1,7 @@
 #ifndef _BBLOCK_
 #define _BBLOCK_
 #include <kamek.hpp>
-#include <game/Objects/KCL/ExternalKCL/VolcanoPiece.hpp>
+#include <MarioKartWii/Objects/KCL/ExternalKCL/VolcanoPiece.hpp>
 
 namespace Objects {
 class bblock : public VolcanoPiece { //ObjectNum 0x20d = 525

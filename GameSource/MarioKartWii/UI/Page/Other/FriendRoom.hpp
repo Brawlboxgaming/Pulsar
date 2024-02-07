@@ -1,15 +1,15 @@
 #ifndef _FRIENDROOMPAGE_
 #define _FRIENDROOMPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Page/Other/GlobeSearch.hpp>
-#include <game/UI/Ctrl/UIControl.hpp>
-#include <game/UI/Ctrl/Menu/CtrlMenuText.hpp>
-#include <game/UI/Ctrl/PushButton.hpp>
-#include <game/UI/Ctrl/SheetSelect.hpp>
-#include <game/UI/Ctrl/CountDown.hpp>
-#include <game/UI/Ctrl/MessageWindowControl.hpp>
-#include <game/RKNet/Room.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/Other/GlobeSearch.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/UI/Ctrl/Menu/CtrlMenuText.hpp>
+#include <MarioKartWii/UI/Ctrl/PushButton.hpp>
+#include <MarioKartWii/UI/Ctrl/SheetSelect.hpp>
+#include <MarioKartWii/UI/Ctrl/CountDown.hpp>
+#include <MarioKartWii/UI/Ctrl/MessageWindowControl.hpp>
+#include <MarioKartWii/RKNet/Room.hpp>
 
 
 namespace Pages {

@@ -1,9 +1,9 @@
 #ifndef _PUL_LEADERBOARD_
 #define _PUL_LEADERBOARD_
 #include <kamek.hpp>
-#include <game/UI/SectionMgr/SectionPad.hpp>
-#include <game/System/SaveDataManager.hpp>
-#include <game/System/Timer.hpp>
+#include <MarioKartWii/UI/SectionMgr/SectionPad.hpp>
+#include <MarioKartWii/System/SaveDataManager.hpp>
+#include <MarioKartWii/System/Timer.hpp>
 #include <PulsarSystem.hpp>
 
 

@@ -1,7 +1,7 @@
 #ifndef _SHEETSELECT_
 #define _SHEETSELECT_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/PushButton.hpp>
+#include <MarioKartWii/UI/Ctrl/PushButton.hpp>
 //_sinit_ at 806374e8
 
 class SheetSelectControl : public UIControl { //arrowpair

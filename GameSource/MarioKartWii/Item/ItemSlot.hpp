@@ -3,7 +3,7 @@
 
 #include <kamek.hpp>
 #include <core/egg/mem/Disposer.hpp>
-#include <game/System/Identifiers.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
 
 /*
 ItemSlotData is the class that handles data from ItemSlot.bin / ItemSlotTable.slt

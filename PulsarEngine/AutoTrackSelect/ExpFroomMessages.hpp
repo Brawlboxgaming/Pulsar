@@ -1,11 +1,11 @@
 #include <kamek.hpp>
-#include <game/UI/Page/Other/FriendRoom.hpp>
+#include <MarioKartWii/UI/Page/Other/FriendRoom.hpp>
 
 
 namespace Pulsar {
 namespace UI {
 
-class ExpFroomMessages: public Pages::FriendRoomMessages {
+class ExpFroomMessages : public Pages::FriendRoomMessages {
 public:
     static bool isOnModeSelection;
     static u32 clickedButtonIdx;

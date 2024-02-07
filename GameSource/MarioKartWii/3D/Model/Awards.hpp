@@ -4,10 +4,10 @@
 #include <core/egg/mem/Disposer.hpp>
 #include <core/egg/Effect/Effect.hpp>
 #include <core/egg/Effect/EffectResource.hpp>
-#include <game/3D/Model/ModelDirector.hpp>
-#include <game/3D/Model/ShadowModelDirector.hpp>
-#include <game/Mii/MiiHeadsModel.hpp>
-#include <game/Race/RaceData.hpp>
+#include <MarioKartWii/3D/Model/ModelDirector.hpp>
+#include <MarioKartWii/3D/Model/ShadowModelDirector.hpp>
+#include <MarioKartWii/Mii/MiiHeadsModel.hpp>
+#include <MarioKartWii/Race/RaceData.hpp>
 
 using namespace nw4r;
 

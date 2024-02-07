@@ -1,9 +1,9 @@
 #ifndef _ACTIONLESSPAGE_
 #define _ACTIONLESSPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Ctrl/Menu/CtrlMenuText.hpp>
-#include <game/UI/Ctrl/MessageWindowControl.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Ctrl/Menu/CtrlMenuText.hpp>
+#include <MarioKartWii/UI/Ctrl/MessageWindowControl.hpp>
 
 //_sinit_ at 805bb294
 namespace Pages {

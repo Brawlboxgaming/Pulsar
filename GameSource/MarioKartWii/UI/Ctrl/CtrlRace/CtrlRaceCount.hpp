@@ -1,7 +1,7 @@
 #ifndef _CTRLRACECOUNT_
 #define _CTRLRACECOUNT_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/CtrlRace/CtrlRaceBase.hpp>
+#include <MarioKartWii/UI/Ctrl/CtrlRace/CtrlRaceBase.hpp>
 
 //_sinit_ at 807ee474
 class CtrlRaceCount : public CtrlRaceBase {

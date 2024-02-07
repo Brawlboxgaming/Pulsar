@@ -1,10 +1,10 @@
 #ifndef _MENUPAGE_
 #define _MENUPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Ctrl/ModelControl.hpp>
-#include <game/UI/Ctrl/Menu/CtrlMenuMovie.hpp>
-#include <game/UI/Page/Other/Message.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Ctrl/ModelControl.hpp>
+#include <MarioKartWii/UI/Ctrl/Menu/CtrlMenuMovie.hpp>
+#include <MarioKartWii/UI/Page/Other/Message.hpp>
 
 //_sinit_ at 80838b18
 namespace Pages {

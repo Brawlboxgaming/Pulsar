@@ -1,11 +1,11 @@
 #ifndef _CTRLRACE2DMAP_
 #define _CTRLRACE2DMAP_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/CtrlRace/CtrlRaceBase.hpp>
+#include <MarioKartWii/UI/Ctrl/CtrlRace/CtrlRaceBase.hpp>
 
 //_sinit_ at 807ebeec
 
-class CtrlRace2DMapObject: public CtrlRaceBase { //used as a base for other objects but also used for the start line as is
+class CtrlRace2DMapObject : public CtrlRaceBase { //used as a base for other objects but also used for the start line as is
     ~CtrlRace2DMapObject() override; //807ea930 vtable 808d3900
     void InitSelf() override; //0x18 807eac2c
     void OnUpdate() override; //0x1c 807eac88
@@ -20,7 +20,7 @@ class CtrlRace2DMapObject: public CtrlRaceBase { //used as a base for other obje
     Vec3 mapRotation; //0x1a0
 }; //0x1b4
 
-class CtrlRace2DMapCharacter: public CtrlRace2DMapObject {
+class CtrlRace2DMapCharacter : public CtrlRace2DMapObject {
     CtrlRace2DMapCharacter(); //807ea89c
     ~CtrlRace2DMapCharacter() override; //807ea98c vtable 808d389c
     void InitSelf() override; //0x18 807eaecc
@@ -33,7 +33,7 @@ class CtrlRace2DMapCharacter: public CtrlRace2DMapObject {
     u8 unknown_0x1b4[0x1CC - 0x1B4];
 }; //total size 0x1cc
 
-class CtrlRace2DMapBossObj: public CtrlRace2DMapObject {
+class CtrlRace2DMapBossObj : public CtrlRace2DMapObject {
     CtrlRace2DMapBossObj(); //807ea9ec
     ~CtrlRace2DMapBossObj() override; //807eaa28 vtable 808d3838
     void InitSelf() override; //0x18 807eba60
@@ -45,7 +45,7 @@ class CtrlRace2DMapBossObj: public CtrlRace2DMapObject {
     u8 unknown_0x1b4[0x1bc - 0x1b4];
 }; //total size 0x1bc
 
-class CtrlRace2DMap: public CtrlRaceBase { //has children controls such as start line
+class CtrlRace2DMap : public CtrlRaceBase { //has children controls such as start line
     ~CtrlRace2DMap() override; //807ebe84 vtable 808d3960
     void InitSelf() override; //807eaac0
     void OnUpdate() override; //807eab3c

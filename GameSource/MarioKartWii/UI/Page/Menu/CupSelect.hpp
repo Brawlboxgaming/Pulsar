@@ -1,8 +1,8 @@
 #ifndef _CUPSELECT_
 #define _CUPSELECT_
 #include <kamek.hpp>
-#include <game/UI/Page/Menu/Menu.hpp>
-#include <game/UI/Ctrl/Menu/CtrlMenuCup.hpp>
+#include <MarioKartWii/UI/Page/Menu/Menu.hpp>
+#include <MarioKartWii/UI/Ctrl/Menu/CtrlMenuCup.hpp>
 
 
 

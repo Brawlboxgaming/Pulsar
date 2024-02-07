@@ -1,7 +1,7 @@
 #ifndef _RKNETPACKETHOLDER_
 #define _RKNETPACKETHOLDER_
 #include <kamek.hpp>
-#include <game/System/Identifiers.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
 
 namespace RKNet {
 

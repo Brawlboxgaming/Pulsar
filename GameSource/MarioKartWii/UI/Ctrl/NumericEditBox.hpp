@@ -1,7 +1,7 @@
 #ifndef _NUMERICEDITBOX_
 #define _NUMERICEDITBOX_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/Manipulator.hpp>
+#include <MarioKartWii/UI/Ctrl/Manipulator.hpp>
 
 
 //_sinit_ at 805cadc0

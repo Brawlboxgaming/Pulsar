@@ -4,8 +4,8 @@
 #include <kamek.hpp>
 #include <core/rvl/ipc/ipc.hpp>
 #include <core/RK/RKSystem.hpp>
-#include <game/UI/Text.hpp>
-#include <game/System/Identifiers.hpp>
+#include <MarioKartWii/UI/Text.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
 #include <Debug/Debug.hpp>
 #include <Info.hpp>
 #include <SlotExpansion/CupsDef.hpp>

@@ -1,12 +1,12 @@
 #ifndef _OBJECT_MGR_
 #define _OBJECT_MGR_
 #include <kamek.hpp>
-#include <game/File/Tables/ObjFlow.hpp>
-#include <game/File/Tables/GeoHitTable.hpp>
-#include <game/Objects/Object.hpp>
-#include <game/Objects/ObjectCollision.hpp>
-#include <game/Item/Obj/ItemObj.hpp>
-#include <game/KMP/KMPManager.hpp>
+#include <MarioKartWii/File/Tables/ObjFlow.hpp>
+#include <MarioKartWii/File/Tables/GeoHitTable.hpp>
+#include <MarioKartWii/Objects/Object.hpp>
+#include <MarioKartWii/Objects/ObjectCollision.hpp>
+#include <MarioKartWii/Item/Obj/ItemObj.hpp>
+#include <MarioKartWii/KMP/KMPManager.hpp>
 
 
 class ObjFlowHolder {

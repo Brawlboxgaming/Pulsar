@@ -1,9 +1,9 @@
 #ifndef _GPVS_LEADERBOARDUPDATE_PAGE_
 #define _GPVS_LEADERBOARDUPDATE_PAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Page/Leaderboard/Leaderboard.hpp>
-#include <game/UI/Ctrl//CtrlRace/CtrlRaceResult.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/Leaderboard/Leaderboard.hpp>
+#include <MarioKartWii/UI/Ctrl//CtrlRace/CtrlRaceResult.hpp>
 
 //_sinit_ at 8085e644
 namespace Pages {

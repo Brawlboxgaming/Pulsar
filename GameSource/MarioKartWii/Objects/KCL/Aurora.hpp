@@ -1,7 +1,7 @@
 #ifndef _AURORA_
 #define _AURORA_
 #include <kamek.hpp>
-#include <game/Objects/KCL/ObjectKCL.hpp>
+#include <MarioKartWii/Objects/KCL/ObjectKCL.hpp>
 
 //Goomba, just as an example
 namespace Objects {

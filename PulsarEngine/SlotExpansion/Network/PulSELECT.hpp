@@ -1,5 +1,5 @@
 #include <kamek.hpp>
-#include <game/RKNet/Select.hpp>
+#include <MarioKartWii/RKNet/Select.hpp>
 
 namespace Pulsar {
 namespace Network {

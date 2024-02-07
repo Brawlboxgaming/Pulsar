@@ -1,8 +1,8 @@
 #ifndef _KCLHANDLER_
 #define _KCLHANDLER_
 #include <kamek.hpp>
-#include <game/File/KCL.hpp>
-#include <game/KCL/Collision.hpp>
+#include <MarioKartWii/File/KCL.hpp>
+#include <MarioKartWii/KCL/Collision.hpp>
 
 class ObjectKCL;
 struct CollisionInfo { //match = matches the "accepted" kcl types bitfield

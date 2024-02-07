@@ -1,10 +1,10 @@
 #ifndef _WWRACESUPPORTINGPAGES_
 #define _WWRACESUPPORTINGPAGES_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Ctrl/MessageWindowControl.hpp>
-#include <game/UI/Ctrl/PushButton.hpp>
-#include <game/UI/Ctrl/CountDown.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Ctrl/MessageWindowControl.hpp>
+#include <MarioKartWii/UI/Ctrl/PushButton.hpp>
+#include <MarioKartWii/UI/Ctrl/CountDown.hpp>
 
 //_sinit_ at 8064fba8
 class FriendStatusButtonRaceAfter : public PushButton {

@@ -2,7 +2,7 @@
 #define _LINKED_3D_POINTS_
 #include <kamek.hpp>
 #include <core/nw4r/ut.hpp>
-#include <game/KMP/KMPManager.hpp>
+#include <MarioKartWii/KMP/KMPManager.hpp>
 
 //This class is used for 3D points that physically linked to each other, the best example being Hanachan's parts
 class Linked3DPoints {

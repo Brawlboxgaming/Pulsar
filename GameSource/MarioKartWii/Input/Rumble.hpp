@@ -1,7 +1,7 @@
 #ifndef _RUMBLE_
 #define _RUMBLE_
 #include <kamek.hpp>
-#include <game/File/KRM.hpp>
+#include <MarioKartWii/File/KRM.hpp>
 
 namespace Input {
 

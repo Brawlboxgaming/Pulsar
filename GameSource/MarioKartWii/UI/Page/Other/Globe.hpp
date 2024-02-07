@@ -1,8 +1,8 @@
 #ifndef _GLOBEPAGE_
 #define _GLOBEPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Ctrl/UIControl.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Ctrl/UIControl.hpp>
 
 
 

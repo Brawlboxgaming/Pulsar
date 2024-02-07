@@ -2,11 +2,11 @@
 #define _KARTWHEEL_
 
 #include <kamek.hpp>
-#include <game/Kart/KartLink.hpp>
-#include <game/Kart/KartPart.hpp>
-#include <game/Kart/KartValues.hpp>
-#include <game/Kart/Hitbox.hpp>
-#include <game/Kart/KartBRRESHandle.hpp>
+#include <MarioKartWii/Kart/KartLink.hpp>
+#include <MarioKartWii/Kart/KartPart.hpp>
+#include <MarioKartWii/Kart/KartValues.hpp>
+#include <MarioKartWii/Kart/Hitbox.hpp>
+#include <MarioKartWii/Kart/KartBRRESHandle.hpp>
 
 namespace Kart {
 

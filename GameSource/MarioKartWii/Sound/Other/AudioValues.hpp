@@ -5,8 +5,8 @@
 #include <core/egg/Audio/AudioTrack.hpp>
 #include <core/egg/mem/Heap.hpp>
 #include <core/egg/mem/Disposer.hpp>
-#include <game/Sound/SingleSoundPlayer.hpp>
-#include <game/System/Identifiers.hpp>
+#include <MarioKartWii/Sound/SingleSoundPlayer.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
 
 /*
 Contributors:

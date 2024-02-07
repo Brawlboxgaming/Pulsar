@@ -1,8 +1,8 @@
 #ifndef _PULSOM_
 #define _PULSOM_
 #include <kamek.hpp>
-#include <game/Kart/KartManager.hpp>
-#include <game/UI/SectionMgr/SectionMgr.hpp>
+#include <MarioKartWii/Kart/KartManager.hpp>
+#include <MarioKartWii/UI/SectionMgr/SectionMgr.hpp>
 #include <UI/CtrlRaceBase/CustomCtrlRaceBase.hpp>
 
 //Simple speedometer that uses TPLs instead of text because the default font numbers have a very ugly black outline

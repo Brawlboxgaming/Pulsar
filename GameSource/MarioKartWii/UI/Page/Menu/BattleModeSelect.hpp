@@ -1,7 +1,7 @@
 #ifndef _BATTLEMODESELECT_
 #define _BATTLEMODESELECT_
 #include <kamek.hpp>
-#include <game/UI/Page/Menu/Menu.hpp>
+#include <MarioKartWii/UI/Page/Menu/Menu.hpp>
 
 //_sinit_ at 8083bb38
 namespace Pages {

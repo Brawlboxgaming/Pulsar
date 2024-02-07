@@ -1,14 +1,14 @@
 #ifndef _ITEMOBJ_
 #define _ITEMOBJ_
 #include <kamek.hpp>
-#include <game/System/Identifiers.hpp>
-#include <game/3D/ClipInfoMgr.hpp>
-#include <game/Entity/EntityManager.hpp>
-#include <game/3D/Model/ModelDirector.hpp>
-#include <game/3D/Model/ShadowModelDirector.hpp>
-#include <game/3D/Model/ModelCalc.hpp>
-#include <game/Sound/Actors/ItemSound.hpp>
-#include <game/KCL/Collision.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
+#include <MarioKartWii/3D/ClipInfoMgr.hpp>
+#include <MarioKartWii/Entity/EntityManager.hpp>
+#include <MarioKartWii/3D/Model/ModelDirector.hpp>
+#include <MarioKartWii/3D/Model/ShadowModelDirector.hpp>
+#include <MarioKartWii/3D/Model/ModelCalc.hpp>
+#include <MarioKartWii/Sound/Actors/ItemSound.hpp>
+#include <MarioKartWii/KCL/Collision.hpp>
 
 namespace Item {
 class Obj;

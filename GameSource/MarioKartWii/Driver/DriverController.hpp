@@ -2,12 +2,12 @@
 #define _DRIVERCONTROLLER_
 #include <kamek.hpp>
 #include <core/nw4r/g3d/res/ResNode.hpp>
-#include <game/Kart/KartLink.hpp>
-#include <game/3D/Model/ModelDirector.hpp>
-#include <game/Driver/Tico.hpp>
-#include <game/Driver/Toadette.hpp>
-#include <game/Mii/MiiHeadsModel.hpp>
-#include <game/Sound/Actors/CharacterSound.hpp>
+#include <MarioKartWii/Kart/KartLink.hpp>
+#include <MarioKartWii/3D/Model/ModelDirector.hpp>
+#include <MarioKartWii/Driver/Tico.hpp>
+#include <MarioKartWii/Driver/Toadette.hpp>
+#include <MarioKartWii/Mii/MiiHeadsModel.hpp>
+#include <MarioKartWii/Sound/Actors/CharacterSound.hpp>
 
 using namespace nw4r;
 class DriverController;

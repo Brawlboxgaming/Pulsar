@@ -1,11 +1,11 @@
 #include <kamek.hpp>
-#include <game/Race/racedata.hpp>
-#include <game/Race/RaceInfo/RaceInfo.hpp>
-#include <game/KMP/KMPManager.hpp>
-#include <game/Kart/KartValues.hpp>
-#include <game/Kart/KartMovement.hpp>
-#include <game/Lakitu/LakituManager.hpp>
-#include <game/Item/Obj/ItemObj.hpp>
+#include <MarioKartWii/Race/racedata.hpp>
+#include <MarioKartWii/Race/RaceInfo/RaceInfo.hpp>
+#include <MarioKartWii/KMP/KMPManager.hpp>
+#include <MarioKartWii/Kart/KartValues.hpp>
+#include <MarioKartWii/Kart/KartMovement.hpp>
+#include <MarioKartWii/Lakitu/LakituManager.hpp>
+#include <MarioKartWii/Item/Obj/ItemObj.hpp>
 #include <Race/200ccParams.hpp>
 
 namespace Pulsar {

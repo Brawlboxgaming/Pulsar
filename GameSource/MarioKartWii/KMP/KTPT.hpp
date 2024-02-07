@@ -1,6 +1,6 @@
 #ifndef _KTPT_
 #define _KTPT_
-#include <game/KMP/KMPBlockBase.hpp>
+#include <MarioKartWii/KMP/KMPBlockBase.hpp>
 
 struct KTPT {
     Vec3 position;

@@ -1,8 +1,8 @@
 #ifndef _STARTGAMEOKPAGE_
 #define _STARTGAMEOKPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/Menu/Menu.hpp>
-#include <game/UI/Ctrl/Menu/CtrlMenuText.hpp>
+#include <MarioKartWii/UI/Page/Menu/Menu.hpp>
+#include <MarioKartWii/UI/Ctrl/Menu/CtrlMenuText.hpp>
 
 //_sinit_ at 80842a64
 namespace Pages {

@@ -1,6 +1,6 @@
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/SectionMgr/SectionMgr.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/SectionMgr/SectionMgr.hpp>
 #include <Settings/Settings.hpp>
 
 namespace Pulsar {

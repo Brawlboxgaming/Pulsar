@@ -1,8 +1,8 @@
 #ifndef _WLSCREENGC_
 #define _WLSCREENGC_
 #include <kamek.hpp>
-#include <game/Objects/Collidable/ObjectCollidable.hpp>
-#include <game/3D/TextureHolder.hpp>
+#include <MarioKartWii/Objects/Collidable/ObjectCollidable.hpp>
+#include <MarioKartWii/3D/TextureHolder.hpp>
 
 namespace Objects {
 

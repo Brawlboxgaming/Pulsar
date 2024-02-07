@@ -1,10 +1,10 @@
 #ifndef _BATTLEKARTSELECT_
 #define _BATTLEKARTSELECT_
 #include <kamek.hpp>
-#include <game/UI/Page/Menu/Menu.hpp>
-#include <game/UI/Page/Menu/CharacterSelect.hpp>
-#include <game/UI/Page/Menu/KartSelect.hpp>
-#include <game/UI/Ctrl/ModelControl.hpp>
+#include <MarioKartWii/UI/Page/Menu/Menu.hpp>
+#include <MarioKartWii/UI/Page/Menu/CharacterSelect.hpp>
+#include <MarioKartWii/UI/Page/Menu/KartSelect.hpp>
+#include <MarioKartWii/UI/Ctrl/ModelControl.hpp>
 
 //_sinit_ at 8083b0cc
 namespace Pages {

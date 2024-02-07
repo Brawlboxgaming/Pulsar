@@ -1,10 +1,10 @@
 #ifndef _LEADERBOARDPAGE_
 #define _LEADERBOARDPAGE_
-#include <game/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
 
 //_sinit_ at 8085c3cc
 namespace Pages {
-class Leaderboard: public Page { //used for tt leaderboard, GP/VS score table etc..
+class Leaderboard : public Page { //used for tt leaderboard, GP/VS score table etc..
 public:
     Leaderboard(); //8085be44
     ~Leaderboard() override; //80625198 vtable 808da9cc

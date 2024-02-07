@@ -1,7 +1,7 @@
 #ifndef _BIKEPARTSDISPPARAM_
 #define _BIKEPARTSDISPPARAM_
 #include <kamek.hpp>
-#include <game/File/DispParams/CommonDisp.hpp>
+#include <MarioKartWii/File/DispParams/CommonDisp.hpp>
 
 class BikePartsDispParam { //https://wiki.tockdom.com/wiki/BikePartsDispParam.bin
 public:

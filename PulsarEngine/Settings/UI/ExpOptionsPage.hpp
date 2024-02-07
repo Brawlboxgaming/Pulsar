@@ -1,12 +1,12 @@
 #ifndef _PUL_OPTIONS_
 #define _PUL_OPTIONS_
 #include <kamek.hpp>
-#include <game/UI/Page/Other/Options.hpp>
+#include <MarioKartWii/UI/Page/Other/Options.hpp>
 
 //Extends Options to add a settings button
 namespace Pulsar {
 namespace UI {
-class ExpOptions: public Pages::Options {
+class ExpOptions : public Pages::Options {
 public:
     ExpOptions() {
         this->onButtonClickHandler.ptmf = &ExpOptions::ExpandedOnButtonClick;

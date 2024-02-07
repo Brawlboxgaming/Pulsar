@@ -1,10 +1,10 @@
 #include <kamek.hpp>
-#include <game/Kart/KartManager.hpp>
-#include <game/Race/RaceInfo/RaceInfo.hpp>
-#include <game/Sound/RSARSounds.hpp>
-#include <game/Sound/RaceAudioMgr.hpp>
-#include <game/Sound/Actors/KartSound.hpp>
-#include <game/UI/Ctrl/CtrlRace/CtrlRaceGhostDiffTime.hpp>
+#include <MarioKartWii/Kart/KartManager.hpp>
+#include <MarioKartWii/Race/RaceInfo/RaceInfo.hpp>
+#include <MarioKartWii/Sound/RSARSounds.hpp>
+#include <MarioKartWii/Sound/RaceAudioMgr.hpp>
+#include <MarioKartWii/Sound/Actors/KartSound.hpp>
+#include <MarioKartWii/UI/Ctrl/CtrlRace/CtrlRaceGhostDiffTime.hpp>
 #include <Settings/Settings.hpp>
 
 

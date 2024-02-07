@@ -1,10 +1,10 @@
 #ifndef _SYSTEMPAGE_
 #define _SYSTEMPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
 
 namespace Pages {
-class System: public Page { //name from vtable of recognizepad which has strings
+class System : public Page { //name from vtable of recognizepad which has strings
     System(); //80602d2c
     ~System() override; //80602dc0 vtable 808ba554
     void ChangeSectionBySceneChange(SectionId sectionId, u32 animDirection, float delay) override; //0x1c 805c9720

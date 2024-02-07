@@ -1,7 +1,7 @@
 #ifndef _PUSHBUTTON_
 #define _PUSHBUTTON_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/Manipulator.hpp>
+#include <MarioKartWii/UI/Ctrl/Manipulator.hpp>
 
 /*
 Contributors:

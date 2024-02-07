@@ -1,8 +1,8 @@
 #ifndef _KCLMANAGER_
 #define _KCLMANAGER_
 #include <kamek.hpp>
-#include <game/File/KCL.hpp>
-#include <game/KCL/KCLController.hpp>
+#include <MarioKartWii/File/KCL.hpp>
+#include <MarioKartWii/KCL/KCLController.hpp>
 
 
 class KCLManager {

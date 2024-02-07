@@ -1,8 +1,8 @@
 #ifndef _ROUTECONTROLLER_
 #define _ROUTECONTROLLER_
 #include <kamek.hpp>
-#include <game/KMP/KMPManager.hpp>
-#include <game/Route/RouteHolder.hpp>
+#include <MarioKartWii/KMP/KMPManager.hpp>
+#include <MarioKartWii/Route/RouteHolder.hpp>
 
 class RouteController {
     RouteController(u16 routeId, float baseSpeed); //806ed160

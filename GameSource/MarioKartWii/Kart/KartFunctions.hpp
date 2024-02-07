@@ -2,17 +2,17 @@
 #define _KARTFUNCTIONS_
 
 #include <kamek.hpp>
-#include <game/System/Identifiers.hpp>
-#include <game/File/StatsParam.hpp>
-#include <game/File/BSP.hpp>
-#include <game/File/DispParams/BikePartsDisp.hpp>
-#include <game/File/DispParams/KartPartsDisp.hpp>
-#include <game/File/DispParams/DriverDisp.hpp>
-#include <game/File/DispParams/KartDriverDisp.hpp>
-#include <game/File/DispParams/MiiDisp.hpp>
-#include <game/File/StatsParam.hpp>
-#include <game/File/BSP.hpp>
-#include <game/3D/Camera/CameraBinaries.hpp>
+#include <MarioKartWii/System/Identifiers.hpp>
+#include <MarioKartWii/File/StatsParam.hpp>
+#include <MarioKartWii/File/BSP.hpp>
+#include <MarioKartWii/File/DispParams/BikePartsDisp.hpp>
+#include <MarioKartWii/File/DispParams/KartPartsDisp.hpp>
+#include <MarioKartWii/File/DispParams/DriverDisp.hpp>
+#include <MarioKartWii/File/DispParams/KartDriverDisp.hpp>
+#include <MarioKartWii/File/DispParams/MiiDisp.hpp>
+#include <MarioKartWii/File/StatsParam.hpp>
+#include <MarioKartWii/File/BSP.hpp>
+#include <MarioKartWii/3D/Camera/CameraBinaries.hpp>
 
 namespace Kart {
 

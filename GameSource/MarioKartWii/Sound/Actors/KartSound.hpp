@@ -1,8 +1,8 @@
 #ifndef _KARTSOUND_
 #define _KARTSOUND_
 #include <kamek.hpp>
-#include <game/Sound/Actors/RaceActor.hpp>
-#include <game/Sound/Other/AudioValues.hpp>
+#include <MarioKartWii/Sound/Actors/RaceActor.hpp>
+#include <MarioKartWii/Sound/Other/AudioValues.hpp>
 
 using namespace nw4r;
 namespace Kart {
@@ -43,7 +43,7 @@ public:
     virtual u32 GetLandingSoundId() const; //8070ba40 "0x138"
 
     void SetActorType(ActorType type); //807074b0
-    static void OutputSoundToWiimotes(AudioHandle *handle, u32 outputLineBitfield); //80708b20 inlined
+    static void OutputSoundToWiimotes(AudioHandle* handle, u32 outputLineBitfield); //80708b20 inlined
     void ApplyKCLSoundTrigger(u8 soundTriggerVariant); //80708b44
     void PlayBoostSound(); //80708bac ramps do not count
     void PlayRampSound(); //80708d48

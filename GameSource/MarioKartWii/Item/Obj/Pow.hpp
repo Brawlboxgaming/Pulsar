@@ -1,8 +1,8 @@
 #ifndef _ITEMOBJPOW_
 #define _ITEMOBJPOW_
 #include <kamek.hpp>
-#include <game/Item/Obj/ItemObj.hpp>
-#include <game/3D/Model/ModelDirector.hpp>
+#include <MarioKartWii/Item/Obj/ItemObj.hpp>
+#include <MarioKartWii/3D/Model/ModelDirector.hpp>
 
 //_sinit_ at 807b2ed0
 namespace Item {

@@ -1,8 +1,8 @@
 #ifndef _QUITCONFIRMATION_
 #define _QUITCONFIRMATION_
 #include <kamek.hpp>
-#include <game/UI/Page/Page.hpp>
-#include <game/UI/Page/RaceMenu/RaceMenu.hpp>
+#include <MarioKartWii/UI/Page/Page.hpp>
+#include <MarioKartWii/UI/Page/RaceMenu/RaceMenu.hpp>
 
 namespace Pages {
 class QuitConfirmation : public RaceMenu { //ID 0x2C

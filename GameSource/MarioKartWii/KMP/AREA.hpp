@@ -1,6 +1,6 @@
 #ifndef _AREA_
 #define _AREA_
-#include <game/KMP/KMPBlockBase.hpp>
+#include <MarioKartWii/KMP/KMPBlockBase.hpp>
 
 struct AREA {
     u8 shape; //0 box 1 cylinder

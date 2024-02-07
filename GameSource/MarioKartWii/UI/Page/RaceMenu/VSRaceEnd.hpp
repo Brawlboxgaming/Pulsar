@@ -1,7 +1,7 @@
 #ifndef _VSRACEENDPAGE_
 #define _VSRACEENDPAGE_
 #include <kamek.hpp>
-#include <game/UI/Page/RaceMenu/RaceMenu.hpp>
+#include <MarioKartWii/UI/Page/RaceMenu/RaceMenu.hpp>
 
 namespace Pages {
 class VSRaceEnd : public RaceMenu { //ID 0x22

@@ -1,9 +1,9 @@
 #ifndef _CTRLRACEWIFI_
 #define _CTRLRACEWIFI_
 #include <kamek.hpp>
-#include <game/UI/Ctrl/CtrlRace/CtrlRaceBase.hpp>
+#include <MarioKartWii/UI/Ctrl/CtrlRace/CtrlRaceBase.hpp>
 //_sinit_ at 807f9258
-class CtrlRaceWifiStartMessage: public CtrlRaceBase {
+class CtrlRaceWifiStartMessage : public CtrlRaceBase {
 public:
     //no ctor
     ~CtrlRaceWifiStartMessage() override; //807f91f0 vtable 808d4110 
@@ -22,7 +22,7 @@ public:
 
 }; //total size 0x1a0
 //update pause position calls 807f8bd8 to make the state disappear
-class CtrlRaceWaitSymbol: public CtrlRaceBase {
+class CtrlRaceWaitSymbol : public CtrlRaceBase {
     //no ctor
     ~CtrlRaceWaitSymbol() override; //807f9110 vtable 808d4070
     void OnUpdate() override; //0x1c 807f90f8
@@ -37,7 +37,7 @@ class CtrlRaceWaitSymbol: public CtrlRaceBase {
     void Load(u32 r4, u8 hudSlotId); //807f8fac r4 not used
 };
 
-class CtrlRaceWifiFinishMessage: public CtrlRaceBase {
+class CtrlRaceWifiFinishMessage : public CtrlRaceBase {
     //no ctor
     ~CtrlRaceWifiFinishMessage() override; //807f9180 vtable 808d40c0
     void OnUpdate() override; //0x1c 807f8f8c
