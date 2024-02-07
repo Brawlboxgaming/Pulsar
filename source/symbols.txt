@@ -1276,6 +1276,8 @@ matNamesMH = 0x808d1860
 #Item
 sInstance__Q24Item7Manager = 0x809c3618
 Update__Q24Item7ManagerFv = 0x80799850
+SpawnModel__Q24Item7ObjBaseFv = 0x8079d9fc
+func_807b7104__FPQ24Item3Objiiifff = 0x807b7104
 
 #ItemSlot
 DecideItem__Q24Item12ItemSlotDataFUsUcbbPQ24Item6Player = 0x807bb42c
