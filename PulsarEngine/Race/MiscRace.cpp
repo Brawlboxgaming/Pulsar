@@ -51,6 +51,9 @@ void DraggableBlueShells(Item::PlayerSub& sub) {
 }
 kmBranch(0x807ae8ac, DraggableBlueShells);
 
+// Coloured Minimap
+kmWrite32(0x807DFC24, 0x60000000);
+
 //No Team Invincibility
 kmWrite32(0x8056fd24, 0x38000000); //KartCollision::CheckKartCollision()
 kmWrite32(0x80572618, 0x38000000); //KartCollision::CheckItemCollision()
