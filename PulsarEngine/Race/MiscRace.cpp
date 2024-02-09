@@ -51,7 +51,7 @@ void DraggableBlueShells(Item::PlayerSub& sub) {
 }
 kmBranch(0x807ae8ac, DraggableBlueShells);
 
-// Coloured Minimap
+//Coloured Minimap
 kmWrite32(0x807DFC24, 0x60000000);
 
 //No Team Invincibility
@@ -64,6 +64,7 @@ kmWrite32(0x807a7f6c, 0x38c00000); //FIB are always red
 kmWrite32(0x807b0bd4, 0x38000000); //pass TC to teammate
 kmWrite32(0x807bd2bc, 0x38000000); //RaceGlobals
 kmWrite32(0x807f18c8, 0x38000000); //TC alert
+
 
 //CtrlItemWindow
 kmWrite24(0x808A9C16, 'PUL'); //item_window_new -> item_window_PUL

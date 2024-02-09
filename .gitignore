@@ -46,6 +46,6 @@ BuildTesting.bat
 # Executables
 *.out
 *.app
-Pulsar Pack Creator.sln
+*.vsidx
 
 PulsarPackCreator/.vs
