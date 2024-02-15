@@ -1243,6 +1243,7 @@ FadeEffects2__13PlayerEffectsFPPQ23EGG6EffectUiUib = 0x806a1b68
 __ct__Q23EGG14EffectResourceFPvPv = 0x80225c98
 
 #Sound
+volumes__21SoundPlayersVolumeMgr = 0x809c26b8
 sInstance__12AudioManager = 0x809c2898
 
 #LinkedRaceActor
