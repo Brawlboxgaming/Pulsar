@@ -3,6 +3,7 @@
 #include <MarioKartWii/Race/RaceData.hpp>
 #include <UI/UI.hpp>
 #include <UI/ChangeCombo/ChangeCombo.hpp>
+#include <VP.hpp>
 
 namespace Pulsar {
 namespace UI {
@@ -78,7 +79,9 @@ void ExpVR::RandomizeCombo(PushButton& randomComboButton, u32 hudSlotId) {
     SectionParams* sectionParams = sectionMgr->sectionParams;
     for(int hudId = 0; hudId < sectionParams->localPlayerCount; hudId++) {
         const CharacterId character = random.NextLimited<CharacterId>(24);
-        const u32 randomizedKartPos = random.NextLimited(12);
+        u8 kartCount = 12;
+        if (VP::System::GetKartRestriction() != VP::System::KART_DEFAULTSELECTION) kartCount = 6;
+        const u32 randomizedKartPos = random.NextLimited(kartCount);
         const KartId kart = kartsSortedByWeight[CharacterIDToWeightClass(character)][randomizedKartPos];
 
         sectionParams->characters[hudId] = character;
@@ -232,8 +235,10 @@ void ExpKartSelect::BeforeControlUpdate() {
 
         u32 nextRoll = prevRoll;
         const bool isGoodFrame = roulette % 4 == 1;
+        u8 kartCount = 12;
+        if (VP::System::GetKartRestriction() != VP::System::KART_DEFAULTSELECTION) kartCount = 6;
         if(roulette == 1) nextRoll = this->randomizedKartPos;
-        else if(isGoodFrame) while(nextRoll == prevRoll) nextRoll = random.NextLimited(12);
+        else if(isGoodFrame) while(nextRoll == prevRoll) nextRoll = random.NextLimited(kartCount);
         if(isGoodFrame) {
             ButtonMachine* nextButton = this->GetKartButton(nextRoll);
             nextButton->HandleSelect(0, -1);
