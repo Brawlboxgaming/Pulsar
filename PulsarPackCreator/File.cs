@@ -70,6 +70,10 @@ namespace PulsarPackCreator
 
                 ParseBMGAndFILE(bmgSR, fileSR);
 
+                //Clear
+                CC100.Text = "0";
+                CC150.Text = "0";
+
                 CupCount.Text = $"{ctsCupCount}";
                 Regs.SelectedIndex = parameters.regsMode;
                 TTTrophies.IsChecked = parameters.hasTTTrophies;
@@ -287,7 +291,8 @@ namespace PulsarPackCreator
                 xml[29] = xml[29].Replace("{$pack}", parameters.modFolderName);
                 xml[30] = xml[30].Replace("{$pack}", parameters.modFolderName);
                 xml[31] = xml[31].Replace("{$pack}", parameters.modFolderName);
-                xml[37] = xml[37].Replace("{$pack}", parameters.modFolderName);
+                xml[32] = xml[32].Replace("{$pack}", parameters.modFolderName);
+                xml[37] = xml[39].Replace("{$pack}", parameters.modFolderName);
             
                 File.Copy("temp/Config.pul", $"{modFolder}/Binaries/Config.pul", true);
                 File.WriteAllLines($"output/Riivolution/{parameters.modFolderName}.xml", xml);
@@ -295,7 +300,7 @@ namespace PulsarPackCreator
             }
             catch(FileNotFoundException ex)
             {
-                Directory.Delete($"{modFolder}", true);
+                //Directory.Delete(modFolder, true);
                 MsgWindow.Show(ex.Message);
                 return false;
             }
@@ -337,6 +342,8 @@ namespace PulsarPackCreator
                     string modFolder = $"output/{parameters.modFolderName}";
                     File.WriteAllBytes($"{modFolder}/Binaries/Code.pul", PulsarRes.Code);
                     Directory.CreateDirectory($"{modFolder}/Assets");
+                    Directory.CreateDirectory($"{modFolder}/CTsBRSTMs");
+                    Directory.CreateDirectory($"{modFolder}/My Stuff");
                     File.WriteAllBytes($"{modFolder}/Binaries/Loader.pul", PulsarRes.Loader);
                     File.WriteAllBytes($"{modFolder}/Assets/RaceAssets.szs", PulsarRes.RaceAssets);
                     File.WriteAllBytes($"{modFolder}/Assets/CommonAssets.szs", PulsarRes.CommonAssets);
@@ -351,7 +358,7 @@ namespace PulsarPackCreator
                     wimgtProcessInfo.UseShellExecute = false;
                     wimgtProcess.StartInfo = wimgtProcessInfo;
 
-                    for (int i = 0; i < ctsCupCount; i++)
+                    for (int i = 0; i < Math.Min(ctsCupCount, (ushort)100); i++)
                     {
                         Cup cup = cups[i];
                         if (cup.iconName != $"{Cup.defaultNames[i]}.png")
@@ -495,7 +502,11 @@ namespace PulsarPackCreator
             if (!isFake)
             {
                 string iconName = cup.iconName;
-                string finalIconName = iconName.Remove(iconName.Length - 4) != Cup.defaultNames[cup.idx] ? "" : iconName;
+                string finalIconName = "";
+                if (idx < 100 && iconName.Length > 4 && iconName.Remove(iconName.Length - 4) != Cup.defaultNames[cup.idx])
+                {
+                    finalIconName = iconName;
+                }
                 bmgSW.WriteLine($"  {0x10000 + idx:X}    = {cup.name}");
                 fileSW.WriteLine($"{idx:X}?{iconName}");
             }
