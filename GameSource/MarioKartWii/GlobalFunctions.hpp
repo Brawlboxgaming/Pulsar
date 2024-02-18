@@ -19,6 +19,7 @@ const char* GetMapIconPaneName(); //80860e08
 bool IsBattle(); //80860a8c
 bool IsTournamentSection(SectionId id); //808604e0
 bool IsGhostRaceSection(SectionId id); //808604c0
+CharacterId GetMiiCharacterId(const Mii& mii); //80831af4
 
 
 

@@ -1490,6 +1490,7 @@ IsBattle__Fv = 0x80860a8c
 IsOnlineSection__F9SectionId = 0x80860484
 GetLocalPlayerCount__Fv = 0x808605fc
 GetCharacterIconPaneName__F11CharacterId = 0x80860acc
+GetMiiCharacterId__FRC3Mii = 0x80831af4
 
 #Static Instances
 itemObjProperties = 0x809c2f48
