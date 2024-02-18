@@ -682,6 +682,9 @@ SelectFocus__10PushButtonFv = 0x805bdb58
 GetAnimationFrameSize__10PushButtonCFv = 0x805bdf88
 SetPlayerBitfield__10PushButtonFUi = 0x805bdbd4
 
+#ButtonDriver
+SetButtonColours__Q223CtrlMenuCharacterSelect12ButtonDriverFUi = 0x807e4130
+
 #SheetSelect
 __ct__18SheetSelectControlFv = 0x80635ec4 
 __dt__18SheetSelectControlFv = 0x8063607c
@@ -839,6 +842,7 @@ Load__18CtrlMenuPressStartFv = 0x807e9cd0
 
 #CharacterSelect
 GetButtonDriver__23CtrlMenuCharacterSelectF11CharacterId = 0x807e35b0
+OnButtonDriverSelect__Q25Pages15CharacterSelectFPQ223CtrlMenuCharacterSelect12ButtonDriverUiUc = 0x8083e5f4
 buttonIdToCharacterId__23CtrlMenuCharacterSelect = 0x808a7de0
 
 #TextInfo
@@ -1453,7 +1457,8 @@ IsCollidingImpl__15ObjectExternKCLFRC4Vec3RC4Vec311KCLBitfieldP13CollisionInfoP1
 
 
 ##Rel	
-GetTrackBMGId = 0x80833668							   
+GetTrackBMGId = 0x80833668
+IsKartUnlocked = 0x8081cfb4					   
 
 
 greenShellSpeed__4Item = 0x808a5dc0
@@ -1483,6 +1488,8 @@ RKNetController_Search8 = 0x8065A080
 GetItemIconPaneName__F6ItemIdUi = 0x80860af0
 IsBattle__Fv = 0x80860a8c
 IsOnlineSection__F9SectionId = 0x80860484
+GetLocalPlayerCount__Fv = 0x808605fc
+GetCharacterIconPaneName__F11CharacterId = 0x80860acc
 
 #Static Instances
 itemObjProperties = 0x809c2f48

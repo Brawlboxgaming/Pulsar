@@ -9,7 +9,7 @@
 class CtrlMenuCharacterSelect : public LayoutUIControl {
 public:
     class ButtonDriver : public PushButton {
-    private:
+    public:
         ButtonDriver(); //807e2808
         ~ButtonDriver() override; //807e2844 vtable 808d3074
         void InitSelf() override; //0x18 807e3e10
@@ -44,11 +44,11 @@ public:
     int GetUnlockedCharacterCountByWeight(u32 weight); //807e3bec
     int GetCorrectButtonDriverId(u32 category, u32 idx); //807e3cac based on unlocked chars category == weight if all unlocked
     void OnMultiplayerMiiSelected(u32 hudSlotId); //807e3b58 sets the OK material and calls the page's on buttonDriverClick
-    CharacterId selectedCharacter;
+    CharacterId selectedCharacter; //0x174
     u8 unknown_0x178[0x184 - 0x178];
     CountDown* timer; //0x184 807e25d4
     u32 playerCount; //0x188
-    bool isUnLocked[26]; //0x18c 24 characters + 2 miisresult of 8081d020, loop at 0x807e2610
+    bool isUnlocked[26]; //0x18c 24 characters + 2 miisresult of 8081d020, loop at 0x807e2610
     u8 unknown_0x1A6[2];
     u32 categoryCount; //init at 4 light, medium, heavy, miis
     u32 unlockedCharactersCount; //0x1ac,  0x1a if all unlocked
