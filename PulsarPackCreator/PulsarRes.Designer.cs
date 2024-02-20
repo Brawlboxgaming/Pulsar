@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Pulsar_Pack_Creator {
+namespace PulsarPackCreator {
     using System;
     
     

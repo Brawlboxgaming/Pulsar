@@ -1,4 +1,4 @@
-﻿using Pulsar_Pack_Creator;
+﻿using PulsarPackCreator;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -138,7 +138,7 @@ namespace PulsarPackCreator
             Directory.CreateDirectory($"input/{ttModeFolders[2, 1]}");
             Directory.CreateDirectory($"input/{ttModeFolders[3, 1]}");
             extractTPL = ExtractDefaultTPLs();
-            bool checkUpdates = Pulsar_Pack_Creator.Properties.Settings.Default.AutoUpdate;
+            bool checkUpdates = PulsarPackCreator.Properties.Settings.Default.AutoUpdate;
             
             string[] args = Environment.GetCommandLineArgs();
             if (args.Length > 1)

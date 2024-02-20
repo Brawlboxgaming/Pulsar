@@ -1,4 +1,4 @@
-using Pulsar_Pack_Creator;
+using PulsarPackCreator;
 using System;
 using System.Diagnostics;
 using System.Drawing;

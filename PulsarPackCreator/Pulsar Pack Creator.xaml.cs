@@ -229,7 +229,7 @@ namespace PulsarPackCreator
 
         private void OnMainWindowClosing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (Pulsar_Pack_Creator.Properties.Settings.Default.ExitRemind == true)
+            if (PulsarPackCreator.Properties.Settings.Default.ExitRemind == true)
             {
                 MsgWindowResult ret = MsgWindow.Show("Are you sure you want to close the creator?", MsgWindowButton.YesNo);
                 if (ret == MsgWindowResult.No)
