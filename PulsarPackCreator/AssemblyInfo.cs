@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
@@ -29,5 +29,5 @@ using System.Runtime.InteropServices;
 //      Revision
 //
 
-[assembly: AssemblyInformationalVersion("1.1.3")] //combined version, always increments
-[assembly: AssemblyFileVersion("1.1.3")] //Code.pul version
+[assembly: AssemblyInformationalVersion("1.1.4")] //combined version, always increments
+[assembly: AssemblyFileVersion("1.1.4")] //Code.pul version

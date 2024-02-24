@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Diagnostics;
-using System.IO;
 using System.Windows;
 
-namespace PulsarPackCreator
+namespace Pulsar_Pack_Creator
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -17,7 +15,7 @@ namespace PulsarPackCreator
 
         private void OnAppDeactivated(object sender, EventArgs e)
         {
-            //PulsarPackCreator.MainWindow.msgWindow.Hide();
+            //Pulsar_Pack_Creator.MainWindow.messageWindow.Hide();
         }
     }
 }
