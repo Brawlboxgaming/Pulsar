@@ -313,9 +313,19 @@ public class PulsarGame
                 int elementSize = Marshal.SizeOf(elementType);
                 int arrayOffset = field.Offset + offSet;
 
-                for (int i = arrayOffset; i < arrayOffset + elementSize * arrayLength; i += elementSize)
+                if (elementType.IsPrimitive)
                 {
-                    RespectEndianness(elementType, data, i);
+                    for (int i = 0; i < arrayLength; i++)
+                    {
+                        Array.Reverse(data, arrayOffset + i * elementSize, elementSize);
+                    }
+                }
+                else
+                {
+                    for (int i = arrayOffset; i < arrayOffset + elementSize * arrayLength; i += elementSize)
+                    {
+                        RespectEndianness(elementType, data, i);
+                    }
                 }
             }
             else if (!field.Field.FieldType.IsPrimitive) //or !field.Field.FiledType.GetFields().Length == 0
@@ -353,7 +363,7 @@ public class PulsarGame
         return result;
     }
 
-    
+
     public static byte[] BytesFromStruct<T>(T structure, bool respectEndianness = true) where T : struct
     {
         int size = Marshal.SizeOf(structure);
@@ -368,7 +378,7 @@ public class PulsarGame
 
         return bytes;
     }
-    
+
 
 
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi, Pack = 1)]
@@ -465,6 +475,7 @@ public class PulsarGame
         public byte hasUMTs;
         public byte hasFeather;
         public byte hasMegaTC;
+        [Endian(Endianness.BigEndian)]
         public ushort cupIconCount;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 41)]
         public byte[] reservedSpace;
@@ -500,11 +511,12 @@ public class PulsarGame
         {
             tracks = new Track[4];
             idx = uiCup.idx;
-            for (int i = 0; i < 4; i++) {             
+            for (int i = 0; i < 4; i++)
+            {
                 tracks[i].slot = uiCup.slots[i];
                 tracks[i].musicSlot = uiCup.musicSlots[i];
                 tracks[i].crc32 = crc32[i];
-            }            
+            }
         }
         [Endian(Endianness.BigEndian)]
         public uint idx;
