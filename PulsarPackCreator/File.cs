@@ -411,16 +411,22 @@ namespace PulsarPackCreator
         {
             File.WriteAllBytes("temp/wbmgt.exe", PulsarRes.wbmgt);
             ProcessStartInfo processInfo = new ProcessStartInfo();
-            processInfo.FileName = @"wbmgt.exe";
+            processInfo.FileName = @"temp/wbmgt.exe";
             processInfo.Arguments = isEncode ? "encode BMG.txt" : "decode bmg.bmg --no-header --export";
             processInfo.WorkingDirectory = @"temp/";
             processInfo.CreateNoWindow = true;
             processInfo.WindowStyle = ProcessWindowStyle.Hidden;
             processInfo.UseShellExecute = false;
+            processInfo.RedirectStandardError = true;
+            processInfo.RedirectStandardInput = true;
+            processInfo.RedirectStandardOutput = true;
 
             Process process = new Process();
             process.StartInfo = processInfo;
             process.Start();
+            string error = process.StandardError.ReadToEnd();
+            string input = process.StandardInput.ToString();
+            string output = process.StandardOutput.ReadToEnd();
             process.WaitForExit();
         }
 
@@ -527,7 +533,7 @@ namespace PulsarPackCreator
                 {
                     File.Copy($"input/{name}.szs", $"{modFolder}/Tracks/{idx * 4 + i}.szs", true);
                     crcToFile.WriteLine($"{name} = {crc32:X8}");
-                    string crc32Folder = $"{modFolder}/Ghosts/{crc32.ToString("X")}";
+                    string crc32Folder = $"{modFolder}/Ghosts/{crc32:X8}";
 
                     Directory.CreateDirectory(crc32Folder);
                     for (int expert = 0; expert < 4; expert++)

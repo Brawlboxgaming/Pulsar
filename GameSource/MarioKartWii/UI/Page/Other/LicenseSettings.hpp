@@ -135,5 +135,20 @@ class LicenseErase : public Page { //ID 0x68
     CtrlMenuBackButton backButton; //0xa48
 }; //0xcac
 size_assert(LicenseErase, 0xcac);
+
+class LicenseRecords : public Page {
+    LicenseRecords(); //8062c0f4 vtable 808d8d78
+    void OnBackPress(u32 hudSlotId); //805bf2d8 just a blr
+    PushButton nextButton; //0x54
+    u32 unknown_0x2a8[2]; //0x2a8
+    float unknown_0x2b0; //0x2b0
+    u8 unknown_0x2b4[0x310-0x2b4]; //0x2b4
+    TextInfo textInfo; //0x310
+    u32 unknown_0x3d4[2]; //0x3d4
+    u8 unknown_0x3dc[0x3e4-0x3dc]; //0x3dc
+    u32 unknown_0x3e4[];
+}; //0x6c4
+size_assert(LicenseRecords, 0x6c4);
+
 }//namespace Pages
 #endif
