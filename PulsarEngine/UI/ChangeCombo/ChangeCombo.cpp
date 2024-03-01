@@ -79,9 +79,9 @@ void ExpVR::RandomizeCombo(PushButton& randomComboButton, u32 hudSlotId) {
     SectionParams* sectionParams = sectionMgr->sectionParams;
     for(int hudId = 0; hudId < sectionParams->localPlayerCount; hudId++) {
         CharacterId character = random.NextLimited<CharacterId>(24);
-        if (VP::System::GetCharacterRestriction() != VP::System::CHAR_DEFAULTSELECTION) character = static_cast<CharacterId>(CtrlMenuCharacterSelect::buttonIdToCharacterId[static_cast<VP::System::CharButtonId>(random.NextLimited<u8>(8) + (8 * (VP::System::GetCharacterRestriction() - 1)))]);
+        if (VP::System::GetCharacterRestriction() != VP::CHAR_DEFAULTSELECTION) character = static_cast<CharacterId>(CtrlMenuCharacterSelect::buttonIdToCharacterId[static_cast<VP::CharButtonId>(random.NextLimited<u8>(8) + (8 * (VP::System::GetCharacterRestriction() - 1)))]);
         u8 kartCount = 12;
-        if (VP::System::GetKartRestriction() != VP::System::KART_DEFAULTSELECTION) kartCount = 6;
+        if (VP::System::GetKartRestriction() != VP::KART_DEFAULTSELECTION) kartCount = 6;
         const u32 randomizedKartPos = random.NextLimited(kartCount);
         const KartId kart = kartsSortedByWeight[CharacterIDToWeightClass(character)][randomizedKartPos];
 
@@ -115,7 +115,7 @@ void ExpVR::RandomizeCombo(PushButton& randomComboButton, u32 hudSlotId) {
             multiKartSelect->rouletteCounter = ExpVR::randomDuration;
             multiKartSelect->rolledKartPos[0] = randomizedKartPos;
             u8 options = 12;
-            if (VP::System::GetKartRestriction() != VP::System::KART_DEFAULTSELECTION) options = 6;
+            if (VP::System::GetKartRestriction() != VP::KART_DEFAULTSELECTION) options = 6;
             if(IsBattle()) options = 2;
             multiKartSelect->rolledKartPos[1] = random.NextLimited(options);
             multiKartSelect->controlsManipulatorManager.inaccessible = true;
@@ -180,7 +180,7 @@ void ExpCharacterSelect::BeforeControlUpdate() {
         if(roulette == 1) this->rolledCharIdx[hudId] = this->randomizedCharIdx[hudId];
         else if(isGoodFrame) while(this->rolledCharIdx[hudId] == prevChar) {
             this->rolledCharIdx[hudId] = random.NextLimited<CharacterId>(24);
-            if (VP::System::GetCharacterRestriction() != VP::System::CHAR_DEFAULTSELECTION) this->rolledCharIdx[hudId] = static_cast<CharacterId>(CtrlMenuCharacterSelect::buttonIdToCharacterId[static_cast<VP::System::CharButtonId>(random.NextLimited<u8>(8) + (8 * (VP::System::GetCharacterRestriction() - 1)))]);
+            if (VP::System::GetCharacterRestriction() != VP::CHAR_DEFAULTSELECTION) this->rolledCharIdx[hudId] = static_cast<CharacterId>(CtrlMenuCharacterSelect::buttonIdToCharacterId[static_cast<VP::CharButtonId>(random.NextLimited<u8>(8) + (8 * (VP::System::GetCharacterRestriction() - 1)))]);
         }
         if(isGoodFrame) {
             this->ctrlMenuCharSelect.GetButtonDriver(prevChar)->HandleDeselect(hudId, -1);
@@ -239,7 +239,7 @@ void ExpKartSelect::BeforeControlUpdate() {
         u32 nextRoll = prevRoll;
         const bool isGoodFrame = roulette % 4 == 1;
         u8 kartCount = 12;
-        if (VP::System::GetKartRestriction() != VP::System::KART_DEFAULTSELECTION) kartCount = 6;
+        if (VP::System::GetKartRestriction() != VP::KART_DEFAULTSELECTION) kartCount = 6;
         if(roulette == 1) nextRoll = this->randomizedKartPos;
         else if(isGoodFrame) while(nextRoll == prevRoll) nextRoll = random.NextLimited(kartCount);
         if(isGoodFrame) {
@@ -259,7 +259,7 @@ void ExpKartSelect::BeforeControlUpdate() {
 
 ButtonMachine* ExpKartSelect::GetKartButton(u32 idx) const {
     u8 buttonsPerRow = 2;
-    if (VP::System::GetKartRestriction() != VP::System::KART_DEFAULTSELECTION) buttonsPerRow = 1;
+    if (VP::System::GetKartRestriction() != VP::KART_DEFAULTSELECTION) buttonsPerRow = 1;
     const UIControl* globalButtonHolder = this->controlGroup.GetControl(buttonsPerRow); //holds the 6 controls (6 rows) that each hold a pair of buttons
     return globalButtonHolder->childrenGroup.GetControl(idx / buttonsPerRow)->childrenGroup.GetControl<ButtonMachine>(idx % buttonsPerRow);
 }
