@@ -440,6 +440,7 @@ sInstance__8RaceData = 0x809bd728
 GetPlayerIdOfLocalPlayer__8RaceDataFUc = 0x80531f70
 GetHudSlotId__8RaceDataCFUc = 0x80531f18
 InitRNG__16RacedataScenarioFv = 0x8052f924
+GetPlayerIdOfLocalPlayer__8RaceDataCFUc = 0x80531f70
 
 #RaceInfo
 sInstance__8RaceInfo = 0x809bd730
@@ -971,6 +972,7 @@ LoadPrevPage__Q25Pages4MenuFR10PushButton = 0x80837b4c
 LoadPrevPageWithDelay__Q25Pages4MenuFf = 0x80837a44
 LoadPrevPageById__Q25Pages4MenuF6PageIdR10PushButton = 0x80837934
 LoadNextPageById__Q25Pages4MenuF6PageIdR10PushButton = 0x80837720
+LoadMessageBoxTransparentPage__Q25Pages4MenuFUiPC8TextInfo = 0x808386a0
 ChangeToPrevSection__Q25Pages4MenuFPQ25Pages5Click = 0x808387ac
 ChangeSectionById__Q25Pages4MenuF9SectionIdR10PushButton = 0x80837e40 
 HandleStartPress__Q25Pages4MenuFUi = 0x80838b14
