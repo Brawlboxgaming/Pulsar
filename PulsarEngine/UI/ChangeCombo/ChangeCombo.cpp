@@ -4,6 +4,8 @@
 #include <UI/UI.hpp>
 #include <UI/ChangeCombo/ChangeCombo.hpp>
 #include <VP.hpp>
+#include <UI/TransmissionSelect.hpp>
+#include <UI/MultiTransmissionSelect.hpp>
 
 namespace Pulsar {
 namespace UI {
@@ -57,8 +59,16 @@ void ExpVR::OnInit() {
     Pages::MultiKartSelect* multiKartPage = section->Get<Pages::MultiKartSelect>();
     if(multiKartPage != nullptr) multiKartPage->timer = timer;
 
+    VP::UI::TransmissionSelect* transmissionPage = section->Get<VP::UI::TransmissionSelect>();
+    if(transmissionPage != nullptr) transmissionPage->timer = timer;
+
     Pages::DriftSelect* driftPage = section->Get<Pages::DriftSelect>();
     if(driftPage != nullptr) driftPage->timer = timer;
+
+    VP::UI::MultiTransmissionSelect* multiTransmissionPage = section->Get<VP::UI::MultiTransmissionSelect>();
+    if(multiTransmissionPage != nullptr) {
+        multiTransmissionPage->timer = timer;
+    }
 
     Pages::MultiDriftSelect* multiDriftPage = section->Get<Pages::MultiDriftSelect>();
     if(multiDriftPage != nullptr) {
