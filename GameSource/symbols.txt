@@ -977,10 +977,10 @@ GetTextInfo__Q25Pages4MenuFv = 0x808372e0
 OnMoviesActivate__Q25Pages4MenuFUi = 0x808387f8
 LoadPrevPage__Q25Pages4MenuFR10PushButton = 0x80837b4c
 LoadPrevPageWithDelay__Q25Pages4MenuFf = 0x80837a44
-LoadPrevPageWithDelayById__Q25Pages4MenuF6PageIdf = 0x80837a44
+LoadPrevPageWithDelayById__Q25Pages4MenuF6PageIdf = 0x8083761c
 LoadPrevPageById__Q25Pages4MenuF6PageIdR10PushButton = 0x80837934
 LoadNextPageById__Q25Pages4MenuF6PageIdR10PushButton = 0x80837720
-LoadNextPageWithDelayById__Q25Pages4MenuF6PageIdf = 0x80837830
+LoadNextPageWithDelayById__Q25Pages4MenuF6PageIdf = 0x8083761c
 LoadMessageBoxTransparentPage__Q25Pages4MenuFUiPC8TextInfo = 0x808386a0
 ChangeToPrevSection__Q25Pages4MenuFPQ25Pages5Click = 0x808387ac
 ChangeSectionById__Q25Pages4MenuF9SectionIdR10PushButton = 0x80837e40 
@@ -1138,6 +1138,19 @@ SetButtonHandlers__Q25Pages11DriftSelectFR10PushButton = 0x8084e760
 
 #MultiDriftSelect
 __ct__Q25Pages16MultiDriftSelectFv = 0x8062b8bc
+__dt__Q25Pages16MultiDriftSelectFv = 0x8084b984
+OnInit__Q25Pages16MultiDriftSelectFv = 0x8084aac4
+OnActivate__Q25Pages16MultiDriftSelectFv = 0x8084b280
+OnControlsInitialized__Q25Pages16MultiDriftSelectFv = 0x8084aff0
+AfterControlUpdate__Q25Pages16MultiDriftSelectFv = 0x8084b388
+OnResume__Q25Pages16MultiDriftSelectFv = 0x8084b8c4
+GetRuntimeTypeInfo__Q25Pages16MultiDriftSelectCFv = 0x8084ba04
+OnExternalButtonSelect__Q25Pages16MultiDriftSelectFR10PushButtonUi = 0x8084b7ec
+GetActivePlayerBitfield__Q25Pages16MultiDriftSelectCFv = 0x8084af84
+GetPlayerBitfield__Q25Pages16MultiDriftSelectCFv = 0x8084af8c
+GetManipulatorManager__Q25Pages16MultiDriftSelectFv = 0x8084af7c
+CreateExternalControl__Q25Pages16MultiDriftSelectFUi = 0x8084aff4
+CreateControl__Q25Pages16MultiDriftSelectFUi = 0x8084b150
 
 #SinglePlayer
 CreateExternalControl__Q25Pages12SinglePlayerFUi = 0x8084efc4
@@ -1341,6 +1354,9 @@ __ct__Q24Item13ObjPropertiesFRCQ24Item13ObjProperties = 0x80790e7c
 DeployBlooper__Q24Item8GessoMgrFUc = 0x807a9128
 AddEVENTEntry__Q24Item7ObjBaseF9ItemObjIdUc = 0x8079c220
 
+#ItemObjThrowable
+SetInitialPositionImpl__Q24Item12ObjThrowableFRQ24Item9PlayerSubUibfff = 0x807b7104
+
 #Lakitu
 Update__Q26Lakitu7ManagerFv = 0x8071e6c0
 
@@ -1513,6 +1529,7 @@ IsOnlineSection__F9SectionId = 0x80860484
 GetLocalPlayerCount__Fv = 0x808605fc
 GetCharacterIconPaneName__F11CharacterId = 0x80860acc
 GetMiiCharacterId__FRC3Mii = 0x80831af4
+AreAllPlayersActive__Q25Pages4MenuFv = 0x808388f0
 
 #Static Instances
 itemObjProperties = 0x809c2f48
