@@ -1276,9 +1276,9 @@ FadeEffects2__13PlayerEffectsFPPQ23EGG6EffectUiUib = 0x806a1b68
 __ct__Q23EGG14EffectResourceFPvPv = 0x80225c98
 
 #Sound
-sInstance__12AudioManager = 0x809c2898
-Lock__12AudioManagerFv = 0x807178ec
-Unlock__12AudioManagerFv = 0x807178f8
+sInstance__Q25Audio7Manager = 0x809c2898
+Lock__Q25Audio7ManagerFv = 0x807178ec
+Unlock__Q25Audio7ManagerFv = 0x807178f8
 
 #SinglePlayer
 sInstance__Q25Audio12SinglePlayer = 0x809c2328
