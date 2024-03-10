@@ -323,13 +323,6 @@ public class PulsarGame
                 {
                     RespectEndianness(elementType, data, i);
                 }
-                else
-                {
-                    for (int i = arrayOffset; i < arrayOffset + elementSize * arrayLength; i += elementSize)
-                    {
-                        RespectEndianness(elementType, data, i);
-                    }
-                }
             }
             else if (!field.Field.FieldType.IsPrimitive) //or !field.Field.FiledType.GetFields().Length == 0
             {
