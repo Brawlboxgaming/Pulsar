@@ -7,6 +7,7 @@
 #include <SlotExpansion/CupsConfig.hpp>
 #include <PulsarSystem.hpp>
 #include <Info.hpp>
+#include <VP.hpp>
 
 
 namespace Pulsar {
@@ -26,7 +27,26 @@ void BeforeSELECTSend(RKNet::PacketHolder* packetHolder, CustomSELECTPacket* src
         normalPacket->engineClass = src->engineClass;
         src = reinterpret_cast<CustomSELECTPacket*>(&copy);
     }
-    else src->pulSELPlayerData[1].starRank += 0x80; //set leftmost bit to specify PULPacket
+    else{
+        src->pulSELPlayerData[1].starRank += 0x80; //set leftmost bit to specify PULPacket
+        
+        VP::System *vp = VP::System::GetsInstance();
+        VP::Gamemode chosenMode = vp->hostMode;
+        const RKNet::Controller* controller = RKNet::Controller::sInstance;
+        const RKNet::ControllerSub& sub = controller->subs[controller->currentSub];
+        const u8 hostAid = sub.hostAid;
+        const u8 localAid = sub.localAid;
+        if (localAid == hostAid){
+            if (!vp->isRegModeSelected){
+                Random random;
+                chosenMode = static_cast<VP::Gamemode>(random.NextLimited(VP::System::GetGamemodeCount()));
+                vp->hostMode = chosenMode;
+                vp->isRegModeSelected = true;
+            }
+            src->pulSELPlayerData[0].starRank &= 0b11111;
+        }
+        src->pulSELPlayerData[0].starRank += (chosenMode << 5);
+    }
     packetHolder->Copy(src, len);
 }
 kmCall(0x80661040, BeforeSELECTSend);
@@ -49,7 +69,20 @@ static void AfterSELECTReception(CustomSELECTPacket* dest, CustomSELECTPacket* s
         src->phase = phase;
         src->engineClass = engineClass;
     }
-    else src->pulSELPlayerData[1].starRank -= 0x80;
+    else{
+        src->pulSELPlayerData[1].starRank -= 0x80;
+
+        const RKNet::Controller* controller = RKNet::Controller::sInstance;
+        const RKNet::ControllerSub& sub = controller->subs[controller->currentSub];
+        const u8 localAid = sub.localAid;
+        const u8 hostAid = sub.hostAid;
+        VP::System *vp = VP::System::GetsInstance();
+        if (localAid != hostAid && !vp->isRegModeSelected){
+            vp->hostMode = static_cast<VP::Gamemode>((src->pulSELPlayerData[0].starRank & 0b11100000) >> 5);
+            vp->isRegModeSelected = true;
+        }
+        src->pulSELPlayerData[0].starRank &= 0b00001111;
+    }
     memcpy(dest, src, sizeof(CustomSELECTPacket));
 }
 kmCall(0x80661130, AfterSELECTReception);

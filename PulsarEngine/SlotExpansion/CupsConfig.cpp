@@ -198,7 +198,8 @@ bool CupsConfig::IsRegsSituation() {
         case(RKNet::ROOMTYPE_JOINING_REGIONAL):
         case(RKNet::ROOMTYPE_BT_REGIONAL):
         case(RKNet::ROOMTYPE_FROOM_HOST):
-        case(RKNet::ROOMTYPE_FROOM_NONHOST): return false;
+        case(RKNet::ROOMTYPE_FROOM_NONHOST):
+        case(RKNet::ROOMTYPE_NONE): return false;
         default: return true;
     }
 }

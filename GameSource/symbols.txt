@@ -1384,6 +1384,8 @@ DecideEngineClass__Q25RKNet13SELECTHandlerFv = 0x80661a5c
 GetCourseVote__Q25RKNet13SELECTHandlerCFUcUc = 0x80660574
 IsPrepared__Q25RKNet13SELECTHandlerCFv = 0x80660710
 AllocatePlayerIdsToAids__Q25RKNet13SELECTHandlerFv = 0x80662034
+GetOwnPlayerIdToAid__Q25RKNet13SELECTHandlerCFv = 0x806604cc
+GetEngineClass__Q25RKNet13SELECTHandlerCFv = 0x8066048c
 
 #RH1
 sInstance__Q25RKNet10RH1Handler = 0x809c2118
@@ -1512,15 +1514,6 @@ CourseIdToGhostIndex = 0x80552d90
 GetCourseIdBySlot = 0x80552e74
 CharacterIDToWeightClass = 0x8081cd3c
 groupTypeSaveOffset = 0x80890d28
-
-RKNetController_Search1 = 0x80653644
-RKNetController_Search2 = 0x806536B0
-RKNetController_Search3 = 0x8065920C
-RKNetController_Search4 = 0x80659260
-RKNetController_Search5 = 0x80659724
-RKNetController_Search6 = 0x80659778
-RKNetController_Search7 = 0x8065A034
-RKNetController_Search8 = 0x8065A080
 
 #Global Funcs
 GetItemIconPaneName__F6ItemIdUi = 0x80860af0
