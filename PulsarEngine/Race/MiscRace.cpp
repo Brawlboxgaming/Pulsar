@@ -36,7 +36,7 @@ static void BattleGlitchEnable() {
     if(Settings::Mgr::GetSettingValue(Settings::SETTINGSTYPE_RACE, SETTINGRACE_RADIO_BATTLE) == RACESETTING_BATTLE_GLITCH_ENABLED) maxDistance = 75000.0f;
     RaceBalloons::maxDistanceNames = maxDistance;
 }
-Settings::Hook BattleGlitch(BattleGlitchEnable);
+static RaceLoadHook BattleGlitch(BattleGlitchEnable);
 
 
 kmWrite32(0x8085C914, 0x38000000); //times at the end of races in VS

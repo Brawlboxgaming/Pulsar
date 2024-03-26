@@ -147,6 +147,16 @@ static void AddChangeComboPages(Section* section, PageId id) {
     if(SectionMgr::sInstance->sectionParams->localPlayerCount == 2) {
         kartPage = PAGE_MULTIPLAYER_KART_SELECT;
         driftPage = PAGE_MULTIPLAYER_DRIFT_SELECT;
+        PageId transmissionPage = static_cast<PageId>(VP::PAGE_MULTI_TRANSMISSION_SELECT);
+        VP::UI::MultiTransmissionSelect* transmission = new(VP::UI::MultiTransmissionSelect);
+        section->Set(transmission, transmissionPage);
+        transmission->Init(transmissionPage);
+    }
+    else if(SectionMgr::sInstance->sectionParams->localPlayerCount == 1){
+        PageId transmissionPage = static_cast<PageId>(VP::PAGE_TRANSMISSION_SELECT);
+        VP::UI::TransmissionSelect* transmission = new(VP::UI::TransmissionSelect);
+        section->Set(transmission, transmissionPage);
+        transmission->Init(transmissionPage);
     }
     else if(isBattle) kartPage = PAGE_BATTLE_KART_SELECT;
     section->CreateAndInitPage(kartPage);

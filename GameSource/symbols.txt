@@ -519,6 +519,10 @@ GetPhysicsHolder__Q24Kart4LinkFv = 0x805903ac
 GetDriftState__Q24Kart6PlayerCFv = 0x805911d8
 ComputeStats__4KartF6KartId11CharacterId = 0x80591fa4
 Update__Q24Kart18WheelPhysicsHolderFRC4Vec3RC5Mtx34f = 0x8059a278
+ResetInertia__Q24Kart4LinkCFRC4Vec3 = 0x80591664
+ResetSpeed__Q24Kart7PhysicsFv = 0x805b4d24
+Reset__Q24Kart7PhysicsFv = 0x805b4b54
+ActivateOob__Q24Kart9CollisionFbP13KCLTypeHolderbi = 0x80573b00
 
 
 hardSpeedCap__4Kart = 0x808b59f4
@@ -534,6 +538,8 @@ unknown_70__4Kart = 0x808cb550
 #KartMovement
 ApplyLightningEffect__Q24Kart8MovementFiii = 0x80580778
 Update__Q24Kart5BoostFPb = 0x80588e24
+DoRespawn__Q24Kart8MovementFv = 0x80584334
+SetInitialPhysicsValues__Q24Kart8MovementFRC4Vec3RC4Vec3 = 0x80584044
 
 #KartBRRESHandle
 __ct__Q24Kart11BRRESHandleFP5LightbUc = 0x80576b3c
@@ -1203,6 +1209,7 @@ GetRuntimeTypeInfo__Q25Pages14CountDownTimerCFv = 0x80651bb0
 PrepareRace__Q25Pages14CountDownTimerFv = 0x80650e24
 SetModeTypes__Q25Pages14CountDownTimerFv = 0x80651854
 UpdateFriendParams__Q25Pages14CountDownTimerFv = 0x806515cc
+GetInstructionBmgId__Q25Pages14CountDownTimerCFv = 0x80650be0
 
 #VRPage
 __ct__Q25Pages2VRFv = 0x8064a3f4

@@ -2,6 +2,7 @@
 #include <MarioKartWii/UI/Page/Other/TTSplits.hpp>
 #include <UI/UI.hpp>
 #include <IO/IO.hpp>
+#include <VP.hpp>
 
 namespace Pulsar {
 namespace Ghosts {
@@ -137,14 +138,16 @@ bool Manager::LoadGhost(RKG& rkg, u32 index) {
 //Copies ghost from src to racedata's RKG buffers and adds mii if ghost race
 void Manager::LoadAllGhosts(u32 maxGhosts, bool isGhostRace) {
     u8 position = 1;
+    VP::System *vp = VP::System::GetsInstance();
+                RaceData* racedata = RaceData::sInstance;
     for(int i = 0; i < maxGhosts; ++i) {
         if(this->selGhostsIndex[i] != 0xFF) {
             if(this->LoadGhost(this->rkg, this->GetGhostData(this->selGhostsIndex[i]).padding)) {
-                RaceData* racedata = RaceData::sInstance;
                 RKG& dest = racedata->ghosts[position];
                 bool isCompressed = false;
                 if(this->rkg.header.compressed) {
                     this->rkg.DecompressTo(dest); //0x2800
+                    vp->transmissions[position + isGhostRace] = static_cast<VP::Transmission>(dest.inputs.unused >> 14);
                 }
                 else memcpy(&dest, &this->rkg, sizeof(RKG));
                 if(this->cb != nullptr) {
@@ -157,6 +160,15 @@ void Manager::LoadAllGhosts(u32 maxGhosts, bool isGhostRace) {
             }
         }
     }
+    if(this->LoadGhost(this->rkg, this->GetGhostData(this->mainGhostIndex).padding)){
+        RKG& dest = racedata->ghosts[0];
+        bool isCompressed = false;
+        if(this->rkg.header.compressed) {
+            this->rkg.DecompressTo(dest); //0x2800
+            vp->transmissions[isGhostRace] = static_cast<VP::Transmission>(dest.inputs.unused >> 14);
+        }
+    }
+    if (isGhostRace) vp->transmissions[0] = vp->lastSelectedTransmission;
 }
 
 bool Manager::SaveGhost(const TimeEntry& entry, u32 ldbPosition, bool isFlap) {
@@ -169,7 +181,9 @@ bool Manager::SaveGhost(const TimeEntry& entry, u32 ldbPosition, bool isFlap) {
     buffer.ClearBuffer();
 
     bool gotTrophy = false;
-    if(data.CreateRKG(buffer) && buffer.CompressTo(this->rkg)) {
+    bool isCreated = data.CreateRKG(buffer);
+    buffer.inputs.unused += (VP::System::GetsInstance()->transmissions[0] << 14);
+    if(isCreated && buffer.CompressTo(this->rkg)) {
         if(this->cb != nullptr) {
             this->cb(buffer, IS_SAVING_GHOST, -1);
         }
@@ -285,7 +299,12 @@ kmCall(0x8052f5e4, GhostHeaderGetCorrectRKG);
 //Function name says it all
 void Manager::LoadCorrectMainGhost(Pages::GhostManager& ghostManager, u8 r4) {
     Manager* manager = Manager::sInstance;
-    manager->LoadGhost(*ghostManager.rkgPointer, manager->GetGhostData(manager->mainGhostIndex).padding);
+    RKG *rkg = ghostManager.rkgPointer;
+    manager->LoadGhost(*rkg, manager->GetGhostData(manager->mainGhostIndex).padding);
+    RKG dest = ghostManager.rkgBuffer;
+    rkg->DecompressTo(dest);
+    VP::System *vp = VP::System::GetsInstance();
+    vp->transmissions[0] = (dest.inputs.unused >> 14);
     if(ghostManager.state == SAVED_GHOST_RACE_FROM_MENU) ghostManager.state = STAFF_GHOST_RACE_FROM_MENU;
     //faking that it's a staff so it copies from the buffer and not savadatamanager
 }

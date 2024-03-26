@@ -3,12 +3,12 @@
 #include <Race/UltraMiniTurbos.hpp>
 #include <Sound/MiscSound.hpp>
 #include <PulsarSystem.hpp>
-
-
+#include <VP.hpp>
 
 namespace Pulsar {
 namespace Race {
 static EGG::EffectResource* pulEffects = nullptr;
+static EGG::EffectResource* vpEffects = nullptr;
 
 const char* ExpPlayerEffects::UMTNames[8] ={
     "rk_driftSpark3L_Spark00",
@@ -21,21 +21,50 @@ const char* ExpPlayerEffects::UMTNames[8] ={
     "rk_purpleTurbo"
 };
 
+const char* ExpPlayerEffects::SMTNames[8] ={
+    "rk_driftSpark2L_Spark00",
+    "rk_driftSpark2L_Spark01",
+    "rk_driftSpark2R_Spark00",
+    "rk_driftSpark2R_Spark01",
+    "rk_orangeTurbo",
+    "rk_orangeTurbo",
+    "rk_orangeTurbo",
+    "rk_orangeTurbo"
+};
+
 //Needed so that other players display the correct effect
 bool umtState[12]; //false = no UMT  true = UMT buff active expanding Kart::Movement just for this doesn't seem like the plan
 
 
 kmWrite32(0x8057ee5c, 0x2c050004); //changes >= 3 to >= 4 for UMT
 kmWrite32(0x8057ef30, 0x2c000001); //changes check from if != 2 to if = 1, so that when in a SMT the function keeps going
-kmWrite32(0x8057ef38, 0x418200A4); //ensure mtSpeedMultiplier gets reset when driftState = 1, by sending to where CreateUMT hooks
-kmWrite32(0x8057efb4, 0x48000028); //skips the SMT charge check and sends unconditionally to CreateUMT
-void CreateUMT(Kart::Movement& movement) {
-    bool isUMTs = Info::IsUMTs();
+kmWrite32(0x8057ef38, 0x418200A4); //ensure mtSpeedMultiplier gets reset when driftState = 1, by sending to where SetKartDriftTiers hooks
+kmWrite32(0x8057efb4, 0x48000028); //skips the SMT charge check and sends unconditionally to SetKartDriftTiers
+void SetKartDriftTiers(Kart::Movement& movement) {
+    KartType type = movement.link.GetType();
     const s16 smtCharge = movement.smtCharge;
-    if(smtCharge >= 550 && isUMTs) movement.driftState = 4;
-    else if(smtCharge >= 300) movement.driftState = 3;
+    if (type == KART){
+        if(smtCharge >= 550) movement.driftState = 4;
+        else if(smtCharge >= 300) movement.driftState = 3;
+    }
+    else if(type == INSIDE_BIKE && smtCharge >= 300) movement.driftState = 3;
 };
-kmBranch(0x8057efdc, CreateUMT);
+kmBranch(0x8057efdc, SetKartDriftTiers);
+
+kmWrite32(0x80588894, 0x2c000003); //changes >= 2 to >= 3 for SMT
+kmWrite32(0x8058889c, 0x2c000000); //changes check from if != 1 to if = 0, so that when in a MT the function keeps going
+kmWrite32(0x805888a8, 0x418200A4);
+kmWrite32(0x80588924, 0x48000028); //skips the MT charge check and sends unconditionally to SetBikeDriftTiers
+void SetBikeDriftTiers(Kart::MovementBike& movement){
+    KartType type = movement.link.GetType();
+    const s16 mtCharge = movement.mtCharge;
+    if (type == OUTSIDE_BIKE){
+        if (mtCharge >= 570) movement.driftState = 3;
+        else if (mtCharge >= 270) movement.driftState = 2;
+    }
+    else if (type == INSIDE_BIKE && mtCharge >= 270) movement.driftState = 2;
+}
+kmBranch(0x8058894c, SetBikeDriftTiers);
 
 //Buffs MTStats and updates umtState
 int BuffUMT(const Kart::Movement& movement) {
@@ -72,13 +101,18 @@ kmCall(0x8057934c, UpdateSpeedMultiplier);
 
 //Expanded player effect, also hijacked to add custom breff/brefts to EffectsMgr
 static void CreatePlayerEffects(EffectsMgr& mgr) { //adding the resource here as all other breff have been loaded at this point
+    const ArchiveRoot* root = ArchiveRoot::sInstance;
     if(Info::IsUMTs()) {
-        const ArchiveRoot* root = ArchiveRoot::sInstance;
         void* breff = root->GetFile(ARCHIVE_HOLDER_COMMON, System::breff, 0);
         void* breft = root->GetFile(ARCHIVE_HOLDER_COMMON, System::breft, 0);
         EGG::EffectResource* res = new EGG::EffectResource(breff, breft);
         if(mgr.resCount != 9) mgr.resources[mgr.resCount] = res;
         else pulEffects = res;
+        breff = root->GetFile(ARCHIVE_HOLDER_COMMON, "/Effect/VP.breff", 0);
+        breft = root->GetFile(ARCHIVE_HOLDER_COMMON, "/Effect/VP.breft", 0);
+        res = new EGG::EffectResource(breff, breft);
+        if(mgr.resCount != 9) mgr.resources[mgr.resCount] = res;
+        else vpEffects = res;
     }
     for(int i = 0; i < RaceData::sInstance->racesScenario.playerCount; ++i) {
         mgr.playersEffects[i] = new(ExpPlayerEffects)(Kart::Manager::sInstance->GetKartPlayer(i));
@@ -89,6 +123,8 @@ kmCall(0x80554624, CreatePlayerEffects);
 static void DeleteEffectRes(EffectsMgr& mgr) {
     delete(pulEffects);
     pulEffects = nullptr;
+    delete(vpEffects);
+    vpEffects = nullptr;
     mgr.Reset();
 }
 kmCall(0x8051b198, DeleteEffectRes);
@@ -97,29 +133,51 @@ kmCall(0x8051b198, DeleteEffectRes);
 //Loads the custom effects
 static void LoadCustomEffects(ExpPlayerEffects& effects) {
     effects.LoadEffects();
-    if(effects.isBike == false && Info::IsUMTs()) {
-        effects.rk_purpleMT = new EGG::Effect * [ExpPlayerEffects::UmtEffectsCount];
-        for(int i = 0; i < ExpPlayerEffects::UmtEffectsCount; ++i) {
-            effects.rk_purpleMT[i] = new(EGG::Effect)(ExpPlayerEffects::UMTNames[i], effects.playerIdPlus2);
-        }
+    effects.rk_purpleMT = new EGG::Effect * [ExpPlayerEffects::UmtEffectsCount];
+    for(int i = 0; i < ExpPlayerEffects::UmtEffectsCount; ++i) {
+        effects.rk_purpleMT[i] = new(EGG::Effect)(ExpPlayerEffects::UMTNames[i], effects.playerIdPlus2);
+    }
+    effects.rk_orangeMT = new EGG::Effect * [ExpPlayerEffects::SmtEffectsCount];
+    for(int i = 0; i < ExpPlayerEffects::SmtEffectsCount; ++i) {
+        effects.rk_orangeMT[i] = new(EGG::Effect)(ExpPlayerEffects::SMTNames[i], effects.playerIdPlus2);
     }
 };
 kmCall(0x8068e9c4, LoadCustomEffects);
 
-//Left and Righ sparks when the SMT charge is over 550
+//Left and Right sparks when the SMT charge is over 550
 void LoadLeftPurpleSparkEffects(ExpPlayerEffects& effects, EGG::Effect** effectArray, u32 firstEffectIndex, u32 lastEffectIndex, const Mtx34& playerMat2, const Vec3& wheelPos, bool r9) {
+    KartType type = effects.kartPlayer->link.GetType();
     const u32 smtCharge = effects.kartPlayer->link.pointers->kartMovement->smtCharge;
-    if(smtCharge >= 550 && Info::IsUMTs()) effects.DisplayPrimaryEffects(effects.rk_purpleMT, 0, 2, playerMat2, wheelPos, r9);
+    if(smtCharge >= 550 && type == KART && Info::IsUMTs()){
+        effects.DisplayPrimaryEffects(effects.rk_purpleMT, 0, 2, playerMat2, wheelPos, r9);
+        effects.FadeEffects(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, r9);
+    }
     else effects.DisplayPrimaryEffects(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, r9);
 };
 kmCall(0x80698a94, LoadLeftPurpleSparkEffects);
 
 void LoadRightPurpleSparkEffects(ExpPlayerEffects& effects, EGG::Effect** effectArray, u32 firstEffectIndex, u32 lastEffectIndex, const Mtx34& playerMat2, const Vec3& wheelPos, bool r9) {
+    KartType type = effects.kartPlayer->link.GetType();
     const u32 smtCharge = effects.kartPlayer->link.pointers->kartMovement->smtCharge;
-    if(smtCharge >= 550 && Info::IsUMTs()) effects.DisplayPrimaryEffects(effects.rk_purpleMT, 2, 4, playerMat2, wheelPos, r9);
+    if(smtCharge >= 550 && type == KART && Info::IsUMTs()){
+        effects.DisplayPrimaryEffects(effects.rk_purpleMT, 2, 4, playerMat2, wheelPos, r9);
+        effects.FadeEffects(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, r9);
+        }
     else effects.DisplayPrimaryEffects(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, r9);
 };
 kmCall(0x80698af0, LoadRightPurpleSparkEffects);
+
+void LoadOrangeSparkEffects(ExpPlayerEffects& effects, EGG::Effect** effectArray, u32 firstEffectIndex, u32 lastEffectIndex, const Mtx34& playerMat2, const Vec3& wheelPos, bool r9){
+    KartType type = effects.kartPlayer->link.GetType();
+    const u32 mtCharge = effects.kartPlayer->link.pointers->kartMovement->mtCharge;
+    if(mtCharge >= 570 && type == OUTSIDE_BIKE) {
+        effects.DisplayPrimaryEffects(effects.rk_orangeMT, 0, 2, playerMat2, wheelPos, r9);
+        effects.FadeEffects(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, r9);
+    }
+    else effects.DisplayPrimaryEffects(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, r9);
+};
+kmBranch(0x806a2f60, LoadOrangeSparkEffects);
+kmBranch(0x806a3004, LoadOrangeSparkEffects);
 
 //Fade the sparks
 void FadeLeftPurpleSparkEffects(ExpPlayerEffects& effects, EGG::Effect** effectArray, u32 firstEffectIndex, u32 lastEffectIndex, const Mtx34& playerMat2, const Vec3& wheelPos, bool r9) {
@@ -139,6 +197,12 @@ kmCall(0x80698248, FadeRightPurpleSparkEffects);
 kmCall(0x80698684, FadeRightPurpleSparkEffects);
 kmCall(0x80698b10, FadeRightPurpleSparkEffects);
 kmCall(0x80698dcc, FadeRightPurpleSparkEffects);
+
+void FadeOrangeSparkEffects(ExpPlayerEffects& effects, EGG::Effect** effectArray, u32 firstEffectIndex, u32 lastEffectIndex, const Mtx34& playerMat2, const Vec3& wheelPos, bool r9){
+    effects.FadeEffects(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, r9);
+    effects.FadeEffects(effects.rk_orangeMT, 0, 2, playerMat2, wheelPos, r9);
+};
+kmBranch(0x806a31fc, FadeOrangeSparkEffects);
 
 int PatchDriftStateCheck(const Kart::Player& kartPlayerPlayer) {
     u32 driftState = kartPlayerPlayer.GetDriftState();
