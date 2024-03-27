@@ -27,7 +27,7 @@ public:
     virtual int GetEnabledCtrlRaceBases() const = 0; //0x68, used for initctrlracebase
     virtual int GetCtrlRaceNameBalloonCount() const; //0x6c 80633d44, returns 0, 3 (as 0 counts) in vs mode, 1 in TTracepage etc...
     virtual void OnPause(u32 hudSlotId); //0x70 808569bc
-    virtual void HasPlayerRaceEnded(u8 id); //0x74 808572d4 based on raceinfoplayer stateflags
+    virtual bool HasPlayerRaceEnded(u8 id); //0x74 808572d4 based on raceinfoplayer stateflags
     virtual bool HasRaceEnded(); //0x78 808573ac also if online, changes next page to 0x48
     virtual bool HasRaceEndedReplay(); //0x7c 8085732c only if gametype == replay
     int GetCtrlRaceBaseCount() const; //80857b08 returns how page elements there should be
