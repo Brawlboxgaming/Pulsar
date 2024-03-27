@@ -120,7 +120,6 @@ static void DecideTrack(CustomSELECTHandler* select) {
     const CupsConfig* cupsConfig = CupsConfig::sInstance;
     const RKNet::Controller* controller = RKNet::Controller::sInstance;
     if(select->mode == RKNet::ONLINEMODE_PUBLIC_VS && !CupsConfig::IsRegsSituation()) {
-
         const u32 availableAids = controller->subs[controller->currentSub].availableAids;
         u8 aids[12];
         u8 newVotesAids[12];

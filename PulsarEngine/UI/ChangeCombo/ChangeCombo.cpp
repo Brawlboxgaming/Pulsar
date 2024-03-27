@@ -158,7 +158,7 @@ static void AddChangeComboPages(Section* section, PageId id) {
         section->Set(transmission, transmissionPage);
         transmission->Init(transmissionPage);
     }
-    else if(isBattle) kartPage = PAGE_BATTLE_KART_SELECT;
+    if(isBattle) kartPage = PAGE_BATTLE_KART_SELECT;
     section->CreateAndInitPage(kartPage);
     section->CreateAndInitPage(driftPage);
 }
