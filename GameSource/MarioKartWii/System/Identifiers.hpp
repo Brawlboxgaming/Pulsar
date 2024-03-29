@@ -407,6 +407,7 @@ enum PageId {
     PAGE_FRIEND_ROOM_MANAGER            = 0x9C, //DONE
     PAGE_FRIEND_ROOM                    = 0x9D, //DONE
     PAGE_FRIEND_ROOM_MESSAGES           = 0x9E, //DONE
+    PAGE_MKCHANNEL_GHOST_CHALLENGE      = 0xA1,
     PAGE_MKCHANNEL                      = 0xA2,
     PAGE_RANKINGS_MENU                  = 0xA3,
     PAGE_CHANNEL_GHOSTS                 = 0xA4,

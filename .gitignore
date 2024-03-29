@@ -57,3 +57,9 @@ PulsarPackCreator/Executable/Pulsar Pack Creator.dll.config
 *.v2
 
 PulsarPackCreator/.vs
+
+GameSource/MarioKartChannel/
+
+GameSource/chanSymbols.txt
+
+GameSource/chanVersions.txt
