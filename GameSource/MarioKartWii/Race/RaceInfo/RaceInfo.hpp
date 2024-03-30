@@ -24,7 +24,9 @@ Contributors:
 enum RaceStage {
     RACESTAGE_INTRO,
     RACESTAGE_COUNTDOWN,
-    RACESTAGE_RACE
+    RACESTAGE_RACE,
+    RACESTAGE_FINISH,
+    RACESTAGE_FINISH_ALL
 };
 
 class KMGHolder {
