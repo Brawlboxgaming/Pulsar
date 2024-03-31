@@ -52,17 +52,22 @@ void SetKartDriftTiers(Kart::Movement& movement) {
 kmBranch(0x8057efdc, SetKartDriftTiers);
 
 kmWrite32(0x80588894, 0x2c000003); //changes >= 2 to >= 3 for SMT
-kmWrite32(0x8058889c, 0x2c000000); //changes check from if != 1 to if = 0, so that when in a MT the function keeps going
-kmWrite32(0x805888a8, 0x418200A4);
-kmWrite32(0x80588924, 0x48000028); //skips the MT charge check and sends unconditionally to SetBikeDriftTiers
-void SetBikeDriftTiers(Kart::MovementBike& movement){
-    KartType type = movement.link.GetType();
-    const s16 mtCharge = movement.mtCharge;
-    if (type == OUTSIDE_BIKE){
-        if (mtCharge >= 570) movement.driftState = 3;
-        else if (mtCharge >= 270) movement.driftState = 2;
+kmWrite32(0x8058889c, 0x2c000003); //changes check from if != 1 to if = 3, so that when in a MT the function keeps going
+kmWrite32(0x805888a8, 0x418200A4); //if in charge state 2, skip to SetBikeDriftTiers
+kmWrite32(0x80588928, 0x60000000); //removed fixed 270 write to mtCharge
+kmWrite32(0x80588938, 0x7c040378); //setup "charged" for next function
+kmWrite32(0x8058893c, 0x48000010); //takes MT charge check and parses it into SetBikeDriftTiers
+void SetBikeDriftTiers(Kart::MovementBike& movement, bool charged){
+    if (charged){
+        movement.driftState = 2;
+        KartType type = movement.link.GetType();
+        const s16 mtCharge = movement.mtCharge;
+        if (type == OUTSIDE_BIKE){
+            if (mtCharge >= 570) movement.driftState = 3;
+            //else if (mtCharge >= 270) movement.driftState = 2;
+        }
     }
-    else if (type == INSIDE_BIKE && mtCharge >= 270) movement.driftState = 2;
+    //else if (type == INSIDE_BIKE && mtCharge >= 270) movement.driftState = 2;
 }
 kmBranch(0x8058894c, SetBikeDriftTiers);
 
