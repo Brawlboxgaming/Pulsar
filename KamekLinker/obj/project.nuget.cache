@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "DQ/D2AgWpEcU0gXloh9yNt9qk6C/8yoxQ13soth0KPr5tWXQ7YWGZxuF4ONbhJbhlMbaikPMqizhDRccYXE9kQ==",
+  "dgSpecHash": "buNdMe4C1fZiAhmZp3bwsjVwgHRnDi5E29vod13XMM+14kecNT7TSq2hZXhY8gxwn6rssZcWaTM1b5EZfBmsyQ==",
   "success": true,
-  "projectFilePath": "C:\\Modding\\Coding\\Kamek\\Common\\KamekLinker\\Kamek.csproj",
+  "projectFilePath": "C:\\Users\\James\\Wii\\MKW\\Kamek\\Common\\KamekLinker\\Kamek.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\admin\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.2\\microsoft.net.illink.tasks.8.0.2.nupkg.sha512"
+    "C:\\Users\\James\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.3\\microsoft.net.illink.tasks.8.0.3.nupkg.sha512"
   ],
   "logs": []
 }

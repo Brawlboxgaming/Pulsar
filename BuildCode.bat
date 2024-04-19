@@ -20,7 +20,7 @@ echo %RIIVO%
 
 :: CPP compilation settings
 SET CC="../Common/cw/mwcceppc.exe"
-SET CFLAGS=-I- -i "../Common/KamekInclude" -i "../Common/GameSource" -i "../Common/GameSource/MarioKartWii" -i PulsarEngine ^
+SET CFLAGS=-I- -i "../Common/KamekInclude" -i "../Common/GameSource" -i "../Common/GameSource/MarioKartWii" -i "../Common/GameSource/core" -i "../Common" -i PulsarEngine ^
   -opt all -inline auto -enum int -proc gekko -fp hard -sdata 0 -sdata2 0 -maxerrors 1 -func_align 4 %cwDWARF%
 SET DEFINE=
 
@@ -40,7 +40,7 @@ FOR %%H IN (%CPPFILES%) DO (
 
 :: Link
 echo Linking... %time%
-"../Common/Kamek" "build/kamek.o" %OBJECTS% %debug% -dynamic -externals="../Common/GameSource/symbols.txt" -versions="../Common/GameSource/versions.txt" -output-combined=build\Code.pul
+"../Common/KamekLinker/Kamek" "build/kamek.o" %OBJECTS% %debug% -dynamic -externals="../Common/GameSource/symbols.txt" -versions="../Common/GameSource/versions.txt" -output-combined=build\Code.pul
 
 if %ErrorLevel% equ 0 (
     xcopy /Y build\*.pul "%RIIVO%\Binaries" >nul
