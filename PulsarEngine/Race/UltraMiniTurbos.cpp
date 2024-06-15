@@ -105,7 +105,7 @@ bool UpdateSpeedMultiplier(Kart::Boost& boost, bool* boostEnded) {
 kmCall(0x8057934c, UpdateSpeedMultiplier);
 
 //Expanded player effect, also hijacked to add custom breff/brefts to EffectsMgr
-static void CreatePlayerEffects(EffectsMgr& mgr) { //adding the resource here as all other breff have been loaded at this point
+static void CreatePlayerEffects(Effects::Mgr& mgr) { //adding the resource here as all other breff have been loaded at this point
     const ArchiveRoot* root = ArchiveRoot::sInstance;
     if(Info::IsUMTs()) {
         void* breff = root->GetFile(ARCHIVE_HOLDER_COMMON, System::breff, 0);
@@ -120,12 +120,12 @@ static void CreatePlayerEffects(EffectsMgr& mgr) { //adding the resource here as
         else vpEffects = res;
     }
     for(int i = 0; i < RaceData::sInstance->racesScenario.playerCount; ++i) {
-        mgr.playersEffects[i] = new(ExpPlayerEffects)(Kart::Manager::sInstance->GetKartPlayer(i));
+        mgr.players[i] = new(ExpPlayerEffects)(Kart::Manager::sInstance->GetKartPlayer(i));
     }
 }
 kmCall(0x80554624, CreatePlayerEffects);
 
-static void DeleteEffectRes(EffectsMgr& mgr) {
+static void DeleteEffectRes(Effects::Mgr& mgr) {
     delete(pulEffects);
     pulEffects = nullptr;
     delete(vpEffects);
@@ -149,25 +149,23 @@ static void LoadCustomEffects(ExpPlayerEffects& effects) {
 };
 kmCall(0x8068e9c4, LoadCustomEffects);
 
-//Left and Right sparks when the SMT charge is over 550
+//Left and Righ sparks when the SMT charge is over 550
 void LoadLeftPurpleSparkEffects(ExpPlayerEffects& effects, EGG::Effect** effectArray, u32 firstEffectIndex, u32 lastEffectIndex, const Mtx34& playerMat2, const Vec3& wheelPos, bool r9) {
-    KartType type = effects.kartPlayer->link.GetType();
     const u32 smtCharge = effects.kartPlayer->link.pointers->kartMovement->smtCharge;
-    if(smtCharge >= 550 && type == KART && Info::IsUMTs()){
+    if(smtCharge >= 550 && Info::IsUMTs()) {
         effects.DisplayPrimaryEffects(effects.rk_purpleMT, 0, 2, playerMat2, wheelPos, r9);
         effects.FadeEffects(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, r9);
     }
-    else effects.DisplayPrimaryEffects(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, r9);
+    else effects.CreateAndUpdateEffectsByIdx(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, updateScale);
 };
 kmCall(0x80698a94, LoadLeftPurpleSparkEffects);
 
 void LoadRightPurpleSparkEffects(ExpPlayerEffects& effects, EGG::Effect** effectArray, u32 firstEffectIndex, u32 lastEffectIndex, const Mtx34& playerMat2, const Vec3& wheelPos, bool r9) {
-    KartType type = effects.kartPlayer->link.GetType();
     const u32 smtCharge = effects.kartPlayer->link.pointers->kartMovement->smtCharge;
-    if(smtCharge >= 550 && type == KART && Info::IsUMTs()){
+    if(smtCharge >= 550 && Info::IsUMTs()) {
         effects.DisplayPrimaryEffects(effects.rk_purpleMT, 2, 4, playerMat2, wheelPos, r9);
         effects.FadeEffects(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, r9);
-        }
+    }
     else effects.DisplayPrimaryEffects(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, r9);
 };
 kmCall(0x80698af0, LoadRightPurpleSparkEffects);
@@ -185,18 +183,18 @@ kmBranch(0x806a2f60, LoadOrangeSparkEffects);
 kmBranch(0x806a3004, LoadOrangeSparkEffects);
 
 //Fade the sparks
-void FadeLeftPurpleSparkEffects(ExpPlayerEffects& effects, EGG::Effect** effectArray, u32 firstEffectIndex, u32 lastEffectIndex, const Mtx34& playerMat2, const Vec3& wheelPos, bool r9) {
-    if(Info::IsUMTs()) effects.FadeEffects(effects.rk_purpleMT, 0, 2, playerMat2, wheelPos, r9);
-    effects.FadeEffects(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, r9);
+void FadeLeftPurpleSparkEffects(ExpPlayerEffects& effects, EGG::Effect** effectArray, u32 firstEffectIndex, u32 lastEffectIndex, const Mtx34& playerMat2, const Vec3& wheelPos, bool updateScale) {
+    if(Info::IsUMTs()) effects.FollowFadeEffectsByIdx(effects.rk_purpleMT, 0, 2, playerMat2, wheelPos, updateScale);
+    effects.FollowFadeEffectsByIdx(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, updateScale);
 };
 kmCall(0x80698dac, FadeLeftPurpleSparkEffects);
 kmCall(0x80698228, FadeLeftPurpleSparkEffects);
 kmCall(0x80698664, FadeLeftPurpleSparkEffects);
 kmCall(0x80698ab4, FadeLeftPurpleSparkEffects);
 
-void FadeRightPurpleSparkEffects(ExpPlayerEffects& effects, EGG::Effect** effectArray, u32 firstEffectIndex, u32 lastEffectIndex, const Mtx34& playerMat2, const Vec3& wheelPos, bool r9) {
-    if(Info::IsUMTs()) effects.FadeEffects(effects.rk_purpleMT, 2, 4, playerMat2, wheelPos, r9);
-    effects.FadeEffects(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, r9);
+void FadeRightPurpleSparkEffects(ExpPlayerEffects& effects, EGG::Effect** effectArray, u32 firstEffectIndex, u32 lastEffectIndex, const Mtx34& playerMat2, const Vec3& wheelPos, bool updateScale) {
+    if(Info::IsUMTs()) effects.FollowFadeEffectsByIdx(effects.rk_purpleMT, 2, 4, playerMat2, wheelPos, updateScale);
+    effects.FollowFadeEffectsByIdx(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, updateScale);
 };
 kmCall(0x80698248, FadeRightPurpleSparkEffects);
 kmCall(0x80698684, FadeRightPurpleSparkEffects);
@@ -235,7 +233,7 @@ kmWrite32(0x8069bfa0, 0x60000000);
 //kmWrite32(0x8069bfdc, 0x7FA5EB78);
 //kmWrite32(0x8069bfe4, 0x7FC6F378);
 void PatchBoostMatrix(EGG::Effect* boostEffect, const Mtx34& boostMat) {
-    if(boostEffect->handleBase.GetPtr()) {
+    if(boostEffect->effectHandle.GetPtr()) {
         boostEffect->SetMtx(boostMat);
         boostEffect->Update();
     }
@@ -245,7 +243,7 @@ void PatchBoostMatrix(EGG::Effect* boostEffect, const Mtx34& boostMat) {
     asm(mr effects, r30;);
     if(!effects->isBike && Info::IsUMTs()) {
         boostEffect = effects->rk_purpleMT[rk_purpleBoost + loopIndex % 4];
-        if(boostEffect->handleBase.GetPtr()) {
+        if(boostEffect->effectHandle.GetPtr()) {
             boostEffect->SetMtx(boostMat);
             boostEffect->Update();
         }

@@ -1,7 +1,7 @@
 #ifndef _PUL_UMT_
 #define _PUL_UMT_
 #include <kamek.hpp>
-#include <MarioKartWii/3D/Effect/EffectMgr.hpp>
+#include <MarioKartWii/Effect/EffectMgr.hpp>
 
 
 namespace Pulsar {
@@ -33,11 +33,11 @@ enum UMTeffects { //Chips are not implemented currently due to pure laziness
     //rk_driftSpark3R1T_Spark01
 };
 
-class ExpPlayerEffects : public PlayerEffects {
+class ExpPlayerEffects : public Effects::Player {
 public:
     static const int SmtEffectsCount = 8;
     static const int UmtEffectsCount = 8;
-    explicit ExpPlayerEffects(Kart::Player* kartPlayer) : PlayerEffects(kartPlayer) { };
+    explicit ExpPlayerEffects(Kart::Player* kartPlayer) : Effects::Player(kartPlayer) { };
     ~ExpPlayerEffects() override {
         if (isBike){
             EGG::Effect** array = rk_orangeMT;
