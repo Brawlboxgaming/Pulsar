@@ -21,8 +21,8 @@ enum UseType {
     ITEMUSE_CIRCLE
 };
 
-struct Behavior {
-    static Behavior behaviourTable[19]; //809c36a0, index item id, see http://wiki.tockdom.com/wiki/List_of_Identifiers#Items
+struct Behaviour {
+    static Behaviour behaviourTable[19]; //809c36a0, index item id, see http://wiki.tockdom.com/wiki/List_of_Identifiers#Items
     u8 unknkown_0x0;
     u8 unknkown_0x1;
     u8 padding[2]; // Ignored when copying to array

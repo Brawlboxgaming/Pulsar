@@ -4,6 +4,7 @@
 #include <MarioKartWii/CourseMgr.hpp>
 #include <MarioKartWii/3D/Model/ModelDirector.hpp>
 #include <MarioKartWii/Driver/DriverManager.hpp>
+#include <MarioKartWii/Item/Obj/ObjProperties.hpp>
 #include <Info.hpp>
 
 

@@ -989,7 +989,7 @@ LoadPrevPageWithDelayById__Q25Pages4MenuF6PageIdf = 0x8083761c
 LoadPrevPageById__Q25Pages4MenuF6PageIdR10PushButton = 0x80837934
 LoadNextPageById__Q25Pages4MenuF6PageIdR10PushButton = 0x80837720
 LoadNextPageWithDelayById__Q25Pages4MenuF6PageIdf = 0x8083761c
-LoadMessageBoxTransparentPage__Q25Pages4MenuFUiPC8TextInfo = 0x808386a0
+LoadMessageBoxTransparentPage__Q25Pages4MenuFUiPCQ24Text4Info = 0x808386a0
 ChangeToPrevSection__Q25Pages4MenuFPQ25Pages5Click = 0x808387ac
 ChangeSectionById__Q25Pages4MenuF9SectionIdR10PushButton = 0x80837e40 
 HandleStartPress__Q25Pages4MenuFUi = 0x80838b14
@@ -1365,7 +1365,7 @@ DeployBlooper__Q24Item8GessoMgrFUc = 0x807a9128
 AddEVENTEntry__Q24Item7ObjBaseF9ItemObjIdUc = 0x8079c220
 
 #ItemObjThrowable
-SetInitialPositionImpl__Q24Item12ObjThrowableFRQ24Item9PlayerSubUibfff = 0x807b7104
+SetInitialPositionImpl__Q24Item12ObjThrowableFRQ24Item9PlayerObjUibfff = 0x807b7104
 
 #Lakitu
 Update__Q26Lakitu7ManagerFv = 0x8071e6c0
