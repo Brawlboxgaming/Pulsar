@@ -29,27 +29,21 @@ void BeforeSELECTSend(RKNet::PacketHolder* packetHolder, CustomSELECTPacket* src
     }
     else{
         src->pulSELPlayerData[1].starRank += 0x80; //set leftmost bit to specify PULPacket
-        
-        //VP::System *vp = VP::System::GetsInstance();
-        //VP::Gamemode chosenMode = vp->hostMode;
-        //const RKNet::Controller* controller = RKNet::Controller::sInstance;
-        //const RKNet::ControllerSub& sub = controller->subs[controller->currentSub];
-        //const u8 hostAid = sub.hostAid;
-        //const u8 localAid = sub.localAid;
-        //if (localAid == hostAid && !vp->isRegModeSelected){
-        //    const GameMode gameMode = RaceData::sInstance->menusScenario.settings.gamemode;
-        //    const bool isFroom = gameMode == MODE_PRIVATE_VS || gameMode == MODE_PRIVATE_BATTLE;
-        //    if (isFroom){
-        //        chosenMode = static_cast<VP::Gamemode>(Pulsar::Settings::Mgr::GetSettingValue(static_cast<Pulsar::Settings::Type>(VP::SETTINGSTYPE_VP), VP::SETTINGVP_SCROLLER_MODE));
-        //    }
-        //    else{
-        //        Random random;
-        //        chosenMode = static_cast<VP::Gamemode>(random.NextLimited(VP::System::GetGamemodeCount()));
-        //    }
-        //    vp->hostMode = chosenMode;
-        //    vp->isRegModeSelected = true;
-        //    src->pulSELPlayerData[0].starRank = (src->pulSELPlayerData[0].starRank & 0b1111) + (chosenMode << 5);
-        //}
+
+        const GameMode gameMode = RaceData::sInstance->menusScenario.settings.gamemode;
+        const bool isFroom = gameMode == MODE_PRIVATE_VS || gameMode == MODE_PRIVATE_BATTLE;
+            if (!isFroom){ // to make sure we're in a regional
+            VP::System *vp = VP::System::GetsInstance();
+            const RKNet::Controller* controller = RKNet::Controller::sInstance;
+            const RKNet::ControllerSub& sub = controller->subs[controller->currentSub];
+            const u8 localAid = sub.localAid;
+            const u8 hostAid = sub.hostAid;
+            if (!vp->isRegModeChosen || localAid == hostAid){ // we only want to modify the packet if we still need to vote
+                if (localAid == hostAid) vp->aidModes[localAid] = vp->votedMode; // if we are the host, set our own vote
+                src->pulSELPlayerData[0].starRank = (src->pulSELPlayerData[0].starRank & 0b1111) + (vp->isRegModeChosen << 4) + (vp->votedMode << 5); // send if we have decided and our vote
+                src->pulSELPlayerData[1].starRank = (src->pulSELPlayerData[1].starRank & 0b1111) + (localAid << 4); // send our aid
+            }
+        }
     }
     packetHolder->Copy(src, len);
 }
@@ -76,16 +70,51 @@ static void AfterSELECTReception(CustomSELECTPacket* dest, CustomSELECTPacket* s
     else{
         src->pulSELPlayerData[1].starRank -= 0x80; //remove leftmost bit from PULPacket
 
-        //const RKNet::Controller* controller = RKNet::Controller::sInstance;
-        //const RKNet::ControllerSub& sub = controller->subs[controller->currentSub];
-        //const u8 localAid = sub.localAid;
-        //const u8 hostAid = sub.hostAid;
-        //VP::System *vp = VP::System::GetsInstance();
-        //if (localAid != hostAid && !vp->isRegModeSelected){
-        //    vp->hostMode = static_cast<VP::Gamemode>((src->pulSELPlayerData[0].starRank & 0b11100000) >> 5);
-        //    vp->isRegModeSelected = true;
-        //}
-        //src->pulSELPlayerData[0].starRank &= 0b1111;
+        VP::System *vp = VP::System::GetsInstance();
+        if (!vp->isRegModeChosen){
+            const bool packetDecided = (src->pulSELPlayerData[0].starRank & 0b10000) >> 4;
+            if (packetDecided){ // only need to check this packet if they have decided on their vote
+                const RKNet::Controller* controller = RKNet::Controller::sInstance;
+                const RKNet::ControllerSub& sub = controller->subs[controller->currentSub];
+                const u8 localAid = sub.localAid;
+                const u8 hostAid = sub.hostAid;
+                const u8 packetAid = (src->pulSELPlayerData[1].starRank & 0b11110000) >> 4;
+            
+                if (packetAid != localAid){
+                    const VP::Gamemode packetVotedMode = static_cast<VP::Gamemode>((src->pulSELPlayerData[0].starRank & 0b11100000) >> 5);
+                    if (localAid == hostAid){ // if we are the host
+                        vp->aidModes[packetAid] = packetVotedMode;
+
+                        bool allVoted = true;
+                        VP::Gamemode votedModes[12];
+                        int votedCount = 0;
+                        const u32 availableAids = sub.availableAids;
+                        for (int i = 0; i < 12; i++){
+                            if((1 << i & availableAids) == 0) break;
+                            if (vp->aidModes[i] == VP::GAMEMODE_NONE){
+                                allVoted = false;
+                                break;
+                            }
+                            votedModes[votedCount] = vp->aidModes[i]; // fill in an array with only the available aid votes
+                            ++votedCount; // track how many available aids we have that have voted
+                        }
+                        if (allVoted){ // if all of the available aids have voted
+                            Random random;
+                            vp->hostMode = votedModes[random.NextLimited(votedCount)]; // decide the mode for the room
+                            vp->isRegModeChosen = true; // we now have the mode decided, so no need to run any more of this code
+                        }
+                    }
+                    else{ // if we are not the host
+                        if (packetAid == hostAid){
+                            vp->hostMode = packetVotedMode; // set the host's mode to use in VP::GetGamemode
+                            vp->isRegModeChosen = true; // we now have the mode decided, so no need to run any more of this code
+                        }
+                    }
+                }
+            }
+            src->pulSELPlayerData[0].starRank &= 0b1111; // remove VP related flags from packet before copying
+            src->pulSELPlayerData[1].starRank &= 0b1111;
+        }
     }
     memcpy(dest, src, sizeof(CustomSELECTPacket));
 }
