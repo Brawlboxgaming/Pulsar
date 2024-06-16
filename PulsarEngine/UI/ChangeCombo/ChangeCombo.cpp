@@ -4,8 +4,8 @@
 #include <UI/UI.hpp>
 #include <UI/ChangeCombo/ChangeCombo.hpp>
 #include <VP.hpp>
-#include <UI/TransmissionSelect.hpp>
-#include <UI/MultiTransmissionSelect.hpp>
+#include <UI/Transmission/TransmissionSelect.hpp>
+#include <UI/Transmission/MultiTransmissionSelect.hpp>
 
 namespace Pulsar {
 namespace UI {

@@ -38,10 +38,10 @@ void BeforeSELECTSend(RKNet::PacketHolder* packetHolder, CustomSELECTPacket* src
             const RKNet::ControllerSub& sub = controller->subs[controller->currentSub];
             const u8 localAid = sub.localAid;
             const u8 hostAid = sub.hostAid;
-            if (!vp->isRegModeChosen || localAid == hostAid){ // we only want to modify the packet if we still need to vote
+            if (vp->regVotePhase != VP::PHASE_HOST_DECIDED || localAid == hostAid){ // we only want to modify the packet if we still need to vote or if we are the host
                 if (localAid == hostAid) vp->aidModes[localAid] = vp->votedMode; // if we are the host, set our own vote
-                src->pulSELPlayerData[0].starRank = (src->pulSELPlayerData[0].starRank & 0b1111) + (vp->isRegModeChosen << 4) + (vp->votedMode << 5); // send if we have decided and our vote
-                src->pulSELPlayerData[1].starRank = (src->pulSELPlayerData[1].starRank & 0b1111) + (localAid << 4); // send our aid
+                src->pulSELPlayerData[0].starRank = (src->pulSELPlayerData[0].starRank & 0b1111) + (vp->votedMode << 4); // send our vote
+                src->pulSELPlayerData[1].starRank = (src->pulSELPlayerData[1].starRank & 0b1111) + (vp->regVotePhase << 4); // send our vote phase
             }
         }
     }
@@ -71,15 +71,15 @@ static void AfterSELECTReception(CustomSELECTPacket* dest, CustomSELECTPacket* s
         src->pulSELPlayerData[1].starRank -= 0x80; //remove leftmost bit from PULPacket
 
         VP::System *vp = VP::System::GetsInstance();
-        if (!vp->isRegModeChosen){
+        if (vp->regVotePhase != VP::PHASE_HOST_DECIDED){
             const bool packetDecided = (src->pulSELPlayerData[0].starRank & 0b10000) >> 4;
             if (packetDecided){ // only need to check this packet if they have decided on their vote
                 const RKNet::Controller* controller = RKNet::Controller::sInstance;
                 const RKNet::ControllerSub& sub = controller->subs[controller->currentSub];
                 const u8 localAid = sub.localAid;
                 const u8 hostAid = sub.hostAid;
-                const u8 packetAid = (src->pulSELPlayerData[1].starRank & 0b11110000) >> 4;
-            
+                register u8 packetAid;
+                asm(mr packetAid, r19;);
                 if (packetAid != localAid){
                     const VP::Gamemode packetVotedMode = static_cast<VP::Gamemode>((src->pulSELPlayerData[0].starRank & 0b11100000) >> 5);
                     if (localAid == hostAid){ // if we are the host
@@ -101,13 +101,13 @@ static void AfterSELECTReception(CustomSELECTPacket* dest, CustomSELECTPacket* s
                         if (allVoted){ // if all of the available aids have voted
                             Random random;
                             vp->hostMode = votedModes[random.NextLimited(votedCount)]; // decide the mode for the room
-                            vp->isRegModeChosen = true; // we now have the mode decided, so no need to run any more of this code
+                            vp->regVotePhase = VP::PHASE_HOST_DECIDED; // we now have the mode decided, so no need to run any more of this code
                         }
                     }
                     else{ // if we are not the host
                         if (packetAid == hostAid){
                             vp->hostMode = packetVotedMode; // set the host's mode to use in VP::GetGamemode
-                            vp->isRegModeChosen = true; // we now have the mode decided, so no need to run any more of this code
+                            vp->regVotePhase = VP::PHASE_HOST_DECIDED; // we now have the mode decided, so no need to run any more of this code
                         }
                     }
                 }

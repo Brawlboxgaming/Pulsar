@@ -149,35 +149,37 @@ static void LoadCustomEffects(ExpPlayerEffects& effects) {
 };
 kmCall(0x8068e9c4, LoadCustomEffects);
 
-//Left and Righ sparks when the SMT charge is over 550
-void LoadLeftPurpleSparkEffects(ExpPlayerEffects& effects, EGG::Effect** effectArray, u32 firstEffectIndex, u32 lastEffectIndex, const Mtx34& playerMat2, const Vec3& wheelPos, bool r9) {
+//Left and Right sparks when the SMT charge is over 550
+void LoadLeftPurpleSparkEffects(ExpPlayerEffects& effects, EGG::Effect** effectArray, u32 firstEffectIndex, u32 lastEffectIndex, const Mtx34& playerMat2, const Vec3& wheelPos, bool updateScale) {
+    KartType type = effects.kartPlayer->link.GetType();
     const u32 smtCharge = effects.kartPlayer->link.pointers->kartMovement->smtCharge;
-    if(smtCharge >= 550 && Info::IsUMTs()) {
-        effects.DisplayPrimaryEffects(effects.rk_purpleMT, 0, 2, playerMat2, wheelPos, r9);
-        effects.FadeEffects(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, r9);
+    if(smtCharge >= 550 && type == KART && Info::IsUMTs()){
+        effects.CreateAndUpdateEffectsByIdx(effects.rk_purpleMT, 0, 2, playerMat2, wheelPos, updateScale);
+        effects.FollowFadeEffectsByIdx(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, updateScale);
     }
     else effects.CreateAndUpdateEffectsByIdx(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, updateScale);
 };
 kmCall(0x80698a94, LoadLeftPurpleSparkEffects);
 
-void LoadRightPurpleSparkEffects(ExpPlayerEffects& effects, EGG::Effect** effectArray, u32 firstEffectIndex, u32 lastEffectIndex, const Mtx34& playerMat2, const Vec3& wheelPos, bool r9) {
+void LoadRightPurpleSparkEffects(ExpPlayerEffects& effects, EGG::Effect** effectArray, u32 firstEffectIndex, u32 lastEffectIndex, const Mtx34& playerMat2, const Vec3& wheelPos, bool updateScale) {
+    KartType type = effects.kartPlayer->link.GetType();
     const u32 smtCharge = effects.kartPlayer->link.pointers->kartMovement->smtCharge;
-    if(smtCharge >= 550 && Info::IsUMTs()) {
-        effects.DisplayPrimaryEffects(effects.rk_purpleMT, 2, 4, playerMat2, wheelPos, r9);
-        effects.FadeEffects(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, r9);
+    if(smtCharge >= 550 && type == KART && Info::IsUMTs()){
+        effects.CreateAndUpdateEffectsByIdx(effects.rk_purpleMT, 2, 4, playerMat2, wheelPos, updateScale);
+        effects.FollowFadeEffectsByIdx(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, updateScale);
     }
-    else effects.DisplayPrimaryEffects(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, r9);
+    else effects.CreateAndUpdateEffectsByIdx(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, updateScale);
 };
 kmCall(0x80698af0, LoadRightPurpleSparkEffects);
 
-void LoadOrangeSparkEffects(ExpPlayerEffects& effects, EGG::Effect** effectArray, u32 firstEffectIndex, u32 lastEffectIndex, const Mtx34& playerMat2, const Vec3& wheelPos, bool r9){
+void LoadOrangeSparkEffects(ExpPlayerEffects& effects, EGG::Effect** effectArray, u32 firstEffectIndex, u32 lastEffectIndex, const Mtx34& playerMat2, const Vec3& wheelPos, bool updateScale){
     KartType type = effects.kartPlayer->link.GetType();
     const u32 mtCharge = effects.kartPlayer->link.pointers->kartMovement->mtCharge;
     if(mtCharge >= 570 && type == OUTSIDE_BIKE) {
-        effects.DisplayPrimaryEffects(effects.rk_orangeMT, 0, 2, playerMat2, wheelPos, r9);
-        effects.FadeEffects(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, r9);
+        effects.CreateAndUpdateEffectsByIdx(effects.rk_orangeMT, 0, 2, playerMat2, wheelPos, updateScale);
+        effects.FollowFadeEffectsByIdx(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, updateScale);
     }
-    else effects.DisplayPrimaryEffects(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, r9);
+    else effects.CreateAndUpdateEffectsByIdx(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, updateScale);
 };
 kmBranch(0x806a2f60, LoadOrangeSparkEffects);
 kmBranch(0x806a3004, LoadOrangeSparkEffects);
@@ -201,9 +203,9 @@ kmCall(0x80698684, FadeRightPurpleSparkEffects);
 kmCall(0x80698b10, FadeRightPurpleSparkEffects);
 kmCall(0x80698dcc, FadeRightPurpleSparkEffects);
 
-void FadeOrangeSparkEffects(ExpPlayerEffects& effects, EGG::Effect** effectArray, u32 firstEffectIndex, u32 lastEffectIndex, const Mtx34& playerMat2, const Vec3& wheelPos, bool r9){
-    effects.FadeEffects(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, r9);
-    effects.FadeEffects(effects.rk_orangeMT, 0, 2, playerMat2, wheelPos, r9);
+void FadeOrangeSparkEffects(ExpPlayerEffects& effects, EGG::Effect** effectArray, u32 firstEffectIndex, u32 lastEffectIndex, const Mtx34& playerMat2, const Vec3& wheelPos, bool updateScale){
+    effects.FollowFadeEffectsByIdx(effectArray, firstEffectIndex, lastEffectIndex, playerMat2, wheelPos, updateScale);
+    effects.FollowFadeEffectsByIdx(effects.rk_orangeMT, 0, 2, playerMat2, wheelPos, updateScale);
 };
 kmBranch(0x806a31fc, FadeOrangeSparkEffects);
 

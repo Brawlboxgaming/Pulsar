@@ -189,6 +189,9 @@ void Manager::LoadAllGhosts(u32 maxGhosts, bool isGhostRace) {
                 if(this->rkg.header.compressed) {
                     this->rkg.DecompressTo(dest); //0x2800
                     vp->transmissions[position + isGhostRace] = static_cast<VP::Transmission>(dest.inputs.unused >> 14);
+                    if ((dest.header.month < 6 && dest.header.year == 2024) || dest.header.year < 2024){
+                        vp->driftHandled[position + isGhostRace] = true;
+                    }
                 }
                 else memcpy(&dest, &this->rkg, sizeof(RKG));
                 if(this->cb != nullptr) {
@@ -207,9 +210,15 @@ void Manager::LoadAllGhosts(u32 maxGhosts, bool isGhostRace) {
         if(this->rkg.header.compressed) {
             this->rkg.DecompressTo(dest); //0x2800
             vp->transmissions[isGhostRace] = static_cast<VP::Transmission>(dest.inputs.unused >> 14);
+            if ((dest.header.month < 6 && dest.header.year == 2024) || dest.header.year < 2024){
+                vp->driftHandled[isGhostRace] = true;
+            }
         }
     }
-    if (isGhostRace) vp->transmissions[0] = vp->lastSelectedTransmission;
+    if (isGhostRace){
+        vp->transmissions[0] = vp->lastSelectedTransmission;
+        vp->driftHandled[0] = false;
+    }
 }
 
 bool Manager::SaveGhost(const TimeEntry& entry, u32 ldbPosition, bool isFlap) {
@@ -368,6 +377,9 @@ void Manager::LoadCorrectMainGhost(Pages::GhostManager& ghostManager, u8 r4) {
     rkg->DecompressTo(dest);
     VP::System *vp = VP::System::GetsInstance();
     vp->transmissions[0] = (dest.inputs.unused >> 14);
+    if ((dest.header.month < 6 && dest.header.year == 2024) || dest.header.year < 2024){
+        vp->driftHandled[0] = true;
+    }
     if(ghostManager.state == SAVED_GHOST_RACE_FROM_MENU) ghostManager.state = STAFF_GHOST_RACE_FROM_MENU;
     //faking that it's a staff so it copies from the buffer and not savadatamanager
 }
